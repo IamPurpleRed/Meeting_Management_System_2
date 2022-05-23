@@ -1,0 +1,27 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "beautify.config": {
+        "indent_size": 2,
+        "end_with_newline": true,
+        "extra_liners": [],
+        "js": {
+            "indent_size": 4
+        },
+    },
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/src/css"
+        }
+    ],
+}
