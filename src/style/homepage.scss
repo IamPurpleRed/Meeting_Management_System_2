@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 nav {
@@ -22,18 +24,21 @@ nav {
   }
 }
 
+
 // Content Box Start------------------------------------------
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-.container{
+
+.container {
   position: relative;
   width: 1200px;
   height: 300px;
   margin: 540px auto;
-  .box{
+
+  .box {
     position: relative;
     width: calc(400px - 30px);
     height: calc(300px - 30px);
@@ -43,7 +48,8 @@ body {
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 10px;
-    .icon{
+
+    .icon {
       position: absolute;
       top: 0;
       left: 0;
@@ -52,33 +58,38 @@ body {
       background: rgb(98, 98, 98);
       transition: 0.5s;
       z-index: 1;
-      .fa{
+
+      .fa {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         font-size: 80px;
         transition: 0.5s;
         color: #fff;
       }
     }
-    &:hover{
-      .icon{
+
+    &:hover {
+      .icon {
         top: 20px;
         left: calc(50% - 40px);
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        .fa{
+
+        .fa {
           font-size: 40px;
         }
       }
-      .content{
+
+      .content {
         top: 100px;
         opacity: 1;
       }
     }
-    .content{
+
+    .content {
       position: absolute;
       top: 100%;
       height: calc(100% - 100px);
@@ -87,13 +98,15 @@ body {
       box-sizing: border-box;
       transition: 0.5s;
       opacity: 0;
-      h3{
+
+      h3 {
         margin: 0 0 10px;
         padding: 0;
         color: #fff;
         font-size: 24px;
       }
-      p{
+
+      p {
         margin: 0;
         padding: 0;
         color: #fff;
@@ -103,3 +116,130 @@ body {
 }
 
 // Content Box End------------------------------------------
+
+// Account Navigation Start------------------------------------------
+.navigation {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 120px;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  transition: height 0.25s, width 0.25s;
+  transition-delay: 0s, 0.4s;
+  overflow: hidden;
+
+  .userBx {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+
+    .imgBx {
+      position: relative;
+      min-width: 60px;
+      height: 60px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 50%;
+      border: 10px solid #fff;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .menuToggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 2px;
+      background: #555;
+      transform: translateY(-10px);
+      box-shadow: 0 10px #555;
+      transition: 0.5s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 2px;
+      background: #555;
+      transform: translateY(10px);
+      transition: 0.5s;
+    }
+  }
+}
+
+.navigation {
+  &.active {
+    width: 200px;
+    height: 230px;
+    transition: width 0.25s, height 0.25s;
+    transition-delay: 0s, 0.4s;
+
+    .menuToggle {
+      &::before {
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 #555;
+      }
+
+      &::after {
+        transform: translateY(0px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  li {
+    list-style: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+      font-size: 1em;
+      text-decoration: none;
+      color: #555;
+
+      &:hover {
+        color: #4e65ff;
+      }
+
+      ion-icon {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+
+// Account Navigation End--------------------------------------------
