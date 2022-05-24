@@ -133,9 +133,9 @@ body {
 }
 
 .navigation {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
   width: 120px;
   height: 60px;
   background: #fff;
