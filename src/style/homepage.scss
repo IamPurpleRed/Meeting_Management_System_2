@@ -1,48 +1,76 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-nav {
-  height: 60px;
-  padding: 0 15px;
-  background-color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  #nav_start {
-    display: flex;
-    align-items: center;
-  }
-
-  #nav_end {
-    display: flex;
-    align-items: center;
-  }
-}
-
-
-// Content Box Start------------------------------------------
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
+#banner {
+  width: 80vw;
+  height: 350px;
+  margin: 150px auto 50px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #000;
+
+  #text_area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    border-radius: 10px 0 0 10px;
+    background-color: rgb(200, 200, 200);
+
+    h2 {
+      font-size: 40px;
+      font-weight: 900;
+      position: absolute;
+      top: 100px;
+      left: 50px;
+    }
+
+    h3 {
+      font-size: 26px;
+      font-weight: 900;
+      color: rgb(100, 100, 100);
+      position: absolute;
+      top: 200px;
+      left: 50px;
+    }
+  }
+
+  #tri_area {
+    z-index: 2;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 60%;
+    border-style: solid;
+    border-width: 350px 0 0 80px;
+    border-color: transparent transparent transparent rgb(200, 200, 200);
+  }
+
+  img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+  }
+}
+
 .container {
   position: relative;
   width: 1200px;
   height: 300px;
-  margin: 540px auto;
+  margin: 50px auto;
 
   .box {
     position: relative;
     width: calc(400px - 30px);
     height: calc(300px - 30px);
-    background: #000;
+    background: rgb(100, 100, 100);
     float: left;
     margin: 15px;
     box-sizing: border-box;
@@ -55,16 +83,16 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgb(98, 98, 98);
+      background: rgb(200, 200, 200);
       transition: 0.5s;
       z-index: 1;
 
-      .fa {
+      .material-icons {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 80px;
+        font-size: 100px;
         transition: 0.5s;
         color: #fff;
       }
@@ -78,7 +106,7 @@ body {
         height: 80px;
         border-radius: 50%;
 
-        .fa {
+        .material-icons {
           font-size: 40px;
         }
       }
@@ -114,132 +142,3 @@ body {
     }
   }
 }
-
-// Content Box End------------------------------------------
-
-// Account Navigation Start------------------------------------------
-.navigation {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 120px;
-  height: 60px;
-  background: #fff;
-  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  transition: height 0.25s, width 0.25s;
-  transition-delay: 0s, 0.4s;
-  overflow: hidden;
-
-  .userBx {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: #fff;
-
-    .imgBx {
-      position: relative;
-      min-width: 60px;
-      height: 60px;
-      overflow: hidden;
-      background: #fff;
-      border-radius: 50%;
-      border: 10px solid #fff;
-
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-
-  .menuToggle {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 32px;
-      height: 2px;
-      background: #555;
-      transform: translateY(-10px);
-      box-shadow: 0 10px #555;
-      transition: 0.5s;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 32px;
-      height: 2px;
-      background: #555;
-      transform: translateY(10px);
-      transition: 0.5s;
-    }
-  }
-}
-
-.navigation {
-  &.active {
-    width: 200px;
-    height: 230px;
-    transition: width 0.25s, height 0.25s;
-    transition-delay: 0s, 0.4s;
-
-    .menuToggle {
-      &::before {
-        transform: translateY(0px) rotate(45deg);
-        box-shadow: 0 0 #555;
-      }
-
-      &::after {
-        transform: translateY(0px) rotate(-45deg);
-      }
-    }
-  }
-}
-
-.menu {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 60px);
-  margin-top: 60px;
-  padding: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-
-  li {
-    list-style: none;
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 20px 0;
-      font-size: 1em;
-      text-decoration: none;
-      color: #555;
-
-      &:hover {
-        color: #4e65ff;
-      }
-
-      ion-icon {
-        font-size: 1.5em;
-      }
-    }
-  }
-}
-
-
-// Account Navigation End--------------------------------------------

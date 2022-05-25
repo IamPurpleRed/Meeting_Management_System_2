@@ -1,4 +1,8 @@
 {
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
     "[html]": {
         "editor.defaultFormatter": "HookyQR.beautify"
     },
@@ -6,6 +10,9 @@
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[scss]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "beautify.config": {

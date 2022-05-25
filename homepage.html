@@ -5,56 +5,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>高大資工會議管理系統</title>
+  <link rel="stylesheet" href="src/css/style.css">
   <link rel="stylesheet" href="src/css/homepage.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
   <nav>
     <div id="nav_start">
-      <img src="/src/images/bookshelf.png">
+      <a href="/">
+        <img src="/src/images/logo-icon.png">
+        <h1>高大資工會議管理系統</h1>
+      </a>
     </div>
     <div id="nav_end">
-      <img src="/src/images/bookshelf.png">
-      <!-- 帳戶圖示和漢堡紐-->
+      <img id="user_photo" src="src/images/account-circle.png">
+      <h2 id="user_name">林子閎</h2>
+      <div class="menuToggle"></div>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
   </nav>
+  <ul id="nav_menu">
+    <li><a href="#">
+        <span class="material-icons">person_outline</span>
+        <span>My Profile</span>
+      </a></li>
+    <li><a href="#">
+        <span class="material-icons">notifications_active</span>
+        <span>Notification</span>
+      </a></li>
+    <li><a href="#">
+        <span class="material-icons">logout</span>
+        <span>Log out</span>
+      </a></li>
+  </ul>
 
-  <!--Account Navigation Start---------------------------->
-  <div class="navigation">
-    <div class="userBx">
-      <div class="imgBx">
-        <img src="src/images/user.png">
-      </div>
+  <div id="banner">
+    <div id="text_area">
+      <h2>太棒了！今天沒有任何會議</h2>
+      <h3>附加文字</h3>
     </div>
-    <div class="menuToggle"></div>
-    <ul class="menu">
-      <li><a href="#">
-          <ion-icon name="person-outline"></ion-icon>My Profile
-        </a></li>
-      <li><a href="#">
-          <ion-icon name="notifications-outline"></ion-icon>Notification
-        </a></li>
-      <li><a href="#">
-          <ion-icon name="log-out-outline"></ion-icon>Sign out
-        </a></li>
-    </ul>
+    <div id="tri_area"></div>
+    <img src="/src/images/shaun-the-sheep-thumbs-up.gif">
   </div>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-    let menuToggle = document.querySelector('.menuToggle');
-    let navigation = document.querySelector('.navigation');
-    menuToggle.onclick = function() {
-      navigation.classList.toggle('active')
-    }
-  </script>
-  <!--Account Navigation End------------------------------>
 
   <!--Content Box Start----------------------------------->
   <div class="container">
     <div class="box">
-      <div class="icon"><i class="fa fa-user" aria-hidden="true">
-        </i></div>
+      <div class="icon">
+        <span class="material-icons" style="color: #ff7a63;">assignment_ind</span>
+      </div>
       <div class="content">
         <h3>Profile</h3>
         <p>Users can modify personal information here,such as name, password and telephone number,
@@ -63,8 +62,9 @@
     </div>
 
     <div class="box">
-      <div class="icon"><i class="fa fa-search" aria-hidden="true">
-        </i></div>
+      <div class="icon">
+        <span class="material-icons" style="color: #12c2e9;">search</span>
+      </div>
       <div class="content">
         <h3>Search</h3>
         <p>Query and view the conference materials you have participated in.</p>
@@ -72,43 +72,50 @@
     </div>
 
     <div class="box">
-      <div class="icon"><i class="fa fa-address-book" aria-hidden="true">
-        </i></div>
+      <div class="icon">
+        <span class="material-icons" style="color: #f5af19;">folder_shared</span>
+      </div>
       <div class="content">
-        <h3>Personnel overview</h3>
+        <h3>Personnel Overview</h3>
         <p>You can view the public basic information of all personnel using this system</p>
       </div>
     </div>
 
     <div class="box">
-      <div class="icon"><i class="fa fa-plus" aria-hidden="true">
-        </i></div>
+      <div class="icon">
+        <span class="material-icons" style="color: #0f9b0f;">add</span>
+      </div>
       <div class="content">
-        <h3>Generate meeting</h3>
+        <h3>Generate Meeting</h3>
         <p>The system administrator can generate new meeting by operating this system, fill in the meeting type,
           meeting name, meeting time, place, participants, discussion items and generate the meeting agenda.</p>
       </div>
     </div>
 
     <div class="box">
-      <div class="icon"><i class="fa fa-list-alt" aria-hidden="true">
-        </i></div>
+      <div class="icon">
+        <span class="material-icons" style="color: #ee0979;">edit_calendar</span>
+      </div>
       <div class="content">
-        <h3>Meeting management</h3>
+        <h3>Meeting Management</h3>
         <p>Only the system administrator has permission to operate this system</p>
       </div>
     </div>
 
     <div class="box">
-      <div class="icon"><i class="fa fa-users" aria-hidden="true">
-        </i></div>
+      <div class="icon">
+        <span class="material-icons" style="color: #7F00FF;">manage_accounts</span>
+      </div>
       <div class="content">
-        <h3>Personnel management</h3>
+        <h3>Personnel Management</h3>
         <p>Personnel management, such as a new teacher, can create a new user account.
           Or a student has graduated,administrator can delete the student's account.</p>
       </div>
     </div>
   </div>
   <!--Content Box End------------------------------------->
+
+  <script src="/src/js/nav.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </body>
 </html>
