@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>高大資工會議管理系統</title>
-  <link rel="stylesheet" href="src/css/style.css">
-  <link rel="stylesheet" href="src/css/homepage.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/homepage.css">
 </head>
 <body>
   <nav>
@@ -41,11 +41,19 @@
 
   <div id="banner">
     <div id="text_area">
-      <h2>太棒了！今天沒有任何會議</h2>
-      <h3>附加文字</h3>
+      <h2 id="has_meeting_title">即將開始</h2>
+      <h2 id="meeting_name">110學年度第2學期第一次系務會議</h2>
+      <h3 id="detailed_content">時間：18:00~20:00<br>地點：工學院 200 教室</h3>
+      <div id="remaining_time">
+        <span class="material-icons">watch_later</span>
+        <h3 id="time_content">2 小時 23 分鐘後開始</h3>
+      </div>
+      <div id="banner_btn">
+        <a href="#">前往&nbsp;&nbsp;&nbsp;&nbsp;></a>
+      </div>
     </div>
     <div id="tri_area"></div>
-    <img src="/src/images/shaun-the-sheep-thumbs-up.gif">
+    <img src="/src/images/boring-meeting.gif">
   </div>
 
   <!--Content Box Start----------------------------------->
