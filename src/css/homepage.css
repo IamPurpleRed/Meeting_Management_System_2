@@ -114,22 +114,33 @@ body {
 
 .container {
   position: relative;
-  width: 1200px;
+  width: 80vw;
   height: 300px;
-  margin: 50px auto;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
 }
 
 .container .box {
   position: relative;
-  width: calc(400px - 30px);
-  height: calc(300px - 30px);
+  width: 30%;
+  height: 100%;
   background: #646464;
-  float: left;
-  margin: 15px;
+  margin: 15px 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
   border-radius: 10px;
+  border: 6px solid #c8c8c8;
 }
 
 .container .box .icon {

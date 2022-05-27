@@ -110,20 +110,29 @@ body {
 
 .container {
   position: relative;
-  width: 1200px;
+  width: 80vw;
   height: 300px;
-  margin: 50px auto;
+  margin: auto;
+  //background: #f00;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
 
   .box {
     position: relative;
-    width: calc(400px - 30px);
-    height: calc(300px - 30px);
+    //width: calc(25.8vw);
+    //height: calc(300px - 30px);
+    width: 30%;
+    height: 100%;
     background: rgb(100, 100, 100);
-    float: left;
-    margin: 15px;
+    //float: left;
+    margin: 15px 0px;
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 10px;
+    border: 6px solid rgb(200, 200, 200);
+    //background: #ff0;
 
     .icon {
       position: absolute;
