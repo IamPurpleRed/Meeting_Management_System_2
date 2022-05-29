@@ -1,0 +1,107 @@
+#search_area {
+  width: 80vw;
+  height: 50px;
+  margin: auto;
+  position: relative;
+  top: 20vh;
+
+  #search_input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    font-size: 22px;
+  }
+
+  .material-icons {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    color: #000;
+    font-size: 40px;
+  }
+}
+
+#result_area {
+  width: 80vw;
+  height: 60vh;
+  margin: auto;
+  position: relative;
+  top: calc(20vh + 50px);
+  border-radius: 10px;
+  overflow-x: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.group_header {
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(200, 200, 200);
+  font-size: 22px;
+  font-weight: bold;
+
+  .material-icons {
+    font-size: 40px;
+    cursor: pointer;
+  }
+}
+
+.user_item,
+.meeting_item {
+  height: 50px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    transition: 0.5s;
+  }
+
+  .user_photo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+
+  .user_name {
+    width: 20%;
+  }
+
+  .meeting_name,
+  .user_email {
+    width: 45%;
+  }
+
+  .user_identity {
+    width: 20%;
+  }
+
+  .meeting_date {
+    width: 20%;
+  }
+
+  .meeting_time {
+    width: 20%;
+  }
+
+  .material-icons {
+    margin-right: 15px;
+    font-size: 50px;
+  }
+}
