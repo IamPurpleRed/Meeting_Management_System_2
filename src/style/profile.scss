@@ -1,0 +1,109 @@
+#main_container {
+  margin: 0 10vw;
+  display: flex;
+  justify-content: space-between;
+
+  #number,
+  #identity {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .input_area {
+    width: 40vw;
+    height: 80px;
+    position: relative;
+    font-size: 16px;
+
+    .label {
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      left: 1px;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .input {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 5px;
+      background: transparent;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .input:focus~.label,
+    .input:valid~.label,
+    .input:disabled~.label {
+      transition: 0.5s;
+      transform: translateX(-5px) translateY(-30px);
+    }
+  }
+
+  .radio_btn_area {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    .label {
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-top: 5px;
+      display: flex;
+      font-size: 18px;
+      font-weight: bold;
+
+      .input {
+        color: #555;
+      }
+
+      span {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  #btn_area {
+    margin-top: 20px;
+
+    .btn {
+      margin-right: 10px;
+    }
+  }
+
+  #photo_area {
+    margin-top: 100px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    #hint {
+      margin-top: 10px;
+      color: red;
+      font-size: 18px;
+    }
+  }
+}

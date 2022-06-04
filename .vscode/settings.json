@@ -4,15 +4,19 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "[html]": {
+        "editor.tabSize": 2,
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[css]": {
+        "editor.tabSize": 2,
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[scss]": {
+        "editor.tabSize": 2,
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[javascript]": {
+        "editor.tabSize": 4,
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "beautify.config": {
