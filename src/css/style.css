@@ -217,6 +217,7 @@ nav #nav_end.active .menuToggle::after {
   background-color: #0690fd;
   color: #fff;
   font-size: 24px;
+  border: 0px;
   text-decoration: none;
   display: inline-block;
   -webkit-transition: 0.5s;

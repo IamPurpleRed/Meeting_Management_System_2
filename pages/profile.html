@@ -11,35 +11,6 @@
 </head>
 <body>
   <!-- 插入 /components/navigation.html -->
-  <!-- nav start -->
-  <nav>
-    <div id="nav_start">
-      <a href="/">
-        <img src="/src/images/logo-icon.png">
-        <h1>高大資工會議管理系統</h1>
-      </a>
-    </div>
-    <div id="nav_end">
-      <img id="user_photo" src="/src/images/account-circle.png">
-      <h2 id="user_name">林子閎</h2>
-      <div class="menuToggle"></div>
-    </div>
-  </nav>
-  <ul id="nav_menu">
-    <li><a href="#">
-        <span class="material-icons">person_outline</span>
-        <span>My Profile</span>
-      </a></li>
-    <li><a href="#">
-        <span class="material-icons">notifications_active</span>
-        <span>Notification</span>
-      </a></li>
-    <li><a href="#">
-        <span class="material-icons">logout</span>
-        <span>Log out</span>
-      </a></li>
-  </ul>
-  <!-- nav end -->
 
   <h2 id="page_title">個人資料</h2>
   <hr id="page_hr">
@@ -166,24 +137,23 @@
         <!-- 業界專家專屬欄位 END -->
 
         <div id="btn_area">
-          <a class="btn" id="edit_btn" href="#">
+          <button class="btn" id="edit_btn" type="button">
             <span class="material-icons">edit</span>
             <span class="text">編輯</span>
-          </a>
-          <a class="btn" id="save_btn" href="#">
+          </button>
+          <button class="btn" id="save_btn" type="submit">
             <span class="material-icons">save</span>
             <span class="text">儲存</span>
-          </a>
+          </button>
         </div>
-
       </form>
     </div>
     <div id="photo_area">
       <img src="/src/user_data/1.jpg">
-      <a class="btn" href="#">
+      <button class="btn" href="#">
         <span class="material-icons">perm_media</span>
         <span class="text">選擇大頭貼</span>
-      </a>
+      </button>
       <span id="hint">* 照片比例需為 1:1</span>
     </div>
   </div>
