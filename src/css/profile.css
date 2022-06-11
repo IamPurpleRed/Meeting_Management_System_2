@@ -49,6 +49,14 @@
   font-size: 18px;
 }
 
+#main_container .input_area .input:disabled {
+  background-color: #eee;
+}
+
+#main_container .input_area .input:invalid {
+  border: 2px solid #ee0979;
+}
+
 #main_container .input_area .input:focus ~ .label,
 #main_container .input_area .input:valid ~ .label,
 #main_container .input_area .input:disabled ~ .label {
@@ -105,6 +113,10 @@
   margin-right: 10px;
 }
 
+#main_container #btn_area #edit_btn:disabled {
+  background-color: #c8c8c8;
+}
+
 #main_container #photo_area {
   margin-top: 100px;
   margin-right: 10px;
@@ -121,8 +133,10 @@
 }
 
 #main_container #photo_area img {
-  width: 200px;
-  height: 200px;
+  width: 15vw;
+  height: 15vw;
+  min-width: 200px;
+  min-height: 200px;
   margin-bottom: 20px;
 }
 
