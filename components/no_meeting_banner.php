@@ -1,3 +1,4 @@
+?>
 <div id="banner">
   <div id="text_area">
     <h2 id="no_meeting_title">太棒了！今天沒有任何會議</h2>
@@ -6,3 +7,4 @@
   <div id="tri_area"></div>
   <img src="/src/images/shaun-the-sheep-thumbs-up.gif">
 </div>
+<?php

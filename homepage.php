@@ -4,59 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>高大資工會議管理系統</title>
-  <link rel="stylesheet" href="../src/css/style.css">
-  <link rel="stylesheet" href="../src/css/homepage.css">
+  <title>首頁 | 高大資工會議管理系統</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/homepage.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <div id="nav_start">
-      <a href="/">
-        <img src="../src/images/logo-icon.png">
-        <h1>高大資工會議管理系統</h1>
-      </a>
-    </div>
-    <div id="nav_end">
-      <img id="user_photo" src="../src/images/account-circle.png">
-      <h2 id="user_name">林子閎</h2>
-      <div class="menuToggle"></div>
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    </div>
-  </nav>
-  <ul id="nav_menu">
-    <li><a href="#">
-        <span class="material-icons">person_outline</span>
-        <span>My Profile</span>
-      </a></li>
-    <li><a href="#">
-        <span class="material-icons">notifications_active</span>
-        <span>Notification</span>
-      </a></li>
-    <li><a href="#">
-        <span class="material-icons">logout</span>
-        <span>Log out</span>
-      </a></li>
-  </ul>
-
-  <div id="banner">
-    <div id="text_area">
-      <h2 id="has_meeting_title">即將開始</h2>
-      <h2 id="meeting_name">110學年度第2學期第一次系務會議</h2>
-      <h3 id="detailed_content">時間：18:00~20:00<br>地點：工學院 200 教室</h3>
-      <div id="remaining_time">
-        <span class="material-icons">watch_later</span>
-        <h3 id="time_content">2 小時 23 分鐘後開始</h3>
-      </div>
-      <div id="banner_btn">
-        <a href="#">前往&nbsp;&nbsp;&nbsp;&nbsp;></a>
-      </div>
-    </div>
-    <div id="tri_area"></div>
-    <img src="../src/images/boring-meeting.gif">
-  </div>
-
-  <!--Content Box Start----------------------------------->
+  <!-- 插入 /components/navigation.html -->
+  <?php
+  require_once("components/navigation.php");
+  ?>
+  <!-- 
+    若使用者今天有會議，插入 /components/no_meeting_banner.html
+    否則插入 /components/has_meeting_banner.html
+   -->
+   <?php
+  require_once("components/no_meeting_banner.php");
+  ?>
   <div class="container">
     <div class="box">
       <div class="icon">
@@ -121,9 +85,7 @@
       </div>
     </div>
   </div>
-  <!--Content Box End------------------------------------->
 
-  <script src="../src/js/nav.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="/src/js/nav.js"></script>
 </body>
 </html>

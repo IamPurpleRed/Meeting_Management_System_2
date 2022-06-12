@@ -1,3 +1,4 @@
+?>
 <div id="banner">
   <div id="text_area">
     <h2 id="has_meeting_title">即將開始</h2>
@@ -12,5 +13,6 @@
     </div>
   </div>
   <div id="tri_area"></div>
-  <img src="../../src/images/boring-meeting.gif">
+  <img src="/src/images/boring-meeting.gif">
 </div>
+<?php
