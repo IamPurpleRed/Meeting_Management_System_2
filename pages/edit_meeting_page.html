@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新增會議 | 高大資工會議管理系統</title><!-- 新增會議 or 編輯會議 -->
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/edit_meeting_page.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- 插入 /components/navigation.html -->
+
+  <h2 id="page_title">新增會議</h2><!-- 新增會議 or 編輯會議 -->
+  <hr id="page_hr">
+  <div id="main_container">
+    <div id="number">會議編號: 1</div>
+    <div id="creator">建立者: 林子閎</div><!-- 只有管理員能建立會議 -->
+    <form action="" method="post">
+      <h3>基本資料</h3>
+      <div class="input_area">
+        <input class="input" id="meeting_name" name="account" type="text" value="" required>
+        <span class="label">會議名稱</span>
+      </div>
+      <div class="input_area">
+        <input class="input" id="account" name="account" type="text" value="" required>
+        <span class="label">會議名稱</span>
+      </div>
+      <button class="btn" id="add_btn" type="button">
+        <span class="material-icons">add</span>
+        <span class="text">新增</span>
+      </button>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/src/js/nav.js"></script>
+  <script src="/src/js/edit_meeting.js"></script>
+</body>
+</html>
