@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.125);
+  border-radius: 50px;
+  border: 0.3px solid rgba(0, 0, 0, 0.15);
+}
+
+nav {
+  z-index: 101;
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav #nav_start a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+nav #nav_start a h1 {
+  padding: 10px;
+  color: #fff;
+}
+
+nav #nav_end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav #nav_end #user_photo {
+  width: 50px;
+  height: 50px;
+  margin: 5px 10px;
+  border-radius: 50%;
+}
+
+nav #nav_end #user_name {
+  max-width: 0;
+  margin-right: 0px;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+nav #nav_end .menuToggle {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav #nav_end .menuToggle::before {
+  content: '';
+  width: 36px;
+  height: 2px;
+  position: absolute;
+  background-color: #fff;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0 10px #fff;
+          box-shadow: 0 10px #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+nav #nav_end .menuToggle::after {
+  content: '';
+  width: 36px;
+  height: 2px;
+  position: absolute;
+  background-color: #fff;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+nav #nav_end.active #user_name {
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+nav #nav_end.active .menuToggle::before {
+  -webkit-transform: translateY(0px) rotate(45deg);
+          transform: translateY(0px) rotate(45deg);
+  -webkit-box-shadow: 0 0 #555;
+          box-shadow: 0 0 #555;
+}
+
+nav #nav_end.active .menuToggle::after {
+  -webkit-transform: translateY(0px) rotate(-45deg);
+          transform: translateY(0px) rotate(-45deg);
+}
+
+#nav_menu {
+  z-index: 100;
+  width: 200px;
+  height: 0px;
+  padding: 15px 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#nav_menu li {
+  list-style: none;
+}
+
+#nav_menu li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 10px;
+  font-size: 1em;
+  text-decoration: none;
+  color: #555;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+#nav_menu li a:hover {
+  background-color: #c8c8c8;
+}
+
+#nav_menu li a .material-icons {
+  margin-right: 10px;
+}
+
+#nav_menu.active {
+  height: 160px;
+  top: 60px;
+}
