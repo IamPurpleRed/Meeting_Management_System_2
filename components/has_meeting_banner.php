@@ -13,6 +13,6 @@
     </div>
   </div>
   <div id="tri_area"></div>
-  <img src="/src/images/boring-meeting.gif">
+  <img src="src/images/boring-meeting.gif">
 </div>
 <?php

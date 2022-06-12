@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>個人資料 | 高大資工會議管理系統</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/profile.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/profile.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -211,7 +211,7 @@
       </form>
     </div>
     <div id="photo_area">
-      <img src="/src/user_data/1.jpg">
+      <img src="src/user_data/1.jpg">
       <button class="btn" href="#">
         <span class="material-icons">perm_media</span>
         <span class="text">選擇大頭貼</span>
@@ -221,8 +221,8 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/src/js/nav.js"></script>
-  <script src="/src/js/profile.js"></script>
+  <script src="src/js/nav.js"></script>
+  <script src="src/js/profile.js"></script>
 </body>
 
 </html>
