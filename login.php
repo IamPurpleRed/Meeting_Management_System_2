@@ -1,25 +1,34 @@
-<meta charset="utf-8">
-<?php
-    session_start(); 
-    
-    if(isset($_POST["account"]) && isset($_POST["password"])){
-        require_once("sql_connect.inc.php");
-        
-        $account = $_POST["account"];
-        $password = $_POST["password"];
-        
-        $select = $sql_qry->query("SELECT * FROM `使用者` WHERE `帳號` = '$account' AND `密碼` = '$password'");
-        $result = $select -> fetch(PDO::FETCH_ASSOC);     
-        
-        if ($result['帳號'] == $account && $result['密碼'] == $password) {
-            $_SESSION["identity"]=$result['身分'];
-            $_SESSION["account"]=$result['帳號'];
-            $_SESSION["ID"]=$result['使用者編號'];
-            $_SESSION["name"]=$result['姓名'];//導覽列會使用到的參數
-            header("Location:homepage.php");
-        }
-        else {
-            echo"帳號或密碼錯誤!";
-        }
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入 | 高大資工會議管理系統</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/login.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <img id="bg" src="src/images/login-bg.jpg">
+  <div class="container">
+    <h3 id="name">高大資工會議管理系統</h3>
+    <?php
+    if (isset($_GET["error"])) {
+      if ($_GET["error"] == 1) echo "<font style='color:red' size='5'>帳號或密碼錯誤!</font>";
     }
-?>
+    ?>
+    <form action="/CSC071/src/php/login_verify.php" method="post">
+      <input type="image" class="icon" id=user1 src="src/images/login-account-circle.jpg" />
+      <input type="text" name="account" placeholder="帳號">
+      <input type="password" name="password" placeholder="密碼">
+      <button type="submit">
+        <span class="material-icons">arrow_forward</span>
+    </form>
+    </button>
+  </div>
+</body>
+
+</html>
