@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,17 @@
   <link rel="stylesheet" href="src/css/profile.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
   <!-- 插入 /components/navigation.html -->
   <?php
-  require_once("components/navigation.php");
+  include("components/navigation.php");
   ?>
   <?php
-  require_once("sql_connect.inc.php");
+  include("src/php/sql_connect.inc.php");
   session_start();
-  $id = $_SESSION["ID"];
-  $account=$_SESSION["account"];
+  $id = $_SESSION["loginMember"]["使用者編號"];
+  $account = $_SESSION["loginMember"]["帳號"];
   $qry = "SELECT * FROM `使用者` WHERE `使用者編號`= $id;";
   $select = $sql_qry->query($qry);
   $result = $select->fetch(PDO::FETCH_ASSOC);
@@ -30,15 +32,15 @@
   <hr id="page_hr">
   <div id="main_container">
     <div id="form_area">
-      <form action="change_member_info.php" method="post">
+      <form action="src/php/change_member_info.php" method="post">
         <div id="number">使用者編號: <?php echo $result["使用者編號"] ?></div>
         <div id="identity">身分: <?php echo $_SESSION["identity"] ?></div>
         <div class="input_area">
-          <input class="input" id="account" name="account" type="text" value=<?php echo $result["帳號"] ?> required disabled >
+          <input class="input" id="account" name="account" type="text" value=<?php echo $result["帳號"] ?> required disabled>
           <span class="label">帳號</span>
         </div>
         <div class="input_area">
-          <input class="input" id="old_password" name="oldPassword" type="password"required disabled> <!-- 此欄位需留空 -->
+          <input class="input" id="old_password" name="oldPassword" type="password" required disabled> <!-- 此欄位需留空 -->
           <span class="label">舊密碼</span>
         </div>
         <div class="input_area">
@@ -46,7 +48,7 @@
           <span class="label">新密碼</span>
         </div>
         <div class="input_area">
-          <input class="input" id="name" name="name" type="text" value="<?php echo $result["姓名"] ?>"required disabled>
+          <input class="input" id="name" name="name" type="text" value="<?php echo $result["姓名"] ?>" required disabled>
           <span class="label">全名</span>
         </div>
         <div class="radio_btn_area">
@@ -158,7 +160,7 @@
             <span class="label">辦公室電話</span>
           </div>
           <div class="input_area">
-            <input class="input" id="outside_teacher_addr" name="outsideTeacherAddr" type="text" value=<?php echo $result["聯絡地址"] ?> required disabled >
+            <input class="input" id="outside_teacher_addr" name="outsideTeacherAddr" type="text" value=<?php echo $result["聯絡地址"] ?> required disabled>
             <span class="label">聯絡地址</span>
           </div>
           <div class="input_area">
