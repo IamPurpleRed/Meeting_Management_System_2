@@ -220,6 +220,7 @@ nav #nav_end.active .menuToggle::after {
   border: 0px;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }

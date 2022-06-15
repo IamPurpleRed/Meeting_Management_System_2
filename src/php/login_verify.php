@@ -13,7 +13,7 @@ if (isset($_POST["account"]) && isset($_POST["password"])) {
 
     if ($result['帳號'] == $account && $result['密碼'] == $password) {
         $_SESSION['loginMember'] = $result;
-        header("Location:/CSC071/homepage/homepage.php");
+        header("Location:../../homepage.php");
     } else {
         header("Location:../../login.php?error=1");
     }

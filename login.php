@@ -21,7 +21,7 @@
       <input type="password" name="password" placeholder="密碼">
       <?php
       if (isset($_GET["error"])) {
-        if ($_GET["error"] == 1) echo "<font style='color:red' size='5'>帳號或密碼錯誤!</font>";
+        if ($_GET["error"] == 1) echo "<font style='color:red; padding: 15px 0' size='5'>Wrong account or password!</font>";
       }
       ?>
       <button class="btn" id="login_btn" type="submit">
@@ -30,6 +30,8 @@
       </button>
     </form>
   </div>
-</body>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="src/js/login.js"></script>
+</body>
 </html>

@@ -213,7 +213,7 @@
       </form>
     </div>
     <div id="photo_area">
-      <img src="src/user_data/1.jpg">
+      <img src="src/user_photo/1.png">
       <button class="btn" href="#">
         <span class="material-icons">perm_media</span>
         <span class="text">選擇大頭貼</span>
