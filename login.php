@@ -15,19 +15,20 @@
   <img id="bg" src="src/images/login-bg.jpg">
   <div class="container">
     <h3 id="name">高大資工會議管理系統</h3>
-    <?php
-    if (isset($_GET["error"])) {
-      if ($_GET["error"] == 1) echo "<font style='color:red' size='5'>帳號或密碼錯誤!</font>";
-    }
-    ?>
-    <form action="/CSC071/src/php/login_verify.php" method="post">
-      <input type="image" class="icon" id=user1 src="src/images/login-account-circle.jpg" />
+    <img class="icon" id=user1 src="src/images/login-account-circle.jpg" />
+    <form action="src/php/login_verify.php" method="post">
       <input type="text" name="account" placeholder="帳號">
       <input type="password" name="password" placeholder="密碼">
-      <button type="submit">
-        <span class="material-icons">arrow_forward</span>
+      <?php
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == 1) echo "<font style='color:red' size='5'>帳號或密碼錯誤!</font>";
+      }
+      ?>
+      <button class="btn" id="login_btn" type="submit">
+        <span class="material-icons">login</span>
+        <span class="text">登入</span>
+      </button>
     </form>
-    </button>
   </div>
 </body>
 
