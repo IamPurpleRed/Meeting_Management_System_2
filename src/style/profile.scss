@@ -40,14 +40,23 @@
       background: transparent;
       color: #555;
       font-size: 18px;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.label,
+      &:valid~.label,
+      &:disabled~.label {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
     }
 
-    .input:focus~.label,
-    .input:valid~.label,
-    .input:disabled~.label {
-      transition: 0.5s;
-      transform: translateX(-5px) translateY(-30px);
-    }
   }
 
   .radio_btn_area {
@@ -85,6 +94,10 @@
     .btn {
       margin-right: 10px;
     }
+
+    #edit_btn:disabled {
+      background-color: rgb(200, 200, 200);
+    }
   }
 
   #photo_area {
@@ -95,8 +108,10 @@
     align-items: center;
 
     img {
-      width: 200px;
-      height: 200px;
+      width: 15vw;
+      height: 15vw;
+      min-width: 200px;
+      min-height: 200px;
       margin-bottom: 20px;
     }
 
