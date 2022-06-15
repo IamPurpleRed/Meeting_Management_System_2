@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人員總覽 | 高大資工會議管理系統</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/personnel_overview.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- nav start -->
+  <nav>
+    <div id="nav_start">
+      <a href="/mms.csie.nuk.edu.tw/homepage.php">
+        <img src="/mms.csie.nuk.edu.tw/src/images/logo-icon.png">
+        <h1>高大資工會議管理系統</h1>
+      </a>
+    </div>
+    <div id="nav_end">
+      <img id="user_photo" src="/mms.csie.nuk.edu.tw/src/images/account-circle.png">
+      <h2 id="user_name">林子閎</h2>
+      <div class="menuToggle"></div>
+    </div>
+  </nav>
+  <ul id="nav_menu">
+    <li><a href="/mms.csie.nuk.edu.tw/profile.php">
+        <span class="material-icons">person_outline</span>
+        <span>My Profile</span>
+      </a></li>
+    <li><a href="#">
+        <span class="material-icons">notifications_active</span>
+        <span>Notification</span>
+      </a></li>
+    <li><a href="/mms.csie.nuk.edu.tw/login.php">
+        <span class="material-icons">logout</span>
+        <span>Log out</span>
+      </a></li>
+  </ul>
+  <!-- nav end -->
+
+  <div id="side_menu">
+    <div class="group" id="std_group">
+      <div class="header">
+        <span class="title">學生代表 (5)</span><!-- container 有幾筆資料，數字就要改成幾 -->
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
+      <div class="container">
+        <!-- 人員資料須放在container內 -->
+        <!-- 一筆人員資料 start -->
+        <div class="item active">
+          <!-- 當使用者點選該項目，就要添加active在class中，且在右側顯示。若使用者點選別的item，就要移除active -->
+          <img src="src/user_photo/1.png">
+          <div class="text_area">
+            <span class="name">林子閎</span>
+            <span class="identity">學生代表</span>
+          </div>
+        </div>
+        <!-- 一筆人員資料 end -->
+      </div>
+    </div>
+
+    <div class="group" id="assistant_group">
+      <div class="header">
+        <span class="title">系助理 (5)</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
+      <div class="container">
+        <!-- 人員資料須放在container內 -->
+      </div>
+    </div>
+
+    <div class="group" id="school_teacher_group">
+      <div class="header">
+        <span class="title">系上老師 (5)</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
+      <div class="container">
+        <!-- 人員資料須放在container內 -->
+      </div>
+    </div>
+
+    <div class="group" id="outside_teacher_group">
+      <div class="header">
+        <span class="title">校外老師 (5)</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
+      <div class="container">
+        <!-- 人員資料須放在container內 -->
+      </div>
+    </div>
+
+    <div class="group" id="expert_group">
+      <div class="header">
+        <span class="title">業界專家 (5)</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
+      <div class="container">
+        <!-- 人員資料須放在container內 -->
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+    <img src="src/user_photo/1.png">
+
+    <div class="data_area" id="person_title">
+      <span id="name">林子閎</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span id="identity">業界專家</span>
+    </div>
+    <div class="data_area" id="phone">
+      <span class="material-icons">phone</span>
+      <span>0912345678</span>
+    </div>
+    <div class="data_area" id="email">
+      <span class="material-icons">email</span>
+      <span>a1085516@mail.nuk.edu.tw</span>
+    </div>
+
+    <!-- 學生代表限定欄位 START -->
+    <div class="data_area" id="std_system">
+      <span>學制</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>資工系學士班</span>
+    </div>
+    <div class="data_area" id="std_class">
+      <span>班級</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>三年級</span>
+    </div>
+    <!-- 學生代表限定欄位 END -->
+
+    <!-- 系助理限定欄位 START -->
+    <!-- <div class="data_area" id="assistant_tel">
+      <span>辦公室電話</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>071234567</span>
+    </div> -->
+    <!-- 系助理限定欄位 END -->
+
+    <!-- 系上老師限定欄位 START -->
+    <!-- <div class="data_area" id="school_teacher_job">
+      <span>職級</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>副教授</span>
+    </div> -->
+    <!-- 系上老師限定欄位 END -->
+
+    <!-- 校外老師限定欄位 START -->
+    <!-- <div class="data_area" id="outside_teacher_school">
+      <span>任職學校</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>國立台灣大學</span>
+    </div>
+    <div class="data_area" id="outside_teacher_department">
+      <span>系所</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>資訊工程學系</span>
+    </div>
+    <div class="data_area" id="outside_teacher_tel">
+      <span>辦公室電話</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>0212345678</span>
+    </div> -->
+    <!-- 校外老師限定欄位 END -->
+
+    <!-- 業界專家限定欄位 START -->
+    <!-- <div class="data_area" id="expert_company">
+      <span>任職公司</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>三鍋臭媽媽</span>
+    </div>
+    <div class="data_area" id="expert_title">
+      <span>職稱</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>店長</span>
+    </div>
+    <div class="data_area" id="expert_tel">
+      <span>辦公室電話</span>
+      <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span>071234567</span>
+    </div> -->
+    <!-- 業界專家限定欄位 END -->
+
+    <div id="actions"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/src/js/nav.js"></script>
+  <script src="/src/js/personnel_overview.js"></script>
+</body>
+</html>
