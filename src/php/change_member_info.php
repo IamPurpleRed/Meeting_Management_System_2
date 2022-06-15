@@ -14,8 +14,8 @@ $select = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號`= $I
 $result = $select->fetch(PDO::FETCH_ASSOC);
 
 if ($old_password == $result["密碼"]) {
-    if ($new_password == "") {
-        $qry = "UPDATE `使用者` SET `密碼`=`$new_password` WHERE `使用者編號`='$ID';";
+    if ($new_password != "") {
+        $qry = "UPDATE `使用者` SET `密碼`='$new_password' WHERE `使用者編號`='$ID';";
         $op = $sql_qry->query($qry);
     }
     $qry = "UPDATE `使用者` SET `姓名`='$name',`性別`='$sex',`個人電話`='$phone',`Email`='$email' WHERE `使用者編號`='$ID';";
@@ -64,5 +64,5 @@ if ($old_password == $result["密碼"]) {
         //mysqli_query($sql,$qry);
         $op = $sql_qry->query($qry);
     }
-    header("Location:/CSC071/profile.php");
+    header("Location:/mms.csie.nuk.edu.tw/profile.php");
 }

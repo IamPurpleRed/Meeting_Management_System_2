@@ -47,7 +47,7 @@
           <span class="label">舊密碼</span>
         </div>
         <div class="input_area">
-          <input class="input" id="new_password" name="newPassword" type="password" required disabled> <!-- 此欄位需留空 -->
+          <input class="input" id="new_password" name="newPassword" type="password" disabled> <!-- 此欄位需留空 -->
           <span class="label">新密碼</span>
         </div>
         <div class="input_area">
@@ -216,7 +216,7 @@
       </form>
     </div>
     <div id="photo_area">
-      <img src="src/user_photo/1.png">
+      <img src=<?php echo $_SESSION["loginMember"]["頭貼"] ?>>
       <button class="btn" href="#">
         <span class="material-icons">perm_media</span>
         <span class="text">選擇大頭貼</span>
