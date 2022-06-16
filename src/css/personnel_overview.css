@@ -107,7 +107,7 @@
 }
 
 #content img {
-  width: 25%;
+  width: 20%;
   min-width: 200px;
   min-height: 200px;
 }
@@ -141,4 +141,8 @@
 #content #person_title span {
   font-size: 30px;
   font-weight: bold;
+}
+
+#actions {
+  margin-top: 20px;
 }

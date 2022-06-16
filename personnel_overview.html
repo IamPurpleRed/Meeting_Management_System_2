@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- nav start -->
+  <!-- nav start，以下請換成 php 動態載入 -->
   <nav>
     <div id="nav_start">
       <a href="/mms.csie.nuk.edu.tw/homepage.php">
@@ -41,7 +41,7 @@
         <span>Log out</span>
       </a></li>
   </ul>
-  <!-- nav end -->
+  <!-- nav end，以上請換成 php 動態載入 -->
 
   <div id="side_menu">
     <div class="group" id="std_group">
@@ -111,7 +111,7 @@
     <div class="data_area" id="person_title">
       <span id="name">林子閎</span>
       <span id="divide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-      <span id="identity">業界專家</span>
+      <span id="identity">學生代表</span>
     </div>
     <div class="data_area" id="phone">
       <span class="material-icons">phone</span>
@@ -187,7 +187,19 @@
     </div> -->
     <!-- 業界專家限定欄位 END -->
 
-    <div id="actions"></div>
+    <!-- 管理員限定動作 START -->
+    <div id="actions">
+      <button class="btn" id="edit_btn" type="button">
+        <span class="material-icons">edit</span>
+        <span class="text">編輯資料</span>
+      </button>
+      <button class="btn" id="reset_pwd_btn" type="button">
+        <span class="material-icons">save</span>
+        <span class="text">重設密碼</span>
+        <!-- 將會跳出 alert 視窗 -->
+      </button>
+    </div>
+    <!-- 管理員限定動作 END -->
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
