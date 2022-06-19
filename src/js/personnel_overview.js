@@ -1,54 +1,4 @@
 $(document).ready(() => {
-    $('#std_group .toggle').click(() => {
-        if ($('#std_group .toggle').text() == 'keyboard_arrow_down') {
-            $('#std_group .container').slideUp();
-            $('#std_group .toggle').text('keyboard_arrow_up');
-        } else {
-            $('#std_group .toggle').text('keyboard_arrow_down');
-            $('#std_group .container').slideDown();
-        }
-    });
-
-    $('#assistant_group .toggle').click(() => {
-        if ($('#assistant_group .toggle').text() == 'keyboard_arrow_down') {
-            $('#assistant_group .container').slideUp();
-            $('#assistant_group .toggle').text('keyboard_arrow_up');
-        } else {
-            $('#assistant_group .toggle').text('keyboard_arrow_down');
-            $('#assistant_group .container').slideDown();
-        }
-    });
-
-    $('#school_teacher_group .toggle').click(() => {
-        if ($('#school_teacher_group .toggle').text() == 'keyboard_arrow_down') {
-            $('#school_teacher_group .container').slideUp();
-            $('#school_teacher_group .toggle').text('keyboard_arrow_up');
-        } else {
-            $('#school_teacher_group .toggle').text('keyboard_arrow_down');
-            $('#school_teacher_group .container').slideDown();
-        }
-    });
-
-    $('#outside_teacher_group .toggle').click(() => {
-        if ($('#outside_teacher_group .toggle').text() == 'keyboard_arrow_down') {
-            $('#outside_teacher_group .container').slideUp();
-            $('#outside_teacher_group .toggle').text('keyboard_arrow_up');
-        } else {
-            $('#outside_teacher_group .toggle').text('keyboard_arrow_down');
-            $('#outside_teacher_group .container').slideDown();
-        }
-    });
-
-    $('#expert_group .toggle').click(() => {
-        if ($('#expert_group .toggle').text() == 'keyboard_arrow_down') {
-            $('#expert_group .container').slideUp();
-            $('#expert_group .toggle').text('keyboard_arrow_up');
-        } else {
-            $('#expert_group .toggle').text('keyboard_arrow_down');
-            $('#expert_group .container').slideDown();
-        }
-    });
-
     setInterval(hideBtnText, 100);
 
     $('#edit_btn').hover(() => {
@@ -79,4 +29,31 @@ function hideBtnText() {
     if ($('#reset_pwd_btn').width() < 130) {
         $('#reset_pwd_btn > .text').hide();
     }
+}
+
+
+var clicking = null;
+
+function makeActive(which) {
+    $(which).attr("class", "item active");
+    if (clicking) {
+        $(clicking).attr("class", "item");
+    }
+    clicking = which;
+
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var PageToSendTo = "components/personnel_content.php?";
+    var MyVariable = clicking.id;
+    var VariablePlaceholder = "ID=";
+    var UrlToSend = PageToSendTo + VariablePlaceholder + MyVariable;
+
+    xmlhttp.open("GET", UrlToSend, false);
+    xmlhttp.send();
+    console.log(xmlhttp.responseText);
+
+    $("#content").html(xmlhttp.responseText);
 }

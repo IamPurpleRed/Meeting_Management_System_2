@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>人員總覽 | 高大資工會議管理系統</title>
   <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/side_menu.css">
   <link rel="stylesheet" href="src/css/personnel_overview.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,36 +159,9 @@
 
   <div id="content"></div>
 
-  <script>
-    var clicking = null;
-    function makeActive(which) {
-      $(which).attr("class", "item active");
-      if(clicking)
-      {
-        $(clicking).attr("class", "item");
-      }
-      clicking = which;
-
-      if (window.XMLHttpRequest){
-          xmlhttp = new XMLHttpRequest();
-      }
-      else{
-          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      var PageToSendTo = "components/personnel_content.php?";
-      var MyVariable = clicking.id;
-      var VariablePlaceholder = "ID=";
-      var UrlToSend = PageToSendTo + VariablePlaceholder + MyVariable;
-      
-      xmlhttp.open("GET", UrlToSend, false);
-      xmlhttp.send();
-      console.log(xmlhttp.responseText);
-
-      $("#content").html(xmlhttp.responseText);
-    }
-  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/js/nav.js"></script>
+  <script src="src/js/side_menu.js"></script>
   <script src="src/js/personnel_overview.js"></script>
 </body>
 </html>
