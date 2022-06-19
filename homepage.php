@@ -56,7 +56,7 @@
     </div>
 
     <div class="box">
-      <a href="#">
+      <a href="personnel_overview.php">
         <div class="icon">
           <span class="material-icons" style="color: #f5af19;">folder_shared</span>
         </div>
