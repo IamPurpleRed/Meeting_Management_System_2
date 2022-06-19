@@ -17,20 +17,188 @@
   <div id="main_container">
     <div id="number">會議編號: 1</div>
     <div id="creator">建立者: 林子閎</div><!-- 只有管理員能建立會議 -->
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
       <h3>基本資料</h3>
       <div class="input_area">
-        <input class="input" id="meeting_name" name="account" type="text" value="" required>
+        <select class="select" id="meeting_type" name="meeting_type" required>
+          <option value="" selected>請選擇會議種類</option>
+          <option value="department_meeting">系務會議</option>
+          <option value="academic_meeting">學術會議</option>
+          <option value="course_meeting">課程會議</option>
+          <option value="business_meeting">商務會議</option>
+          <option value="budget_meeting">預算會議</option>
+          <option value="others_meeting">其它</option>
+        </select>
+      </div>
+      <div class="input_area">
+        <input class="input" id="meeting_name" name="meeting_name" type="text" value="" required>
         <span class="label">會議名稱</span>
       </div>
       <div class="input_area">
-        <input class="input" id="account" name="account" type="text" value="" required>
-        <span class="label">會議名稱</span>
+        <input class="input" id="meeting_date" name="meeting_date" type="datetime-local" value="" required>
       </div>
-      <button class="btn" id="add_btn" type="button">
-        <span class="material-icons">add</span>
-        <span class="text">新增</span>
-      </button>
+      <div class="input_area">
+        <input class="input" id="meeting_place" name="meeting_place" type="text" value="" required>
+        <span class="label">開會地點</span>
+      </div>
+      <div class="input_area">
+        <input class="input" id="chair_speak" name="chair_speak" type="text" value="" required>
+        <span class="label">主席致詞</span>
+      </div>
+      <div class="input_area" id="input_meeting_area">
+        <textarea class="textarea" id="meeting_items" name="meeting_items" value="" required>案由:
+說明:
+決議事項:
+執行情況:
+        </textarea>
+        <span class="textarea_label">討論事項</span>
+      </div>
+      <!--
+      <div class="input_area">
+        <select class="multiple_select" id="meeting_person" name="meeting_person" multiple required>
+          <option value="" disabled>請選擇與會人員</option>
+          <option value="chair">系主任</option>
+          <option value="assistant">系助理</option>
+          <option value="professor_a">A教授</option>
+          <option value="professor_b">B教授</option>
+          <option value="professor_c">C教授</option>
+          <option value="student_a">學生代表A</option>
+          <option value="student_b">學生代表B</option>
+          <option value="industry_expert_a">業界專家A</option>
+          <option value="industry_expert_b">業界專家B</option>
+          <option value="industry_expert_c">業界專家C</option>
+          <option value="outside_professor_a">校外教授A</option>
+          <option value="outside_professor_b">校外教授B</option>
+          <option value="outside_professor_c">校外教授C</option>
+        </select>
+      </div>-->
+      <div class="input_area">
+        <button class="btn" id="add_btn" type="button">
+          <span class="material-icons">add</span>
+          <span class="text">新增討論事項</span>
+        </button>
+      </div>
+      <div class="input_area">
+        <input class="submit" id="upload_file" type="file" name="upload_file">
+      </div>
+
+
+
+      <div class="choose_person">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>帳號</th>
+              <th>姓名</th>
+              <th>身分</th>
+              <th>檢視</th>
+              <th>修改</th>
+              <th>是否參與</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>dannynfs</td>
+              <td>陳泓銘</td>
+              <td>學生代表</td>
+              <td><input id="row1_view" name="row1_view" type="checkbox"></td>
+              <td><input id="row1_edit" name="row1_edit" type="checkbox"></td>
+              <td>
+                <input id="row1_yes" name="row1_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row1_role" name="row1_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row1_no" name="row1_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr class="active-row">
+              <td>PR</td>
+              <td>林子閎</td>
+              <td>業界專家</td>
+              <td><input id="row2_view" name="row2_view" type="checkbox"></td>
+              <td><input id="row2_edit" name="row2_edit" type="checkbox"></td>
+              <td>
+                <input id="row2_yes" name="row2_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row2_role" name="row2_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row2_no" name="row2_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr>
+              <td>TA</td>
+              <td>塗峻翔</td>
+              <td>系上老師</td>
+              <td><input id="row3_view" name="row3_view" type="checkbox"></td>
+              <td><input id="row3_edit" name="row3_edit" type="checkbox"></td>
+              <td>
+                <input id="row3_yes" name="row3_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row3_role" name="row3_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row3_no" name="row3_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr class="active-row">
+              <td>baganono</td>
+              <td>柯柏熏</td>
+              <td>校外老師</td>
+              <td><input id="row4_view" name="row4_view" type="checkbox"></td>
+              <td><input id="row4_edit" name="row4_edit" type="checkbox"></td>
+              <td>
+                <input id="row4_yes" name="row4_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row4_role" name="row4_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row4_no" name="row4_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr>
+              <td>PN</td>
+              <td>傅沛雯</td>
+              <td>系助理</td>
+              <td><input id="row5_view" name="row5_view" type="checkbox"></td>
+              <td><input id="row5_edit" name="row5_edit" type="checkbox"></td>
+              <td>
+                <input id="row5_yes" name="row5_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row5_role" name="row5_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row5_no" name="row5_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <!-- and so on... -->
+          </tbody>
+        </table>
+      </div>
+
+
+
     </form>
   </div>
 

@@ -1,26 +1,85 @@
 #main_container {
   margin: 0 10vw 100px;
 }
-
 #main_container #number,
 #main_container #creator {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
 }
-
 #main_container h3 {
   font-size: 30px;
   margin-top: 40px;
 }
-
+#main_container .choose_person {
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  bottom: 570px;
+  left: 30%;
+  font-size: 16px;
+}
+#main_container .choose_person .styled-table {
+  position: relative;
+  top: 4%;
+  left: 6%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 0px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+#main_container .choose_person .styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+#main_container .choose_person .styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+#main_container .choose_person .styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+#main_container .choose_person .styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+#main_container .choose_person .styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+#main_container .choose_person .styled-table th,
+#main_container .choose_person .styled-table td {
+  padding: 12px 15px;
+}
 #main_container .input_area {
-  width: 40vw;
-  height: 80px;
+  width: 100vw;
+  height: 70px;
   position: relative;
   font-size: 16px;
 }
-
+#main_container .input_area .btn {
+  position: absolute;
+  bottom: 60%;
+  left: 0;
+  background-color: #eee;
+  color: #555;
+}
+#main_container .input_area .submit {
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+}
+#main_container .input_area .delete_btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 21%;
+  border-radius: 100px;
+  border: 1px solid #eee;
+  background-color: #eee;
+  color: #555;
+}
 #main_container .input_area .label {
   position: absolute;
   display: inline-block;
@@ -28,18 +87,105 @@
   left: 1px;
   padding: 5px;
   color: #555;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 18px;
   font-weight: bold;
 }
-
+#main_container .input_area .label_datetime {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 1px;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .input_area .textarea_label {
+  position: absolute;
+  display: inline-block;
+  bottom: -20%;
+  left: 30%;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .input_area .select {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 5px;
+  font-size: 18px;
+  color: #555;
+  width: 25%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  background: transparent;
+  font-weight: bold;
+}
+#main_container .input_area .select:disabled {
+  margin-top: 40px;
+}
+#main_container .input_area .select:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .input_area .multiple_select {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  z-index: 1;
+  padding: 5px;
+  font-size: 18px;
+  color: #555;
+  width: 25%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  background: transparent;
+  font-weight: bold;
+}
+#main_container .input_area .multiple_select:disabled {
+  margin-top: 40px;
+}
+#main_container .input_area .multiple_select:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .input_area .textarea {
+  position: relative;
+  display: flex;
+  margin-top: 5px;
+  bottom: -70%;
+  left: 30%;
+  z-index: 1;
+  padding: 5px;
+  font-size: 18px;
+  color: #555;
+  font-weight: bold;
+  width: 47.5%;
+  height: 150%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  background: transparent;
+}
+#main_container .input_area .textarea:disabled {
+  background-color: #eee;
+}
+#main_container .input_area .textarea:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .input_area .textarea:focus ~ .textarea_label, #main_container .input_area .textarea:valid ~ .textarea_label, #main_container .input_area .textarea:disabled ~ .textarea_label {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-40px);
+}
 #main_container .input_area .input {
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 1;
-  width: 100%;
+  width: 25%;
   border: 1px solid #111;
   border-radius: 4px;
   padding: 5px;
@@ -47,20 +193,17 @@
   color: #555;
   font-size: 18px;
 }
-
 #main_container .input_area .input:disabled {
   background-color: #eee;
 }
-
 #main_container .input_area .input:invalid {
   border: 2px solid #ee0979;
 }
-
-#main_container .input_area .input:focus ~ .label,
-#main_container .input_area .input:valid ~ .label,
-#main_container .input_area .input:disabled ~ .label {
-  -webkit-transition: 0.5s;
+#main_container .input_area .input:focus ~ .label, #main_container .input_area .input:valid ~ .label, #main_container .input_area .input:disabled ~ .label {
   transition: 0.5s;
-  -webkit-transform: translateX(-5px) translateY(-30px);
-          transform: translateX(-5px) translateY(-30px);
+  transform: translateX(-5px) translateY(-30px);
+}
+#main_container .input_area .input:focus ~ .label_datetime, #main_container .input_area .input:valid ~ .label_datetime, #main_container .input_area .input:disabled ~ .label_datetime {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-33px);
 }

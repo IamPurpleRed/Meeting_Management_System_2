@@ -13,11 +13,91 @@
     margin-top: 40px;
   }
 
+  .choose_person {
+    width: 100vw;
+    height: 60vh;
+    position: relative;
+    bottom: 570px;
+    left: 30%;
+    font-size: 16px;
+    //background-color: rgb(144, 21, 21);
+
+    .styled-table {
+      position: relative;
+      top: 4%;
+      left: 6%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 0px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+      thead {
+        tr {
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #dddddd;
+
+          &:nth-of-type(even) {
+            background-color: #f3f3f3;
+          }
+
+          &:last-of-type {
+            border-bottom: 2px solid #009879;
+          }
+        }
+
+        tr.active-row {
+          font-weight: bold;
+          color: #009879;
+        }
+      }
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 12px 15px;
+    }
+  }
+
+
   .input_area {
-    width: 40vw;
-    height: 80px;
+    width: 100vw;
+    height: 70px;
     position: relative;
     font-size: 16px;
+
+    .btn {
+      position: absolute;
+      bottom: 60%;
+      left: 0;
+      background-color: #eee;
+      color: #555;
+    }
+
+    .submit {
+      position: absolute;
+      bottom: 110%;
+      left: 0;
+    }
+
+    .delete_btn {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 21%;
+      border-radius: 100px;
+      border: 1px solid #eee;
+      background-color: #eee;
+      color: #555;
+    }
 
     .label {
       position: absolute;
@@ -31,12 +111,116 @@
       font-weight: bold;
     }
 
+    .label_datetime {
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      left: 1px;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .textarea_label {
+      position: absolute;
+      display: inline-block;
+      bottom: -20%;
+      left: 30%;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .select {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      padding: 5px;
+      font-size: 18px;
+      color: #555;
+      width: 25%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      background: transparent;
+      font-weight: bold;
+
+      &:disabled {
+        margin-top: 40px;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+    }
+
+    .multiple_select {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      z-index: 1;
+      padding: 5px;
+      font-size: 18px;
+      color: #555;
+      width: 25%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      background: transparent;
+      font-weight: bold;
+
+      &:disabled {
+        margin-top: 40px;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+    }
+
+    .textarea {
+      position: relative;
+      display: flex;
+      margin-top: 5px;
+      bottom: -70%;
+      left: 30%;
+      z-index: 1;
+      padding: 5px;
+      font-size: 18px;
+      color: #555;
+      font-weight: bold;
+      width: 47.5%;
+      height: 150%;
+      // height: 500%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      background: transparent;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.textarea_label,
+      &:valid~.textarea_label,
+      &:disabled~.textarea_label {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-40px);
+      }
+    }
+
     .input {
       position: absolute;
       bottom: 0;
       left: 0;
       z-index: 1;
-      width: 100%;
+      width: 25%;
       border: 1px solid #111;
       border-radius: 4px;
       padding: 5px;
@@ -57,6 +241,13 @@
       &:disabled~.label {
         transition: 0.5s;
         transform: translateX(-5px) translateY(-30px);
+      }
+
+      &:focus~.label_datetime,
+      &:valid~.label_datetime,
+      &:disabled~.label_datetime {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-33px);
       }
     }
   }
