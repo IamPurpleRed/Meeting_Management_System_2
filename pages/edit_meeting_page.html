@@ -45,33 +45,10 @@
         <input class="input" id="chair_speak" name="chair_speak" type="text" value="" required>
         <span class="label">主席致詞</span>
       </div>
-      <div class="input_area" id="input_meeting_area">
-        <textarea class="textarea" id="meeting_items" name="meeting_items" value="" required>案由:
-說明:
-決議事項:
-執行情況:
-        </textarea>
-        <span class="textarea_label">討論事項</span>
-      </div>
-      <!--
       <div class="input_area">
-        <select class="multiple_select" id="meeting_person" name="meeting_person" multiple required>
-          <option value="" disabled>請選擇與會人員</option>
-          <option value="chair">系主任</option>
-          <option value="assistant">系助理</option>
-          <option value="professor_a">A教授</option>
-          <option value="professor_b">B教授</option>
-          <option value="professor_c">C教授</option>
-          <option value="student_a">學生代表A</option>
-          <option value="student_b">學生代表B</option>
-          <option value="industry_expert_a">業界專家A</option>
-          <option value="industry_expert_b">業界專家B</option>
-          <option value="industry_expert_c">業界專家C</option>
-          <option value="outside_professor_a">校外教授A</option>
-          <option value="outside_professor_b">校外教授B</option>
-          <option value="outside_professor_c">校外教授C</option>
-        </select>
-      </div>-->
+        <textarea class="texts" id="meeting_content" name="meeting_content" value="" required></textarea>
+        <span class="texts_label">報告內容</span>
+      </div>
       <div class="input_area">
         <button class="btn" id="add_btn" type="button">
           <span class="material-icons">add</span>
@@ -81,8 +58,6 @@
       <div class="input_area">
         <input class="submit" id="upload_file" type="file" name="upload_file">
       </div>
-
-
 
       <div class="choose_person">
         <table class="styled-table">
@@ -197,8 +172,48 @@
         </table>
       </div>
 
+      <div class="discuss_area" id="discuss_meeting_area">
+        <!--
+        <span class="label1">案由:</span>
+        <input class="input1" id="meeting_cause" name="meeting_cause" type="text" value="" required>
+        <span class="label2">說明:</span>
+        <input class="input2" id="meeting_description" name="meeting_description" type="text" value="" required>
+        <span class="label3">決議事項:</span>
+        <input class="input3" id="meeting_resolution" name="meeting_resolution" type="text" value="" required>
+        <span class="label4">執行情況:</span>
+        <input class="input4" id="meeting_state" name="meeting_state" type="text" value="" required>
+        -->
+      </div>
 
-
+      <!--
+      <div class="input_area" id="input_meeting_area">
+        <textarea class="textarea" id="meeting_items" name="meeting_items" value="" required>案由:
+說明:
+決議事項:
+執行情況:
+        </textarea>
+        <span class="textarea_label">討論事項</span>
+      </div>
+    -->
+      <!--
+      <div class="input_area">
+        <select class="multiple_select" id="meeting_person" name="meeting_person" multiple required>
+          <option value="" disabled>請選擇與會人員</option>
+          <option value="chair">系主任</option>
+          <option value="assistant">系助理</option>
+          <option value="professor_a">A教授</option>
+          <option value="professor_b">B教授</option>
+          <option value="professor_c">C教授</option>
+          <option value="student_a">學生代表A</option>
+          <option value="student_b">學生代表B</option>
+          <option value="industry_expert_a">業界專家A</option>
+          <option value="industry_expert_b">業界專家B</option>
+          <option value="industry_expert_c">業界專家C</option>
+          <option value="outside_professor_a">校外教授A</option>
+          <option value="outside_professor_b">校外教授B</option>
+          <option value="outside_professor_c">校外教授C</option>
+        </select>
+      </div>-->
     </form>
   </div>
 

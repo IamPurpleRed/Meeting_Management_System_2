@@ -52,6 +52,164 @@
 #main_container .choose_person .styled-table td {
   padding: 12px 15px;
 }
+#main_container .discuss_area {
+  width: 100vw;
+  height: 280px;
+  position: relative;
+  margin-top: 50px;
+  font-size: 16px;
+}
+#main_container .discuss_area .label1 {
+  position: relative;
+  display: inline-block;
+  bottom: 250%;
+  left: 32%;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .discuss_area .label2 {
+  position: relative;
+  display: inline-block;
+  bottom: 250%;
+  left: 32%;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .discuss_area .label3 {
+  position: relative;
+  display: inline-block;
+  bottom: 250%;
+  left: 32%;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .discuss_area .label4 {
+  position: relative;
+  display: inline-block;
+  bottom: 250%;
+  left: 32%;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .discuss_area .input1 {
+  position: relative;
+  display: flex;
+  bottom: 250%;
+  left: 32%;
+  z-index: 1;
+  width: 47%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 5px;
+  background: transparent;
+  color: #555;
+  font-size: 18px;
+}
+#main_container .discuss_area .input1:disabled {
+  background-color: #eee;
+}
+#main_container .discuss_area .input1:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .discuss_area .input1:focus ~ .label1, #main_container .discuss_area .input1:valid ~ .label1, #main_container .discuss_area .input1:disabled ~ .label1 {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-30px);
+}
+#main_container .discuss_area .input2 {
+  position: relative;
+  display: flex;
+  bottom: 250%;
+  left: 32%;
+  z-index: 1;
+  width: 47%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 5px;
+  background: transparent;
+  color: #555;
+  font-size: 18px;
+}
+#main_container .discuss_area .input2:disabled {
+  background-color: #eee;
+}
+#main_container .discuss_area .input2:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .discuss_area .input2:focus ~ .label2, #main_container .discuss_area .input2:valid ~ .label2, #main_container .discuss_area .input2:disabled ~ .label2 {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-30px);
+}
+#main_container .discuss_area .input3 {
+  position: relative;
+  display: flex;
+  bottom: 250%;
+  left: 32%;
+  z-index: 1;
+  width: 47%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 5px;
+  background: transparent;
+  color: #555;
+  font-size: 18px;
+}
+#main_container .discuss_area .input3:disabled {
+  background-color: #eee;
+}
+#main_container .discuss_area .input3:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .discuss_area .input3:focus ~ .label3, #main_container .discuss_area .input3:valid ~ .label3, #main_container .discuss_area .input3:disabled ~ .label3 {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-30px);
+}
+#main_container .discuss_area .input4 {
+  position: relative;
+  display: flex;
+  bottom: 250%;
+  left: 32%;
+  z-index: 1;
+  width: 47%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 5px;
+  background: transparent;
+  color: #555;
+  font-size: 18px;
+}
+#main_container .discuss_area .input4:disabled {
+  background-color: #eee;
+}
+#main_container .discuss_area .input4:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .discuss_area .input4:focus ~ .label4, #main_container .discuss_area .input4:valid ~ .label4, #main_container .discuss_area .input4:disabled ~ .label4 {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-30px);
+}
+#main_container .discuss_area .delete_btn {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  bottom: 272.5%;
+  left: 24%;
+  border-radius: 100px;
+  border: 1px solid #eee;
+  background-color: #eee;
+  color: #555;
+}
 #main_container .input_area {
   width: 100vw;
   height: 70px;
@@ -60,14 +218,14 @@
 }
 #main_container .input_area .btn {
   position: absolute;
-  bottom: 60%;
+  bottom: -20%;
   left: 0;
   background-color: #eee;
   color: #555;
 }
 #main_container .input_area .submit {
   position: absolute;
-  bottom: 110%;
+  bottom: 30%;
   left: 0;
 }
 #main_container .input_area .delete_btn {
@@ -153,6 +311,44 @@
 #main_container .input_area .multiple_select:invalid {
   border: 2px solid #ee0979;
 }
+#main_container .input_area .texts_label {
+  position: absolute;
+  display: inline-block;
+  bottom: 5%;
+  left: 1px;
+  padding: 5px;
+  color: #555;
+  transition: 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+}
+#main_container .input_area .texts {
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  z-index: 1;
+  width: 25%;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 5px;
+  background: transparent;
+  color: #555;
+  font-size: 18px;
+}
+#main_container .input_area .texts:disabled {
+  background-color: #eee;
+}
+#main_container .input_area .texts:invalid {
+  border: 2px solid #ee0979;
+}
+#main_container .input_area .texts:focus ~ .label, #main_container .input_area .texts:valid ~ .label, #main_container .input_area .texts:disabled ~ .label {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-30px);
+}
+#main_container .input_area .texts:focus ~ .texts_label, #main_container .input_area .texts:valid ~ .texts_label, #main_container .input_area .texts:disabled ~ .texts_label {
+  transition: 0.5s;
+  transform: translateX(-5px) translateY(-30px);
+}
 #main_container .input_area .textarea {
   position: relative;
   display: flex;
@@ -202,8 +398,4 @@
 #main_container .input_area .input:focus ~ .label, #main_container .input_area .input:valid ~ .label, #main_container .input_area .input:disabled ~ .label {
   transition: 0.5s;
   transform: translateX(-5px) translateY(-30px);
-}
-#main_container .input_area .input:focus ~ .label_datetime, #main_container .input_area .input:valid ~ .label_datetime, #main_container .input_area .input:disabled ~ .label_datetime {
-  transition: 0.5s;
-  transform: translateX(-5px) translateY(-33px);
 }

@@ -68,6 +68,197 @@
   }
 
 
+  .discuss_area {
+    width: 100vw;
+    height: 280px;
+    position: relative;
+    margin-top: 50px;
+    font-size: 16px;
+    // background-color: #ee0979;
+
+    .label1 {
+      position: relative;
+      display: inline-block;
+      bottom: 250%;
+      left: 32%;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+      // background-color: #ee0979;
+    }
+
+    .label2 {
+      position: relative;
+      display: inline-block;
+      bottom: 250%;
+      left: 32%;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .label3 {
+      position: relative;
+      display: inline-block;
+      bottom: 250%;
+      left: 32%;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .label4 {
+      position: relative;
+      display: inline-block;
+      bottom: 250%;
+      left: 32%;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .input1 {
+      position: relative;
+      display: flex;
+      bottom: 250%;
+      left: 32%;
+      z-index: 1;
+      width: 47%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 5px;
+      background: transparent;
+      color: #555;
+      font-size: 18px;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.label1,
+      &:valid~.label1,
+      &:disabled~.label1 {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
+    }
+
+    .input2 {
+      position: relative;
+      display: flex;
+      bottom: 250%;
+      left: 32%;
+      z-index: 1;
+      width: 47%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 5px;
+      background: transparent;
+      color: #555;
+      font-size: 18px;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.label2,
+      &:valid~.label2,
+      &:disabled~.label2 {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
+    }
+
+    .input3 {
+      position: relative;
+      display: flex;
+      bottom: 250%;
+      left: 32%;
+      z-index: 1;
+      width: 47%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 5px;
+      background: transparent;
+      color: #555;
+      font-size: 18px;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.label3,
+      &:valid~.label3,
+      &:disabled~.label3 {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
+    }
+
+    .input4 {
+      position: relative;
+      display: flex;
+      bottom: 250%;
+      left: 32%;
+      z-index: 1;
+      width: 47%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 5px;
+      background: transparent;
+      color: #555;
+      font-size: 18px;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.label4,
+      &:valid~.label4,
+      &:disabled~.label4 {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
+    }
+
+    .delete_btn {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      bottom: 272.5%;
+      left: 24%;
+      border-radius: 100px;
+      border: 1px solid #eee;
+      background-color: #eee;
+      color: #555;
+    }
+  }
+
+
   .input_area {
     width: 100vw;
     height: 70px;
@@ -76,7 +267,7 @@
 
     .btn {
       position: absolute;
-      bottom: 60%;
+      bottom: -20%;
       left: 0;
       background-color: #eee;
       color: #555;
@@ -84,7 +275,7 @@
 
     .submit {
       position: absolute;
-      bottom: 110%;
+      bottom: 30%;
       left: 0;
     }
 
@@ -181,6 +372,54 @@
       }
     }
 
+    .texts_label {
+      position: absolute;
+      display: inline-block;
+      bottom: 5%;
+      left: 1px;
+      padding: 5px;
+      color: #555;
+      transition: 0.5s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .texts {
+      position: absolute;
+      bottom: -30%;
+      left: 0;
+      z-index: 1;
+      width: 25%;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 5px;
+      background: transparent;
+      color: #555;
+      font-size: 18px;
+
+      &:disabled {
+        background-color: #eee;
+      }
+
+      &:invalid {
+        border: 2px solid #ee0979;
+      }
+
+      &:focus~.label,
+      &:valid~.label,
+      &:disabled~.label {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
+
+      &:focus~.texts_label,
+      &:valid~.texts_label,
+      &:disabled~.texts_label {
+        transition: 0.5s;
+        transform: translateX(-5px) translateY(-30px);
+      }
+    }
+
     .textarea {
       position: relative;
       display: flex;
@@ -241,13 +480,6 @@
       &:disabled~.label {
         transition: 0.5s;
         transform: translateX(-5px) translateY(-30px);
-      }
-
-      &:focus~.label_datetime,
-      &:valid~.label_datetime,
-      &:disabled~.label_datetime {
-        transition: 0.5s;
-        transform: translateX(-5px) translateY(-33px);
       }
     }
   }

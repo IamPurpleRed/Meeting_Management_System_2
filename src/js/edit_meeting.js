@@ -1,4 +1,4 @@
-const input_meeting_area = document.getElementById('input_meeting_area');
+const discuss_meeting_area = document.getElementById('discuss_meeting_area');
 const text_area = document.getElementById('meeting_items');
 
 var area_count = 0;
@@ -79,7 +79,63 @@ function show_select5() {
 
 
 function addTextArea() {
-    const new_text_area = document.createElement("textarea");
+    const new_discuss_div = document.createElement("div");
+    const new_discuss_div_button = document.createElement("button");
+    const new_input_a = document.createElement("input");
+    const new_input_b = document.createElement("input");
+    const new_input_c = document.createElement("input");
+    const new_input_d = document.createElement("input");
+    const new_lable_e = document.createElement("span");
+    const new_lable_f = document.createElement("span");
+    const new_lable_g = document.createElement("span");
+    const new_lable_h = document.createElement("span");
+
+
+    new_discuss_div_button.id = 'button' + area_count;
+    new_discuss_div.id = area_count;
+    new_input_a.id = area_count + 'a';
+    new_input_b.id = area_count + 'b';
+    new_input_c.id = area_count + 'c';
+    new_input_d.id = area_count + 'd';
+    new_lable_e.id = area_count + 'e';
+    new_lable_f.id = area_count + 'f';
+    new_lable_g.id = area_count + 'g';
+    new_lable_h.id = area_count + 'h';
+
+    new_discuss_div.className = "discuss_area";
+    new_discuss_div_button.className = "delete_btn";
+    new_input_a.className = "input1";
+    new_input_b.className = "input2";
+    new_input_c.className = "input3";
+    new_input_d.className = "input4";
+    new_lable_e.className = "label1";
+    new_lable_f.className = "label2";
+    new_lable_g.className = "label3";
+    new_lable_h.className = "label4";
+
+    new_lable_e.textContent = "案由:";
+    new_lable_f.textContent = "說明:";
+    new_lable_g.textContent = "決議事項:";
+    new_lable_h.textContent = "執行情況:";
+
+    discuss_meeting_area.appendChild(new_discuss_div);
+    discuss_meeting_area.appendChild(new_discuss_div_button);
+    new_discuss_div.appendChild(new_lable_e);
+    new_discuss_div.appendChild(new_input_a);
+    new_discuss_div.appendChild(new_lable_f);
+    new_discuss_div.appendChild(new_input_b);
+    new_discuss_div.appendChild(new_lable_g);
+    new_discuss_div.appendChild(new_input_c);
+    new_discuss_div.appendChild(new_lable_h);
+    new_discuss_div.appendChild(new_input_d);
+
+
+    new_discuss_div_button.addEventListener("click", delete_area);
+    area_count += 1;
+
+
+
+    /*const new_text_area = document.createElement("textarea");
     const new_text_area_button = document.createElement("button");
     new_text_area_button.id = 'button' + area_count;
     new_text_area.id = area_count;
@@ -92,12 +148,7 @@ function addTextArea() {
 
 
     new_text_area_button.addEventListener("click", delete_area);
-    /*new_text_area.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            enter_text(this.id);
-        }
-    })*/
-    area_count += 1;
+    area_count += 1;*/
 
 }
 
@@ -115,16 +166,39 @@ function delete_area() {
 
     var i = idOfArea;
     for (i; i < area_count; i++) {
-        const this_text_area = document.getElementById(i);
-        const next_text_area = document.getElementById(i + 1);
-        this_text_area.value = next_text_area.value;
+        const this_discuss_div = document.getElementById(i);
+        const next_discuss_div = document.getElementById(i + 1);
+
+        const this_input_a = document.getElementById(i + 'a');
+        const next_input_a = document.getElementById((i + 1) + 'a');
+        this_input_a.value = next_input_a.value;
+
+        const this_input_b = document.getElementById(i + 'b');
+        const next_input_b = document.getElementById((i + 1) + 'b');
+        this_input_b.value = next_input_b.value;
+
+        const this_input_c = document.getElementById(i + 'c');
+        const next_input_c = document.getElementById((i + 1) + 'c');
+        this_input_c.value = next_input_c.value;
+
+        const this_input_d = document.getElementById(i + 'd');
+        const next_input_d = document.getElementById((i + 1) + 'd');
+        this_input_d.value = next_input_d.value;
     }
 
     last = document.getElementById(area_count);
-    input_meeting_area.removeChild(last);
+    discuss_meeting_area.removeChild(last);
     last_btn = document.getElementById('button' + area_count);
-    input_meeting_area.removeChild(last_btn);
-    console.log(l)
+    last_inpt_a = document.getElementById(area_count + 'a');
+    last_inpt_b = document.getElementById(area_count + 'b');
+    last_inpt_c = document.getElementById(area_count + 'c');
+    last_inpt_d = document.getElementById(area_count + 'd');
+    discuss_meeting_area.removeChild(last_btn);
+    discuss_meeting_area.removeChild(last_inpt_a);
+    discuss_meeting_area.removeChild(last_inpt_b);
+    discuss_meeting_area.removeChild(last_inpt_c);
+    discuss_meeting_area.removeChild(last_inpt_d);
+    console.log(area_count);
 
     print_all_txt();
 
@@ -139,5 +213,3 @@ function delete_area() {
     }
 
 }*/
-
-///////////////////////////////////////////////////////////////////////
