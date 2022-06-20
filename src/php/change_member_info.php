@@ -65,4 +65,8 @@ if ($old_password == $result["密碼"]) {
         $op = $sql_qry->query($qry);
     }
     header("Location:/mms.csie.nuk.edu.tw/profile.php");
-}
+} ?>
+<?php
+echo "舊密碼輸入錯誤\n";
+?>
+<a href="/mms.csie.nuk.edu.tw/profile.php">回上一頁</a>
