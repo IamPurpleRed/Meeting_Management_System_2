@@ -16,10 +16,8 @@
 <body>
   <?php
   include("components/navigation.php");
-  include("src/php/sql_connect.inc.php");
+  include("components/side_menu.php");
   ?>
-
-  <!-- 匯入 components/side_menu.php -->
 
   <div id="content">
     <!-- 匯入 components/profile.php -->
