@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新增會議 | 高大資工會議管理系統</title><!-- 新增會議 or 編輯會議 -->
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/edit_meeting_page.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- 插入 /components/navigation.php -->
+
+  <h2 id="page_title">新增會議</h2><!-- 新增會議 or 編輯會議 -->
+  <hr id="page_hr">
+  <div id="main_container">
+    <div id="number">會議編號: 1</div>
+    <div id="creator">建立者: 林子閎</div><!-- 只有管理員能建立會議 -->
+    <form action="" method="post" enctype="multipart/form-data">
+      <!-- 基本資料區域 START -->
+      <div class="area_container">
+        <h3>基本資料</h3>
+        <div class="input_area">
+          <input class="input" id="title" name="title" type="text" value="" required>
+          <span class="label">會議名稱</span>
+        </div>
+        <div class="input_area">
+          <input class="input" id="date" name="date" type="datetime-local" value="" required>
+        </div>
+        <div class="input_area">
+          <input class="input" id="place" name="place" type="text" value="" required>
+          <span class="label">開會地點</span>
+        </div>
+        <div class="text_area">
+          <textarea class="input" id="chairman_speak" name="chairmanSpeak" rows="5" value="" required></textarea>
+          <span class="label">主席致詞</span>
+        </div>
+        <div class="text_area">
+          <textarea class="input" id="meeting_content" name="meetingContent" rows="5" value="" required></textarea>
+          <span class="label">報告內容</span>
+        </div>
+      </div>
+      <!-- 基本資料區域 END -->
+
+      <!-- 人員權限區域 START -->
+      <div class="area_container">
+        <h3>人員權限</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>帳號</th>
+              <th>姓名</th>
+              <th>身分</th>
+              <th>檢視</th>
+              <th>修改</th>
+              <th>是否參與</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>dannynfs</td>
+              <td>陳泓銘</td>
+              <td>學生代表</td>
+              <td><input id="row1_view" name="row1_view" type="checkbox"></td>
+              <td><input id="row1_edit" name="row1_edit" type="checkbox"></td>
+              <td>
+                <input id="row1_yes" name="row1_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row1_role" name="row1_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row1_no" name="row1_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr class="active-row">
+              <td>PR</td>
+              <td>林子閎</td>
+              <td>業界專家</td>
+              <td><input id="row2_view" name="row2_view" type="checkbox"></td>
+              <td><input id="row2_edit" name="row2_edit" type="checkbox"></td>
+              <td>
+                <input id="row2_yes" name="row2_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row2_role" name="row2_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row2_no" name="row2_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr>
+              <td>TA</td>
+              <td>塗峻翔</td>
+              <td>系上老師</td>
+              <td><input id="row3_view" name="row3_view" type="checkbox"></td>
+              <td><input id="row3_edit" name="row3_edit" type="checkbox"></td>
+              <td>
+                <input id="row3_yes" name="row3_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row3_role" name="row3_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row3_no" name="row3_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr class="active-row">
+              <td>baganono</td>
+              <td>柯柏熏</td>
+              <td>校外老師</td>
+              <td><input id="row4_view" name="row4_view" type="checkbox"></td>
+              <td><input id="row4_edit" name="row4_edit" type="checkbox"></td>
+              <td>
+                <input id="row4_yes" name="row4_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row4_role" name="row4_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row4_no" name="row4_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <tr>
+              <td>PN</td>
+              <td>傅沛雯</td>
+              <td>系助理</td>
+              <td><input id="row5_view" name="row5_view" type="checkbox"></td>
+              <td><input id="row5_edit" name="row5_edit" type="checkbox"></td>
+              <td>
+                <input id="row5_yes" name="row5_choose" type="radio" value="1">
+                <label>Yes</label>
+                <select id="row5_role" name="row5_role" disabled>
+                  <option value="" selected disabled hidden>請選擇參與身分</option>
+                  <option value="chair">會議主席</option>
+                  <option value="attendees">出席人員</option>
+                  <option value="bystander">旁觀人員</option>
+                </select>
+                <input id="row5_no" name="row5_choose" type="radio" value="0">
+                <label>No</label>
+              </td>
+            </tr>
+            <!-- and so on... -->
+          </tbody>
+        </table>
+      </div>
+      <!-- 人員權限區域 END -->
+
+      <!-- 討論事項區域 START -->
+      <div class="area_container">
+        <h3>討論事項</h3>
+        <button class="btn" id="add_discussion_btn" type="button">
+          <span class="material-icons">add</span>
+          <span class="text">新增討論事項</span>
+        </button>
+      </div>
+      <!-- 討論事項區域 END -->
+
+      <!-- 附件區域 START -->
+      <div class="area_container">
+        <h3>附件</h3>
+        <button class="btn" id="add_attachment_btn" type="button">
+          <span class="material-icons">add</span>
+          <span class="text">新增附件</span>
+        </button>
+        <input id="attachment1" name="attachment1" type="file">
+      </div>
+      <!-- 附件區域 END -->
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/src/js/nav.js"></script>
+  <script src="/src/js/edit_meeting.js"></script>
+</body>
+</html>
