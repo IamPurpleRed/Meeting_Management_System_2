@@ -6,20 +6,32 @@ var last = 0;
 $(document).ready(() => {
     setInterval(hideBtnText, 100);
 
-    $('#add_btn').hover(() => {
-        $('#add_btn').width(200);
-        $('#add_btn > .text').delay(500).fadeIn();
+    $('#add_discussion_btn').hover(() => {
+        $('#add_discussion_btn').width(200);
+        $('#add_discussion_btn > .text').delay(500).fadeIn();
     }, () => {
-        $('#add_btn > .text').hide();
-        $('#add_btn').width(50);
+        $('#add_discussion_btn > .text').hide();
+        $('#add_discussion_btn').width(50);
     });
 
-    $('#add_btn').click(addTextArea);
+    $('#add_discussion_btn').click(addTextArea);
+
+    $('#add_attachment_btn').hover(() => {
+        $('#add_attachment_btn').width(150);
+        $('#add_attachment_btn > .text').delay(500).fadeIn();
+    }, () => {
+        $('#add_attachment_btn > .text').hide();
+        $('#add_attachment_btn').width(50);
+    });
 });
 
 function hideBtnText() {
-    if ($('#add_btn').width() < 80) {
-        $('#add_btn > .text').hide();
+    if ($('#add_discussion_btn').width() < 180) {
+        $('#add_discussion_btn > .text').hide();
+    }
+
+    if ($('#add_attachment_btn').width() < 130) {
+        $('#add_attachment_btn > .text').hide();
     }
 }
 
