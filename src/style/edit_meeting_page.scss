@@ -14,6 +14,8 @@
       margin-top: 40px;
     }
 
+
+
     .input_area {
       width: 60vw;
       height: 80px;
@@ -148,7 +150,7 @@
 
       thead {
         tr {
-          background-color: #009879;
+          background-color: #4183ec;
           color: #ffffff;
           text-align: left;
         }
@@ -162,15 +164,31 @@
             background-color: #f3f3f3;
           }
 
+          /*
           &:last-of-type {
             border-bottom: 2px solid #009879;
           }
+          */
         }
+      }
+    }
 
-        tr.active-row {
-          font-weight: bold;
-          color: #009879;
-        }
+
+    .form_item {
+      margin: 0 auto 20px;
+      width: 75vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      label {
+        font-size: 18px;
+        padding-right: 5%;
+      }
+
+      input {
+        width: 70%;
+        max-width: 400px;
       }
     }
   }

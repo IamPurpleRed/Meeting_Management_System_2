@@ -1,4 +1,4 @@
-const discuss_meeting_area = document.getElementById('discuss_meeting_area');
+const area_container = document.getElementById('area_container');
 const text_area = document.getElementById('meeting_items');
 
 var area_count = 0;
@@ -84,7 +84,7 @@ function show_select5() {
 
 
 
-////////////////////////////////////泓銘部分//////////////////////////////////
+
 
 
 
@@ -92,75 +92,97 @@ function show_select5() {
 
 function addTextArea() {
     const new_discuss_div = document.createElement("div");
+    const new_top_div = document.createElement("div");
+    const new_middle_top_div = document.createElement("div");
+    const new_middle_bottom_div = document.createElement("div");
+    const new_bottom_div = document.createElement("div");
     const new_discuss_div_button = document.createElement("button");
-    const new_input_a = document.createElement("input");
-    const new_input_b = document.createElement("input");
-    const new_input_c = document.createElement("input");
-    const new_input_d = document.createElement("input");
-    const new_lable_e = document.createElement("span");
-    const new_lable_f = document.createElement("span");
-    const new_lable_g = document.createElement("span");
-    const new_lable_h = document.createElement("span");
+    const new_discuss_div_button_span1 = document.createElement("span");
+    const new_discuss_div_button_span2 = document.createElement("span");
+    const new_textarea_top = document.createElement("textarea");
+    const new_textarea_middle_top = document.createElement("textarea");
+    const new_textarea_middle_bottom = document.createElement("textarea");
+    const new_textarea_bottom = document.createElement("textarea");
+    const new_lable_top = document.createElement("span");
+    const new_lable_middle_top = document.createElement("span");
+    const new_lable_middle_bottom = document.createElement("span");
+    const new_lable_bottom = document.createElement("span");
+    const new_inner_div_ = document.createElement("div");
 
 
     new_discuss_div_button.id = 'button' + area_count;
     new_discuss_div.id = area_count;
-    new_input_a.id = area_count + 'a';
-    new_input_b.id = area_count + 'b';
-    new_input_c.id = area_count + 'c';
-    new_input_d.id = area_count + 'd';
-    new_lable_e.id = area_count + 'e';
-    new_lable_f.id = area_count + 'f';
-    new_lable_g.id = area_count + 'g';
-    new_lable_h.id = area_count + 'h';
+    new_textarea_top.id = area_count + 'textareaTop';
+    new_textarea_middle_top.id = area_count + 'textareaMiddleTop';
+    new_textarea_middle_bottom.id = area_count + 'textareaMiddleBottom';
+    new_textarea_bottom.id = area_count + 'textareaBottom';
+    new_lable_top.id = area_count + 'labelTop';
+    new_lable_middle_top.id = area_count + 'labelMiddleTop';
+    new_lable_middle_bottom.id = area_count + 'labelMiddleBottom';
+    new_lable_bottom.id = area_count + 'labelBottom';
+
 
     new_discuss_div.className = "discuss_area";
-    new_discuss_div_button.className = "delete_btn";
-    new_input_a.className = "input1";
-    new_input_b.className = "input2";
-    new_input_c.className = "input3";
-    new_input_d.className = "input4";
-    new_lable_e.className = "label1";
-    new_lable_f.className = "label2";
-    new_lable_g.className = "label3";
-    new_lable_h.className = "label4";
+    new_top_div.className = "text_area";
+    new_middle_top_div.className = "text_area";
+    new_middle_bottom_div.className = "text_area";
+    new_bottom_div.className = "text_area";
+    new_discuss_div_button.className = "btn";
+    new_discuss_div_button_span1.className = "material-icons";
+    new_discuss_div_button_span2.className = "text";
+    new_textarea_top.className = "input";
+    new_textarea_middle_top.className = "input";
+    new_textarea_middle_bottom.className = "input";
+    new_textarea_bottom.className = "input";
+    new_lable_top.className = "label";
+    new_lable_middle_top.className = "label";
+    new_lable_middle_bottom.className = "label";
+    new_lable_bottom.className = "label";
 
-    new_lable_e.textContent = "案由:";
-    new_lable_f.textContent = "說明:";
-    new_lable_g.textContent = "決議事項:";
-    new_lable_h.textContent = "執行情況:";
 
-    discuss_meeting_area.appendChild(new_discuss_div);
-    discuss_meeting_area.appendChild(new_discuss_div_button);
-    new_discuss_div.appendChild(new_lable_e);
-    new_discuss_div.appendChild(new_input_a);
-    new_discuss_div.appendChild(new_lable_f);
-    new_discuss_div.appendChild(new_input_b);
-    new_discuss_div.appendChild(new_lable_g);
-    new_discuss_div.appendChild(new_input_c);
-    new_discuss_div.appendChild(new_lable_h);
-    new_discuss_div.appendChild(new_input_d);
+    new_lable_top.innerHTML = "案由:";
+    new_lable_middle_top.innerHTML = "說明:";
+    new_lable_middle_bottom.innerHTML = "決議事項:";
+    new_lable_bottom.innerHTML = "執行情況:";
+    new_discuss_div_button_span2.innerHTML = "del";
+
+    new_textarea_top.value = '';
+    new_textarea_middle_top.value = '';
+    new_textarea_middle_bottom.value = '';
+    new_textarea_bottom.value = '';
+
+    new_textarea_top.required = true;
+    new_textarea_middle_top.required = true;
+    new_textarea_middle_bottom.required = true;
+    new_textarea_bottom.required = true;
+
+    new_textarea_top.rows = 5;
+    new_textarea_middle_top.rows = 5;
+    new_textarea_middle_bottom.rows = 5;
+    new_textarea_bottom.rows = 5;
+
+
+    area_container.appendChild(new_discuss_div);
+    area_container.appendChild(new_discuss_div_button);
+    // new_discuss_div_button.appendChild(new_discuss_div_button_span1);
+    new_discuss_div_button.appendChild(new_discuss_div_button_span2);
+    new_discuss_div.appendChild(new_top_div);
+    new_discuss_div.appendChild(new_middle_top_div);
+    new_discuss_div.appendChild(new_middle_bottom_div);
+    new_discuss_div.appendChild(new_bottom_div);
+    new_top_div.appendChild(new_lable_top);
+    new_top_div.appendChild(new_textarea_top);
+    new_middle_top_div.appendChild(new_lable_middle_top);
+    new_middle_top_div.appendChild(new_textarea_middle_top);
+    new_middle_bottom_div.appendChild(new_lable_middle_bottom);
+    new_middle_bottom_div.appendChild(new_textarea_middle_bottom);
+    new_bottom_div.appendChild(new_lable_bottom);
+    new_bottom_div.appendChild(new_textarea_bottom);
 
 
     new_discuss_div_button.addEventListener("click", delete_area);
     area_count += 1;
 
-
-
-    /*const new_text_area = document.createElement("textarea");
-    const new_text_area_button = document.createElement("button");
-    new_text_area_button.id = 'button' + area_count;
-    new_text_area.id = area_count;
-    new_text_area.className = "textarea";
-    new_text_area_button.className = "delete_btn";
-
-    new_text_area.value = "案由:\n說明:\n決議事項:\n執行情況: ";
-    input_meeting_area.appendChild(new_text_area);
-    input_meeting_area.appendChild(new_text_area_button);
-
-
-    new_text_area_button.addEventListener("click", delete_area);
-    area_count += 1;*/
 
 }
 
@@ -181,47 +203,44 @@ function delete_area() {
         const this_discuss_div = document.getElementById(i);
         const next_discuss_div = document.getElementById(i + 1);
 
-        const this_input_a = document.getElementById(i + 'a');
-        const next_input_a = document.getElementById((i + 1) + 'a');
-        this_input_a.value = next_input_a.value;
+        const this_textarea_Top = document.getElementById(i + 'textareaTop');
+        const next_textarea_Top = document.getElementById((i + 1) + 'textareaTop');
+        this_textarea_Top.value = next_textarea_Top.value;
 
-        const this_input_b = document.getElementById(i + 'b');
-        const next_input_b = document.getElementById((i + 1) + 'b');
-        this_input_b.value = next_input_b.value;
+        const this_textarea_middle_top = document.getElementById(i + 'textareaMiddleTop');
+        const next_textarea_middle_top = document.getElementById((i + 1) + 'textareaMiddleTop');
+        this_textarea_middle_top.value = next_textarea_middle_top.value;
 
-        const this_input_c = document.getElementById(i + 'c');
-        const next_input_c = document.getElementById((i + 1) + 'c');
-        this_input_c.value = next_input_c.value;
+        const this_textarea_middle_bottom = document.getElementById(i + 'textareaMiddleBottom');
+        const next_textarea_middle_bottom = document.getElementById((i + 1) + 'textareaMiddleBottom');
+        this_textarea_middle_bottom.value = next_textarea_middle_bottom.value;
 
-        const this_input_d = document.getElementById(i + 'd');
-        const next_input_d = document.getElementById((i + 1) + 'd');
-        this_input_d.value = next_input_d.value;
+        const this_textarea_bottom = document.getElementById(i + 'textareaBottom');
+        const next_textarea_bottom = document.getElementById((i + 1) + 'textareaBottom');
+        this_textarea_bottom.value = next_textarea_bottom.value;
     }
 
     last = document.getElementById(area_count);
-    discuss_meeting_area.removeChild(last);
+    area_container.removeChild(last);
     last_btn = document.getElementById('button' + area_count);
-    last_inpt_a = document.getElementById(area_count + 'a');
-    last_inpt_b = document.getElementById(area_count + 'b');
-    last_inpt_c = document.getElementById(area_count + 'c');
-    last_inpt_d = document.getElementById(area_count + 'd');
-    discuss_meeting_area.removeChild(last_btn);
-    discuss_meeting_area.removeChild(last_inpt_a);
-    discuss_meeting_area.removeChild(last_inpt_b);
-    discuss_meeting_area.removeChild(last_inpt_c);
-    discuss_meeting_area.removeChild(last_inpt_d);
+    last_textarea_top = document.getElementById(area_count + 'textareaTop');
+    last_textarea_middle_top = document.getElementById(area_count + 'textareaMiddleTop');
+    last_textarea_middle_bottom = document.getElementById(area_count + 'textareaMiddleBottom');
+    last_textarea_bottom = document.getElementById(area_count + 'textareaBottom');
+    area_container.removeChild(last_btn);
+    area_container.removeChild(last_textarea_top);
+    area_container.removeChild(last_textarea_middle_top);
+    area_container.removeChild(last_textarea_middle_bottom);
+    area_container.removeChild(last_textarea_bottom);
     console.log(area_count);
 
     print_all_txt();
 
 }
 
-/*function print_all_txt(id) {
 
-    var i = 0;
-    for (i; i < area_count - 1; i++) {
-        const this_text_area = document.getElementById(i);
-        console.log(this_text_area.value);
-    }
+function add_doc() {
 
-}*/
+
+
+}
