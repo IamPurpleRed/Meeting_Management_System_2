@@ -15,10 +15,10 @@
 </head>
 
 <body>
-  <!-- 插入 /components/navigation.html -->
   <?php
   include("components/navigation.php");
   ?>
+
   <?php
   include("src/php/sql_connect.inc.php");
   session_start();
@@ -29,10 +29,13 @@
   $result = $select->fetch(PDO::FETCH_ASSOC);
   $identity = $result["身分"];
   ?>
+
   <?php
   include("components/profile.php");
   ?>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="src/js/nav.js"></script>
+  <script src="src/js/profile.js"></script>
 </body>
-
 </html>
