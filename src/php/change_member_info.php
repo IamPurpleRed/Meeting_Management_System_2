@@ -1,7 +1,7 @@
 <?php
 require_once("sql_connect.inc.php");
 session_start();
-$ID = $_SESSION["loginMember"]["使用者編號"];
+$ID = $_GET["id"];
 $name = $_POST["name"];
 $sex = $_POST["gender"];
 $phone = $_POST["phone"];

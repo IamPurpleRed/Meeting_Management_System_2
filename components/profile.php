@@ -1,6 +1,8 @@
  ?>
  <?php
+  $from_which_page = 1;
   if (isset($_GET["ID"])) {
+    $from_which_page = 0;
     $id = $_GET["ID"];
     session_start();
     include("../src/php/sql_connect.inc.php");
@@ -12,11 +14,13 @@
 
   ?>
  <?php if (isset($result)) : ?>
+   <?php $img = $result["頭貼"];
+    $id = $result["使用者編號"]; ?>
    <h2 id="page_title">個人資料</h2>
    <hr id="page_hr">
    <div id="main_container">
      <div id="form_area">
-       <form action="src/php/change_member_info.php" method="post">
+       <form action="src/php/change_member_info.php?id=<?php echo $id ?>" method="post">
          <div id="number">使用者編號: <?php echo $result["使用者編號"] ?></div>
          <div id="identity">身分: <?php echo $identity ?></div>
          <div class="input_area">
@@ -196,7 +200,7 @@
        </form>
      </div>
      <div id="photo_area">
-       <img src="src/user_photo/1.png">
+       <img src=<?php echo $img; ?>>
        <button class="btn" href="#">
          <span class="material-icons">perm_media</span>
          <span class="text">選擇大頭貼</span>
