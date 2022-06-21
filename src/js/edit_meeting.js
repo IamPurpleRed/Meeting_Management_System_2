@@ -244,3 +244,48 @@ function add_doc() {
 
 
 }
+
+/////////////// 附件 Start ////////////////////
+
+var file = document.getElementById("attachment1");
+var fileName = document.getElementById("file_name0");
+
+function handleFile() {
+    fileName.value = file.value;
+}
+
+function addItem() {
+    var myitem = document.getElementById("file_name0").value;
+    var newP = document.createElement("li");
+    var textNode = document.createTextNode(myitem);
+
+    newP.appendChild(textNode);
+    document.getElementById("attachment_container").appendChild(newP);
+
+
+    return false;
+}
+
+
+
+
+
+
+/////////////////////////
+
+
+$("#submit_file").bind('click', function() {
+    //一次
+    if ($("#bnew").length < 1) {
+        var str = '<button id="delete_file_btn1">清除</button>';
+        $(str).insertAfter("#attachment_container");
+        //可以設定新增按鈕主題：
+        $("#delete_file_btn1").button({
+            theme: "e"
+        })
+    }
+});
+
+
+
+/////////////// 附件 End ////////////////////

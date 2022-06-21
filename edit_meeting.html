@@ -201,7 +201,11 @@
           <span class="material-icons">add</span>
           <span class="text">新增附件</span>
         </button>
-        <input id="attachment1" name="attachment1" type="file">
+        <input id="attachment1" name="attachment1" type="file" onchange="handleFile()">
+        <input type="submit" id="submit_file" onclick="addItem()">
+        <br>
+        <span>List: </span>
+        <input class="file_name" name="fileName" id="file_name0" type="text" disabled="disable" value="" hidden>
         <div id="attachment_list" class="form_item">
           <ol id="attachment_container" type="1">
           </ol>
