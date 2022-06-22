@@ -10,14 +10,14 @@
     $result = $select->fetch(PDO::FETCH_ASSOC);
     $identity = $result["身分"];
   }
-?>
+  ?>
 
  <?php if (isset($result)) : ?>
    <?php $img = $result["頭貼"];
     $id = $result["使用者編號"]; ?>
    <div id="main_container">
      <div id="form_area">
-       <form action="src/php/change_member_info.php?id=<?php echo $id ?>" method="post">
+       <form action="src/php/change_member_info.php?id=<?php echo $id ?>&page=<?php echo $from_which_page ?>" method="post">
          <div id="number">使用者編號: <?php echo $result["使用者編號"] ?></div>
          <div id="identity">身分: <?php echo $identity ?></div>
          <div class="input_area">
