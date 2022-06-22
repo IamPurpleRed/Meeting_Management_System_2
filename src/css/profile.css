@@ -1,5 +1,5 @@
 #main_container {
-  margin: 0 10vw 100px;
+  margin: 0 10% 100px;
   display: flex;
   justify-content: space-between;
 }
@@ -18,7 +18,7 @@
 #main_container .input_area .label {
   position: absolute;
   display: inline-block;
-  bottom: 0;
+  bottom: 1px;
   left: 1px;
   padding: 5px;
   color: #555;
@@ -47,7 +47,7 @@
 }
 #main_container .input_area .input:focus ~ .label, #main_container .input_area .input:valid ~ .label, #main_container .input_area .input:disabled ~ .label {
   transition: 0.5s;
-  transform: translateX(-5px) translateY(-30px);
+  transform: translateX(-5px) translateY(-35px);
 }
 #main_container .radio_btn_area {
   height: 80px;
@@ -79,12 +79,12 @@
 #main_container #btn_area .btn {
   margin-right: 10px;
 }
-#main_container #btn_area #edit_btn:disabled {
+#main_container #btn_area #edit_btn:disabled,
+#main_container #btn_area #save_btn:disabled {
   background-color: rgb(200, 200, 200);
 }
 #main_container #photo_area {
-  margin-top: 100px;
-  margin-right: 10px;
+  margin: 100px 10px 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <?php
   include("components/navigation.php");
   ?>
+
+  <h2 id="page_title">個人資料</h2>
+  <hr id="page_hr">
 
   <?php
   include("src/php/sql_connect.inc.php");
@@ -36,6 +37,5 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/js/nav.js"></script>
-  <script src="src/js/profile.js"></script>
 </body>
 </html>

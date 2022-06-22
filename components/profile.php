@@ -1,4 +1,3 @@
- ?>
  <?php
   $from_which_page = 1;
   if (isset($_GET["ID"])) {
@@ -11,13 +10,11 @@
     $result = $select->fetch(PDO::FETCH_ASSOC);
     $identity = $result["身分"];
   }
+?>
 
-  ?>
  <?php if (isset($result)) : ?>
    <?php $img = $result["頭貼"];
     $id = $result["使用者編號"]; ?>
-   <h2 id="page_title">個人資料</h2>
-   <hr id="page_hr">
    <div id="main_container">
      <div id="form_area">
        <form action="src/php/change_member_info.php?id=<?php echo $id ?>" method="post">
@@ -32,8 +29,8 @@
            <span class="label">舊密碼</span>
          </div>
          <div class="input_area">
-           <input class="input" id="new_password" name="newPassword" type="password" required disabled> <!-- 此欄位需留空 -->
-           <span class="label">新密碼</span>
+           <input class="input" id="new_password" name="newPassword" type="password" disabled> <!-- 此欄位需留空 -->
+           <span class="label">新密碼 (如欲更改密碼再填寫此欄位)</span>
          </div>
          <div class="input_area">
            <input class="input" id="name" name="name" type="text" value="<?php echo $result["姓名"] ?>" required disabled>
@@ -192,7 +189,7 @@
              <span class="material-icons">edit</span>
              <span class="text">編輯</span>
            </button>
-           <button class="btn" id="save_btn" type="submit">
+           <button class="btn" id="save_btn" type="submit" disabled>
              <span class="material-icons">save</span>
              <span class="text">儲存</span>
            </button>
@@ -209,4 +206,6 @@
      </div>
    </div>
  <?php endif; ?>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="src/js/profile.js"></script>
  <?php

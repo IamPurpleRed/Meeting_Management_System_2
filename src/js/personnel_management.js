@@ -19,7 +19,6 @@ function makeActive(which) {
 
     xmlhttp.open("GET", UrlToSend, false);
     xmlhttp.send();
-    console.log(xmlhttp.responseText);
 
     $("#content").html(xmlhttp.responseText);
 }
