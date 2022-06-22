@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="stylesheet" href="src/css/side_menu.css">
   <link rel="stylesheet" href="src/css/personnel_overview.css">
+  <link rel="stylesheet" href="src/css/profile.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
   include("components/side_menu.php");
   ?>
 
-  <div id="content"></div>
+  <div id="content" name="insertContent"></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/js/nav.js"></script>
