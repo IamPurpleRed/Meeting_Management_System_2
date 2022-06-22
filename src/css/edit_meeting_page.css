@@ -11,6 +11,15 @@
   font-size: 30px;
   margin-top: 40px;
 }
+#main_container .area_container .file_delete_btn {
+  position: relative;
+  width: 35px;
+  height: 25px;
+  border: 4px #111;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #555;
+}
 #main_container .area_container .input_area {
   width: 60vw;
   height: 80px;
@@ -120,6 +129,7 @@
   font-size: 0.9em;
   min-width: 0px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 76%;
 }
 #main_container .area_container table th,
 #main_container .area_container table td {

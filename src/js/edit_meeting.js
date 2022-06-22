@@ -1,6 +1,7 @@
 const area_container = document.getElementById('area_container');
 const text_area = document.getElementById('meeting_items');
 
+var delete_file_index = 0;
 var area_count = 0;
 var last = 0;
 $(document).ready(() => {
@@ -164,7 +165,6 @@ function addTextArea() {
 
     area_container.appendChild(new_discuss_div);
     area_container.appendChild(new_discuss_div_button);
-    // new_discuss_div_button.appendChild(new_discuss_div_button_span1);
     new_discuss_div_button.appendChild(new_discuss_div_button_span2);
     new_discuss_div.appendChild(new_top_div);
     new_discuss_div.appendChild(new_middle_top_div);
@@ -194,9 +194,6 @@ function delete_area() {
     area_count -= 1;
     var idOfButton = this.id;
     var idOfArea = parseInt(idOfButton.substr(6, idOfButton.lenth));
-    // console.log("x" + idOfButton + "x");
-    // console.log("y" + idOfArea + "y");
-    //console.log("y" + area_count + "y");
 
     var i = idOfArea;
     for (i; i < area_count; i++) {
@@ -250,42 +247,34 @@ function add_doc() {
 var file = document.getElementById("attachment1");
 var fileName = document.getElementById("file_name0");
 
-function handleFile() {
+function handle_file() {
     fileName.value = file.value;
+
+    $("#submit_file").removeAttr("disabled");
+
 }
 
-function addItem() {
+function add_item() {
     var myitem = document.getElementById("file_name0").value;
     var newP = document.createElement("li");
     var textNode = document.createTextNode(myitem);
 
+    newP.id = "file_list_ol" + delete_file_index;
     newP.appendChild(textNode);
     document.getElementById("attachment_container").appendChild(newP);
 
+    $("#submit_file").attr("disabled", true);
+    $("#file_delete_btn").removeAttr("disabled");
 
+    delete_file_index += 1;
     return false;
 }
 
-
-
-
-
-
-/////////////////////////
-
-
-$("#submit_file").bind('click', function() {
-    //一次
-    if ($("#bnew").length < 1) {
-        var str = '<button id="delete_file_btn1">清除</button>';
-        $(str).insertAfter("#attachment_container");
-        //可以設定新增按鈕主題：
-        $("#delete_file_btn1").button({
-            theme: "e"
-        })
-    }
-});
-
-
+function file_delete1() {
+    console.clear();
+    delete_file_index -= 1;
+    file_list_ol = document.getElementById('file_list_ol' + delete_file_index);
+    $('#file_list_ol' + delete_file_index).remove();
+}
 
 /////////////// 附件 End ////////////////////

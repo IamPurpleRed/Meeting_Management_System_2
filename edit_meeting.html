@@ -197,15 +197,12 @@
       <!-- 附件區域 START -->
       <div class="area_container">
         <h3>附件</h3>
-        <button class="btn" id="add_attachment_btn" type="button">
-          <span class="material-icons">add</span>
-          <span class="text">新增附件</span>
-        </button>
-        <input id="attachment1" name="attachment1" type="file" onchange="handleFile()">
-        <input type="submit" id="submit_file" onclick="addItem()">
+        <input id="attachment1" name="attachment1" type="file" onchange="handle_file()">
+        <input type="submit" id="submit_file" onclick="add_item()" disabled>
+        <button class="file_delete_btn" id="file_delete_btn" type="button" onclick="file_delete1()" disabled>刪除</button>
         <br>
         <span>List: </span>
-        <input class="file_name" name="fileName" id="file_name0" type="text" disabled="disable" value="" hidden>
+        <input class=" file_name" name="fileName" id="file_name0" type="text" disabled="disable" value="" hidden>
         <div id="attachment_list" class="form_item">
           <ol id="attachment_container" type="1">
           </ol>
