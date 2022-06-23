@@ -37,14 +37,14 @@ function hideBtnText() {
 }
 
 
-$('input:radio[name="row1_choose"]').click(show_select1);
-$('input:radio[name="row2_choose"]').click(show_select2);
-$('input:radio[name="row3_choose"]').click(show_select3);
-$('input:radio[name="row4_choose"]').click(show_select4);
-$('input:radio[name="row5_choose"]').click(show_select5);
+$('input:radio[name="row1Choose"]').click(show_select1);
+$('input:radio[name="row2Choose"]').click(show_select2);
+$('input:radio[name="row3Choose"]').click(show_select3);
+$('input:radio[name="row4Choose"]').click(show_select4);
+$('input:radio[name="row5Choose"]').click(show_select5);
 
 function show_select1() {
-    var checkValue = $('input:radio[name="row1_choose"]:checked').val();
+    var checkValue = $('input:radio[name="row1Choose"]:checked').val();
     if (checkValue == 1) {
         $("#row1_role").removeAttr("disabled");
     }
@@ -52,7 +52,7 @@ function show_select1() {
 }
 
 function show_select2() {
-    var checkValue = $('input:radio[name="row2_choose"]:checked').val();
+    var checkValue = $('input:radio[name="row2Choose"]:checked').val();
     if (checkValue == 1) {
         $("#row2_role").removeAttr("disabled");
     }
@@ -60,7 +60,7 @@ function show_select2() {
 }
 
 function show_select3() {
-    var checkValue = $('input:radio[name="row3_choose"]:checked').val();
+    var checkValue = $('input:radio[name="row3Choose"]:checked').val();
     if (checkValue == 1) {
         $("#row3_role").removeAttr("disabled");
     }
@@ -68,7 +68,7 @@ function show_select3() {
 }
 
 function show_select4() {
-    var checkValue = $('input:radio[name="row4_choose"]:checked').val();
+    var checkValue = $('input:radio[name="row4Choose"]:checked').val();
     if (checkValue == 1) {
         $("#row4_role").removeAttr("disabled");
     }
@@ -76,7 +76,7 @@ function show_select4() {
 }
 
 function show_select5() {
-    var checkValue = $('input:radio[name="row5_choose"]:checked').val();
+    var checkValue = $('input:radio[name="row5Choose"]:checked').val();
     if (checkValue == 1) {
         $("#row5_role").removeAttr("disabled");
     }
@@ -187,9 +187,7 @@ function addTextArea() {
 }
 
 function delete_area() {
-
     console.clear();
-
 
     area_count -= 1;
     var idOfButton = this.id;
