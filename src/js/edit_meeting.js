@@ -135,11 +135,27 @@ function addTextArea() {
     new_textarea_middle_top.className = "input";
     new_textarea_middle_bottom.className = "input";
     new_textarea_bottom.className = "input";
-    new_lable_top.className = "label";
-    new_lable_middle_top.className = "label";
-    new_lable_middle_bottom.className = "label";
-    new_lable_bottom.className = "label";
 
+    new_lable_top.style.position = "relative";
+    new_lable_top.style.bottom = "-25px";
+    new_lable_top.style.fontSize = "18px";
+    new_lable_top.style.fontWeight = "bold";
+    new_lable_top.style.color = "#555";
+    new_lable_middle_top.style.position = "relative";
+    new_lable_middle_top.style.bottom = "-25px";
+    new_lable_middle_top.style.fontSize = "18px";
+    new_lable_middle_top.style.fontWeight = "bold";
+    new_lable_middle_top.style.color = "#555";
+    new_lable_middle_bottom.style.position = "relative";
+    new_lable_middle_bottom.style.bottom = "-25px";
+    new_lable_middle_bottom.style.fontSize = "18px";
+    new_lable_middle_bottom.style.fontWeight = "bold";
+    new_lable_middle_bottom.style.color = "#555";
+    new_lable_bottom.style.position = "relative";
+    new_lable_bottom.style.bottom = "-25px";
+    new_lable_bottom.style.fontSize = "18px";
+    new_lable_bottom.style.fontWeight = "bold";
+    new_lable_bottom.style.color = "#555";
 
     new_lable_top.innerHTML = "案由:";
     new_lable_middle_top.innerHTML = "說明:";
