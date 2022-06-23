@@ -17,12 +17,12 @@ $(document).ready(() => {
 
     $('#add_discussion_btn').click(addTextArea);
 
-    $('#add_attachment_btn').hover(() => {
-        $('#add_attachment_btn').width(150);
-        $('#add_attachment_btn > .text').delay(500).fadeIn();
+    $('#send_meeting_btn').hover(() => {
+        $('#send_meeting_btn').width(150);
+        $('#send_meeting_btn > .text').delay(500).fadeIn();
     }, () => {
-        $('#add_attachment_btn > .text').hide();
-        $('#add_attachment_btn').width(50);
+        $('#send_meeting_btn > .text').hide();
+        $('#send_meeting_btn').width(50);
     });
 });
 
@@ -31,8 +31,8 @@ function hideBtnText() {
         $('#add_discussion_btn > .text').hide();
     }
 
-    if ($('#add_attachment_btn').width() < 130) {
-        $('#add_attachment_btn > .text').hide();
+    if ($('#send_meeting_btn').width() < 90) {
+        $('#send_meeting_btn > .text').hide();
     }
 }
 
@@ -292,3 +292,5 @@ function file_delete1() {
 }
 
 /////////////// 附件 End ////////////////////
+document.getElementById("send_meeting_btn").style.left = "400px";
+document.getElementById("send_meeting_btn").style.bottom = "75px";
