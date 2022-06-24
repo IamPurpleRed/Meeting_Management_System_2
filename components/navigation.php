@@ -8,7 +8,7 @@
     </a>
   </div>
   <div id="nav_end">
-    <img id="user_photo" src="/mms.csie.nuk.edu.tw/src/images/account-circle.png">
+    <img id="user_photo" src="/mms.csie.nuk.edu.tw/<?php echo $_SESSION["loginMember"]["頭貼"] ?>">
     <h2 id="user_name"><?php echo $_SESSION['loginMember']['姓名'] ?></h2>
     <div class="menuToggle"></div>
   </div>
