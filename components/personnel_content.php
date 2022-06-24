@@ -119,4 +119,7 @@ $result = $select->fetch(PDO::FETCH_ASSOC);
     }
     ?>
 <!-- </div> -->
+<script type="text/javascript">
+    var uID = <?php echo json_encode($theSelectedUser); ?>;
+</script>
 <script src="src/js/personnel_content.js"></script>

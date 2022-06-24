@@ -19,9 +19,11 @@
   include("components/navigation.php");
   ?>
 
+  <h2 id="page_title">個人資料</h2>
+  <hr id="page_hr">
+
   <?php
   include("src/php/sql_connect.inc.php");
-  session_start();
   $id = $_SESSION["loginMember"]["使用者編號"];
   $account = $_SESSION["loginMember"]["帳號"];
   $qry = "SELECT * FROM `使用者` WHERE `使用者編號`= $id;";
@@ -36,6 +38,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/js/nav.js"></script>
-  <script src="src/js/profile.js"></script>
 </body>
+
 </html>

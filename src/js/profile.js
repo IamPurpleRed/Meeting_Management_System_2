@@ -3,6 +3,7 @@ $(document).ready(() => {
 
     $('#edit_btn').click(() => {
         $('.input').removeAttr('disabled');
+        $('#save_btn').prop('disabled', false);
         $('#edit_btn').prop('disabled', true);
     });
 

@@ -56,6 +56,18 @@
   font-weight: bold;
 }
 
+#content2 {
+  width: 70vw;
+  height: calc(100vh - 60px);
+  padding-top: 50px;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
 #actions {
   margin-top: 20px;
 }

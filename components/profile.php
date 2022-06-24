@@ -1,6 +1,7 @@
- ?>
  <?php
+  $from_which_page = 1;
   if (isset($_GET["ID"])) {
+    $from_which_page = 0;
     $id = $_GET["ID"];
     session_start();
     include("../src/php/sql_connect.inc.php");
@@ -9,14 +10,14 @@
     $result = $select->fetch(PDO::FETCH_ASSOC);
     $identity = $result["身分"];
   }
-
   ?>
+
  <?php if (isset($result)) : ?>
-   <h2 id="page_title">個人資料</h2>
-   <hr id="page_hr">
+   <?php $img = $result["頭貼"];
+    $id = $result["使用者編號"]; ?>
    <div id="main_container">
      <div id="form_area">
-       <form action="src/php/change_member_info.php" method="post">
+       <form action="src/php/change_member_info.php?id=<?php echo $id ?>&page=<?php echo $from_which_page ?>" method="post">
          <div id="number">使用者編號: <?php echo $result["使用者編號"] ?></div>
          <div id="identity">身分: <?php echo $identity ?></div>
          <div class="input_area">
@@ -28,8 +29,8 @@
            <span class="label">舊密碼</span>
          </div>
          <div class="input_area">
-           <input class="input" id="new_password" name="newPassword" type="password" required disabled> <!-- 此欄位需留空 -->
-           <span class="label">新密碼</span>
+           <input class="input" id="new_password" name="newPassword" type="password" disabled> <!-- 此欄位需留空 -->
+           <span class="label">新密碼 (如欲更改密碼再填寫此欄位)</span>
          </div>
          <div class="input_area">
            <input class="input" id="name" name="name" type="text" value="<?php echo $result["姓名"] ?>" required disabled>
@@ -188,7 +189,7 @@
              <span class="material-icons">edit</span>
              <span class="text">編輯</span>
            </button>
-           <button class="btn" id="save_btn" type="submit">
+           <button class="btn" id="save_btn" type="submit" disabled>
              <span class="material-icons">save</span>
              <span class="text">儲存</span>
            </button>
@@ -196,7 +197,7 @@
        </form>
      </div>
      <div id="photo_area">
-       <img src="src/user_photo/1.png">
+       <img src=<?php echo $img; ?>>
        <button class="btn" href="#">
          <span class="material-icons">perm_media</span>
          <span class="text">選擇大頭貼</span>
@@ -205,4 +206,6 @@
      </div>
    </div>
  <?php endif; ?>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="src/js/profile.js"></script>
  <?php
