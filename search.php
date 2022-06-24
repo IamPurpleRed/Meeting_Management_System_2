@@ -14,6 +14,9 @@
 </head>
 <body>
   <!-- 插入 /components/navigation.html  -->
+  <?php
+  include("components/navigation.php");
+  ?>
 
   <div id="search_area">
     <input id="search_input" type="text" placeholder="搜尋使用者或會議...">

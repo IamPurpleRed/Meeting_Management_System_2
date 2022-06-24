@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <?php
   include("components/navigation.php");
@@ -44,7 +46,7 @@
     </div>
 
     <div class="box">
-      <a href="#">
+      <a href="search.php">
         <div class="icon">
           <span class="material-icons" style="color: #12c2e9;">search</span>
         </div>
