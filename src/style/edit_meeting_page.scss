@@ -9,111 +9,43 @@
   }
 
   .area_container {
+    margin-bottom: 80px;
+
     h3 {
       font-size: 30px;
       margin-top: 40px;
     }
 
-    .file_delete_btn {
-      position: relative;
-      width: 35px;
-      height: 25px;
-      border: 4px #111;
-      border-radius: 4px;
-      background-color: #eee;
-      color: #555;
-    }
-
-
     .input_area {
       width: 60vw;
+      min-width: 600px;
+      max-width: 900px;
       height: 80px;
       position: relative;
       font-size: 16px;
-
-      .submit {
-        position: absolute;
-        bottom: 30%;
-        left: 0;
-      }
-
-      .textarea_label {
-        position: absolute;
-        display: inline-block;
-        bottom: -20%;
-        left: 30%;
-        padding: 5px;
-        color: #555;
-        transition: 0.5s;
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .select {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        padding: 5px;
-        font-size: 18px;
-        color: #555;
-        width: 25%;
-        border: 1px solid #111;
-        border-radius: 4px;
-        background: transparent;
-        font-weight: bold;
-
-        &:disabled {
-          margin-top: 40px;
-        }
-
-        &:invalid {
-          border: 2px solid #ee0979;
-        }
-      }
-
-      .multiple_select {
-        position: absolute;
-        bottom: -100%;
-        left: 0;
-        z-index: 1;
-        padding: 5px;
-        font-size: 18px;
-        color: #555;
-        width: 25%;
-        border: 1px solid #111;
-        border-radius: 4px;
-        background: transparent;
-        font-weight: bold;
-
-        &:disabled {
-          margin-top: 40px;
-        }
-
-        &:invalid {
-          border: 2px solid #ee0979;
-        }
-      }
     }
 
     .text_area {
       width: 60vw;
-      height: 170px;
+      min-width: 600px;
+      max-width: 900px;
+      height: 190px;
       position: relative;
       font-size: 16px;
+
+      .input {
+        height: 150px;
+      }
     }
 
     .input {
-      min-width: 500px;
+      width: 100%;
+      padding: 5px;
       position: absolute;
       bottom: 0;
       left: 0;
-      z-index: 1;
-      width: 100%;
       border: 1px solid #111;
       border-radius: 4px;
-      padding: 5px;
-      background: transparent;
       color: #555;
       font-size: 18px;
 
@@ -134,9 +66,10 @@
     }
 
     .label {
+      z-index: 1;
       position: absolute;
       display: inline-block;
-      top: 45px;
+      top: 40px;
       left: 1px;
       padding: 5px;
       color: #555;
@@ -145,62 +78,77 @@
       font-weight: bold;
     }
 
-
     table {
-      min-width: 500px;
-      margin: 25px 0;
-      font-size: 0.9em;
-      min-width: 0px;
+      width: 60vw;
+      min-width: 600px;
+      max-width: 900px;
+      margin-top: 20px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-      width: 76%;
-
+      text-align: center;
 
       th,
       td {
-        padding: 12px 15px;
+        padding: 10px 0;
       }
 
       thead {
         tr {
           background-color: #4183ec;
           color: #ffffff;
-          text-align: left;
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        #identity {
+          width: 100px;
+        }
+
+        #view,
+        #edit {
+          width: 70px;
+        }
+
+        #append {
+          width: 250px;
         }
       }
 
       tbody {
         tr {
           border-bottom: 1px solid #dddddd;
+          font-size: 18px;
 
           &:nth-of-type(even) {
             background-color: #f3f3f3;
           }
-
-          /*
-          &:last-of-type {
-            border-bottom: 2px solid #009879;
-          }
-          */
         }
       }
     }
 
+    .discussion_item {
+      width: 60vw;
+      min-width: 600px;
+      max-width: 900px;
+      margin: 20px 0;
+      padding: 20px;
+      position: relative;
+      border-radius: 15px;
+      background-color: #f3f3f3;
 
-    .form_item {
-      margin: 0 auto 20px;
-      width: 75vw;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      label {
-        font-size: 18px;
-        padding-right: 5%;
+      .text_area {
+        width: 100%;
+        min-width: 0;
       }
+    }
 
-      input {
-        width: 70%;
-        max-width: 400px;
+    #file_area {
+      li {
+        display: flex;
+        align-items: center;
+
+        input {
+          font-size: 18px;
+        }
       }
     }
   }

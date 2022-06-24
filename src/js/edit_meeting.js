@@ -1,9 +1,6 @@
-const area_container = document.getElementById('area_container');
-const text_area = document.getElementById('meeting_items');
+let discussionCounter = 0;
+let attachmentCounter = 0;
 
-var delete_file_index = 0;
-var area_count = 0;
-var last = 0;
 $(document).ready(() => {
     setInterval(hideBtnText, 100);
 
@@ -15,7 +12,30 @@ $(document).ready(() => {
         $('#add_discussion_btn').width(50);
     });
 
-    $('#add_discussion_btn').click(addTextArea);
+    $('#add_discussion_btn').click(addDiscussionItem);
+
+    for (let i = 0; i < $('#members > tr').length; i++) {
+        $(`#edit${i + 1}`).click(() => {
+            checkEditLogic(i + 1);
+        });
+
+        $(`#append${i + 1}_yes`).click(() => {
+            checkAppendLogic(i + 1);
+        });
+        $(`#append${i + 1}_no`).click(() => {
+            checkAppendLogic(i + 1);
+        });
+    }
+
+    $('#add_attachment_btn').hover(() => {
+        $('#add_attachment_btn').width(150);
+        $('#add_attachment_btn > .text').delay(500).fadeIn();
+    }, () => {
+        $('#add_attachment_btn > .text').hide();
+        $('#add_attachment_btn').width(50);
+    });
+
+    $('#add_attachment_btn').click(addAttachment);
 
     $('#send_meeting_btn').hover(() => {
         $('#send_meeting_btn').width(150);
@@ -31,266 +51,109 @@ function hideBtnText() {
         $('#add_discussion_btn > .text').hide();
     }
 
-    if ($('#send_meeting_btn').width() < 90) {
+    if ($('#add_attachment_btn').width() < 130) {
+        $('#add_attachment_btn > .text').hide();
+    }
+
+    if ($('#send_meeting_btn').width() < 130) {
         $('#send_meeting_btn > .text').hide();
     }
 }
 
-
-$('input:radio[name="row1Choose"]').click(show_select1);
-$('input:radio[name="row2Choose"]').click(show_select2);
-$('input:radio[name="row3Choose"]').click(show_select3);
-$('input:radio[name="row4Choose"]').click(show_select4);
-$('input:radio[name="row5Choose"]').click(show_select5);
-
-function show_select1() {
-    var checkValue = $('input:radio[name="row1Choose"]:checked').val();
-    if (checkValue == 1) {
-        $("#row1_role").removeAttr("disabled");
+function checkEditLogic(i) {
+    if ($(`#edit${i}`).is(':checked')) {
+        $(`#view${i}`).prop('checked', true);
+        $(`#view${i}`).prop('disabled', true);
+    } else {
+        $(`#view${i}`).prop('disabled', false);
     }
-    //alert(checkValue);
 }
 
-function show_select2() {
-    var checkValue = $('input:radio[name="row2Choose"]:checked').val();
-    if (checkValue == 1) {
-        $("#row2_role").removeAttr("disabled");
+function checkAppendLogic(i) {
+    let value = ($(`input[name=append${i}]:checked`).val() == 1) ? true : false;
+    if (value) {
+        $(`#role${i}`).prop('disabled', false);
+    } else {
+        $(`#role${i}`).prop('disabled', true);
     }
-    //alert(checkValue);
 }
 
-function show_select3() {
-    var checkValue = $('input:radio[name="row3Choose"]:checked').val();
-    if (checkValue == 1) {
-        $("#row3_role").removeAttr("disabled");
-    }
-    //alert(checkValue);
+function addDiscussionItem() {
+    discussionCounter++;
+    const i = discussionCounter; // 使以下項目不會隨著discussionCounter改變
+    let item = `
+    <div class="discussion_item" id="discussion${i}">
+        <button class="btn del" id="del_discussion${i}_btn" type="button">
+            <span class="material-icons">delete</span>
+            <span class="text">刪除</span>
+        </button>
+        <div class="text_area">
+            <textarea class="input" id="discussion${i}_title" name="discussion${i}Title" value="" required></textarea>
+            <span class="label">案由</span>
+        </div>
+        <div class="text_area">
+            <textarea class="input" id="discussion${i}_content" name="discussion${i}Content" value="" required></textarea>
+            <span class="label">說明</span>
+        </div>
+        <div class="text_area">
+            <textarea class="input" id="discussion${i}_resolution" name="discussion${i}Resolution" value="" required></textarea>
+            <span class="label">決議事項</span>
+        </div>
+        <div class="text_area">
+            <textarea class="input" id="discussion${i}_implementation" name="discussion${i}Implementation" value="" required></textarea>
+            <span class="label">執行情況</span>
+        </div>
+    </div>`;
+
+    $('#discussion_container').append(item);
+
+    setInterval(() => {
+        if ($(`#del_discussion${i}_btn`).width() < 80) {
+            $(`#del_discussion${i}_btn > .text`).hide();
+        }
+    }, 100);
+
+    $(`#del_discussion${i}_btn`).hover(() => {
+        $(`#del_discussion${i}_btn`).width(100);
+        $(`#del_discussion${i}_btn > .text`).delay(500).fadeIn();
+    }, () => {
+        $(`#del_discussion${i}_btn > .text`).hide();
+        $(`#del_discussion${i}_btn`).width(50);
+    });
+
+    $(`#del_discussion${i}_btn`).click(() => {
+        $(`#discussion${i}`).remove();
+    });
 }
 
-function show_select4() {
-    var checkValue = $('input:radio[name="row4Choose"]:checked').val();
-    if (checkValue == 1) {
-        $("#row4_role").removeAttr("disabled");
-    }
-    //alert(checkValue);
+function addAttachment() {
+    attachmentCounter++;
+    const i = attachmentCounter; // 使以下項目不會隨著attachmentCounter改變
+    $('#file_area').append(`
+        <li id="attachment${i}">
+            <input type="file" name="attachment${i}">
+            <button class="btn del" id="del_attachment${i}_btn" type="button">
+                <span class="material-icons">delete</span>
+                <span class="text">刪除</span>
+            </button>
+        </li>
+    `);
+
+    setInterval(() => {
+        if ($(`#del_attachment${i}_btn`).width() < 80) {
+            $(`#del_attachment${i}_btn > .text`).hide();
+        }
+    }, 100);
+
+    $(`#del_attachment${i}_btn`).hover(() => {
+        $(`#del_attachment${i}_btn`).width(100);
+        $(`#del_attachment${i}_btn > .text`).delay(500).fadeIn();
+    }, () => {
+        $(`#del_attachment${i}_btn > .text`).hide();
+        $(`#del_attachment${i}_btn`).width(50);
+    });
+
+    $(`#del_attachment${i}_btn`).click(() => {
+        $(`#attachment${i}`).remove();
+    });
 }
-
-function show_select5() {
-    var checkValue = $('input:radio[name="row5Choose"]:checked').val();
-    if (checkValue == 1) {
-        $("#row5_role").removeAttr("disabled");
-    }
-    //alert(checkValue);
-}
-
-
-
-
-
-
-
-
-
-function addTextArea() {
-    const new_discuss_div = document.createElement("div");
-    const new_top_div = document.createElement("div");
-    const new_middle_top_div = document.createElement("div");
-    const new_middle_bottom_div = document.createElement("div");
-    const new_bottom_div = document.createElement("div");
-    const new_discuss_div_button = document.createElement("button");
-    const new_discuss_div_button_span1 = document.createElement("span");
-    const new_discuss_div_button_span2 = document.createElement("span");
-    const new_textarea_top = document.createElement("textarea");
-    const new_textarea_middle_top = document.createElement("textarea");
-    const new_textarea_middle_bottom = document.createElement("textarea");
-    const new_textarea_bottom = document.createElement("textarea");
-    const new_lable_top = document.createElement("span");
-    const new_lable_middle_top = document.createElement("span");
-    const new_lable_middle_bottom = document.createElement("span");
-    const new_lable_bottom = document.createElement("span");
-    const new_inner_div_ = document.createElement("div");
-
-
-    new_discuss_div_button.id = 'button' + area_count;
-    new_discuss_div.id = area_count;
-    new_textarea_top.id = area_count + 'textareaTop';
-    new_textarea_middle_top.id = area_count + 'textareaMiddleTop';
-    new_textarea_middle_bottom.id = area_count + 'textareaMiddleBottom';
-    new_textarea_bottom.id = area_count + 'textareaBottom';
-    new_lable_top.id = area_count + 'labelTop';
-    new_lable_middle_top.id = area_count + 'labelMiddleTop';
-    new_lable_middle_bottom.id = area_count + 'labelMiddleBottom';
-    new_lable_bottom.id = area_count + 'labelBottom';
-
-
-    new_discuss_div.className = "discuss_area";
-    new_top_div.className = "text_area";
-    new_middle_top_div.className = "text_area";
-    new_middle_bottom_div.className = "text_area";
-    new_bottom_div.className = "text_area";
-    new_discuss_div_button.className = "btn";
-    new_discuss_div_button_span1.className = "material-icons";
-    new_discuss_div_button_span2.className = "text";
-    new_textarea_top.className = "input";
-    new_textarea_middle_top.className = "input";
-    new_textarea_middle_bottom.className = "input";
-    new_textarea_bottom.className = "input";
-
-    new_lable_top.style.position = "relative";
-    new_lable_top.style.bottom = "-25px";
-    new_lable_top.style.fontSize = "18px";
-    new_lable_top.style.fontWeight = "bold";
-    new_lable_top.style.color = "#555";
-    new_lable_middle_top.style.position = "relative";
-    new_lable_middle_top.style.bottom = "-25px";
-    new_lable_middle_top.style.fontSize = "18px";
-    new_lable_middle_top.style.fontWeight = "bold";
-    new_lable_middle_top.style.color = "#555";
-    new_lable_middle_bottom.style.position = "relative";
-    new_lable_middle_bottom.style.bottom = "-25px";
-    new_lable_middle_bottom.style.fontSize = "18px";
-    new_lable_middle_bottom.style.fontWeight = "bold";
-    new_lable_middle_bottom.style.color = "#555";
-    new_lable_bottom.style.position = "relative";
-    new_lable_bottom.style.bottom = "-25px";
-    new_lable_bottom.style.fontSize = "18px";
-    new_lable_bottom.style.fontWeight = "bold";
-    new_lable_bottom.style.color = "#555";
-
-    new_lable_top.innerHTML = "案由:";
-    new_lable_middle_top.innerHTML = "說明:";
-    new_lable_middle_bottom.innerHTML = "決議事項:";
-    new_lable_bottom.innerHTML = "執行情況:";
-    new_discuss_div_button_span2.innerHTML = "del";
-
-    new_textarea_top.value = '';
-    new_textarea_middle_top.value = '';
-    new_textarea_middle_bottom.value = '';
-    new_textarea_bottom.value = '';
-
-    new_textarea_top.required = true;
-    new_textarea_middle_top.required = true;
-    new_textarea_middle_bottom.required = true;
-    new_textarea_bottom.required = true;
-
-    new_textarea_top.rows = 5;
-    new_textarea_middle_top.rows = 5;
-    new_textarea_middle_bottom.rows = 5;
-    new_textarea_bottom.rows = 5;
-
-
-    area_container.appendChild(new_discuss_div);
-    area_container.appendChild(new_discuss_div_button);
-    new_discuss_div_button.appendChild(new_discuss_div_button_span2);
-    new_discuss_div.appendChild(new_top_div);
-    new_discuss_div.appendChild(new_middle_top_div);
-    new_discuss_div.appendChild(new_middle_bottom_div);
-    new_discuss_div.appendChild(new_bottom_div);
-    new_top_div.appendChild(new_lable_top);
-    new_top_div.appendChild(new_textarea_top);
-    new_middle_top_div.appendChild(new_lable_middle_top);
-    new_middle_top_div.appendChild(new_textarea_middle_top);
-    new_middle_bottom_div.appendChild(new_lable_middle_bottom);
-    new_middle_bottom_div.appendChild(new_textarea_middle_bottom);
-    new_bottom_div.appendChild(new_lable_bottom);
-    new_bottom_div.appendChild(new_textarea_bottom);
-
-
-    new_discuss_div_button.addEventListener("click", delete_area);
-    area_count += 1;
-
-
-}
-
-function delete_area() {
-    console.clear();
-
-    area_count -= 1;
-    var idOfButton = this.id;
-    var idOfArea = parseInt(idOfButton.substr(6, idOfButton.lenth));
-
-    var i = idOfArea;
-    for (i; i < area_count; i++) {
-        const this_discuss_div = document.getElementById(i);
-        const next_discuss_div = document.getElementById(i + 1);
-
-        const this_textarea_Top = document.getElementById(i + 'textareaTop');
-        const next_textarea_Top = document.getElementById((i + 1) + 'textareaTop');
-        this_textarea_Top.value = next_textarea_Top.value;
-
-        const this_textarea_middle_top = document.getElementById(i + 'textareaMiddleTop');
-        const next_textarea_middle_top = document.getElementById((i + 1) + 'textareaMiddleTop');
-        this_textarea_middle_top.value = next_textarea_middle_top.value;
-
-        const this_textarea_middle_bottom = document.getElementById(i + 'textareaMiddleBottom');
-        const next_textarea_middle_bottom = document.getElementById((i + 1) + 'textareaMiddleBottom');
-        this_textarea_middle_bottom.value = next_textarea_middle_bottom.value;
-
-        const this_textarea_bottom = document.getElementById(i + 'textareaBottom');
-        const next_textarea_bottom = document.getElementById((i + 1) + 'textareaBottom');
-        this_textarea_bottom.value = next_textarea_bottom.value;
-    }
-
-    last = document.getElementById(area_count);
-    area_container.removeChild(last);
-    last_btn = document.getElementById('button' + area_count);
-    last_textarea_top = document.getElementById(area_count + 'textareaTop');
-    last_textarea_middle_top = document.getElementById(area_count + 'textareaMiddleTop');
-    last_textarea_middle_bottom = document.getElementById(area_count + 'textareaMiddleBottom');
-    last_textarea_bottom = document.getElementById(area_count + 'textareaBottom');
-    area_container.removeChild(last_btn);
-    area_container.removeChild(last_textarea_top);
-    area_container.removeChild(last_textarea_middle_top);
-    area_container.removeChild(last_textarea_middle_bottom);
-    area_container.removeChild(last_textarea_bottom);
-    console.log(area_count);
-
-    print_all_txt();
-
-}
-
-
-function add_doc() {
-
-
-
-}
-
-/////////////// 附件 Start ////////////////////
-
-var file = document.getElementById("attachment1");
-var fileName = document.getElementById("file_name0");
-
-function handle_file() {
-    fileName.value = file.value;
-
-    $("#submit_file").removeAttr("disabled");
-
-}
-
-function add_item() {
-    var myitem = document.getElementById("file_name0").value;
-    var newP = document.createElement("li");
-    var textNode = document.createTextNode(myitem);
-
-    newP.id = "file_list_ol" + delete_file_index;
-    newP.appendChild(textNode);
-    document.getElementById("attachment_container").appendChild(newP);
-
-    $("#submit_file").attr("disabled", true);
-    $("#file_delete_btn").removeAttr("disabled");
-
-    delete_file_index += 1;
-    return false;
-}
-
-function file_delete1() {
-    console.clear();
-    delete_file_index -= 1;
-    file_list_ol = document.getElementById('file_list_ol' + delete_file_index);
-    $('#file_list_ol' + delete_file_index).remove();
-}
-
-/////////////// 附件 End ////////////////////
-document.getElementById("send_meeting_btn").style.left = "400px";
-document.getElementById("send_meeting_btn").style.bottom = "75px";

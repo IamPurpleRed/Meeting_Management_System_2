@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="stylesheet" href="src/css/edit_meeting_page.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- 插入 /components/navigation.php -->
@@ -33,11 +36,11 @@
           <span class="label">開會地點</span>
         </div>
         <div class="text_area">
-          <textarea class="input" id="chairman_speak" name="chairmanSpeak" rows="5" value="" required></textarea>
+          <textarea class="input" id="chairman_speak" name="chairmanSpeak" value="" required></textarea>
           <span class="label">主席致詞</span>
         </div>
         <div class="text_area">
-          <textarea class="input" id="meeting_content" name="meetingContent" rows="5" value="" required></textarea>
+          <textarea class="input" id="meeting_content" name="meetingContent" value="" required></textarea>
           <span class="label">報告內容</span>
         </div>
       </div>
@@ -51,116 +54,65 @@
             <tr>
               <th>帳號</th>
               <th>姓名</th>
-              <th>身分</th>
-              <th>檢視</th>
-              <th>修改</th>
-              <th>是否參與</th>
+              <th id="identity">身分</th>
+              <th id="view">檢視</th>
+              <th id="edit">編輯</th>
+              <th id="append">是否參與</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="members">
+            <!-- 非系統管理員之情況 START -->
             <tr>
-              <td>dannynfs</td>
+              <td>a1085511</td>
               <td>陳泓銘</td>
               <td>學生代表</td>
-              <td><input id="row1_view" name="row1View" type="checkbox"></td>
-              <td><input id="row1_edit" name="row1Edit" type="checkbox"></td>
+              <td><input id="view1" name="view1" type="checkbox"></td>
+              <td><input id="edit1" name="edit1" type="checkbox"></td>
               <td>
-                <input id="row1_yes" name="row1Choose" type="radio" value="1">
+                <input id="append1_yes" name="append1" type="radio" value="1">
                 <label>Yes</label>
-                <select id="row1_role" name="row1Role" disabled>
+                <select id="role1" name="role1" disabled>
                   <option value="" selected disabled hidden>請選擇參與身分</option>
-                  <option value="chair">會議主席</option>
-                  <option value="attendees">出席人員</option>
-                  <option value="bystander">旁觀人員</option>
+                  <option value="1">會議主席</option>
+                  <option value="2">書記</option>
+                  <option value="3">與會人員</option>
                 </select>
-                <input id="row1_no" name="row1Choose" type="radio" value="0">
+                &nbsp;&nbsp;&nbsp;
+                <input id="append1_no" name="append1" type="radio" value="0" checked>
                 <label>No</label>
               </td>
             </tr>
-            <tr class="active-row">
-              <td>PR</td>
-              <td>林子閎</td>
-              <td>業界專家</td>
-              <td><input id="row2_view" name="row2View" type="checkbox"></td>
-              <td><input id="row2_edit" name="row2Edit" type="checkbox"></td>
-              <td>
-                <input id="row2_yes" name="row2Choose" type="radio" value="1">
-                <label>Yes</label>
-                <select id="row2_role" name="row2Role" disabled>
-                  <option value="" selected disabled hidden>請選擇參與身分</option>
-                  <option value="chair">會議主席</option>
-                  <option value="attendees">出席人員</option>
-                  <option value="bystander">旁觀人員</option>
-                </select>
-                <input id="row2_no" name="row2Choose" type="radio" value="0">
-                <label>No</label>
-              </td>
-            </tr>
+            <!-- 非系統管理員之情況 END -->
+
+            <!-- 系統管理員之情況 START -->
             <tr>
-              <td>TA</td>
-              <td>塗峻翔</td>
-              <td>系上老師</td>
-              <td><input id="row3_view" name="row3View" type="checkbox"></td>
-              <td><input id="row3_edit" name="row3Edit" type="checkbox"></td>
+              <td>a1085511</td>
+              <td>陳泓銘</td>
+              <td>學生代表</td>
+              <td><input id="view1" name="view1" type="checkbox" checked disabled></td>
+              <td><input id="edit1" name="edit1" type="checkbox" checked disabled></td>
               <td>
-                <input id="row3_yes" name="row3Choose" type="radio" value="1">
+                <input id="append1_yes" name="append1" type="radio" value="1">
                 <label>Yes</label>
-                <select id="row3_role" name="row3Role" disabled>
+                <select id="role1" name="role1" disabled>
                   <option value="" selected disabled hidden>請選擇參與身分</option>
-                  <option value="chair">會議主席</option>
-                  <option value="attendees">出席人員</option>
-                  <option value="bystander">旁觀人員</option>
+                  <option value="1">會議主席</option>
+                  <option value="2">書記</option>
+                  <option value="3">與會人員</option>
                 </select>
-                <input id="row3_no" name="row3Choose" type="radio" value="0">
+                &nbsp;&nbsp;&nbsp;
+                <input id="append1_no" name="append1" type="radio" value="0" checked>
                 <label>No</label>
               </td>
             </tr>
-            <tr class="active-row">
-              <td>baganono</td>
-              <td>柯柏熏</td>
-              <td>校外老師</td>
-              <td><input id="row4_view" name="row4View" type="checkbox"></td>
-              <td><input id="row4_edit" name="row4Edit" type="checkbox"></td>
-              <td>
-                <input id="row4_yes" name="row4Choose" type="radio" value="1">
-                <label>Yes</label>
-                <select id="row4_role" name="row4Role" disabled>
-                  <option value="" selected disabled hidden>請選擇參與身分</option>
-                  <option value="chair">會議主席</option>
-                  <option value="attendees">出席人員</option>
-                  <option value="bystander">旁觀人員</option>
-                </select>
-                <input id="row4_no" name="row4Choose" type="radio" value="0">
-                <label>No</label>
-              </td>
-            </tr>
-            <tr>
-              <td>PN</td>
-              <td>傅沛雯</td>
-              <td>系助理</td>
-              <td><input id="row5_view" name="row5View" type="checkbox"></td>
-              <td><input id="row5_edit" name="row5Edit" type="checkbox"></td>
-              <td>
-                <input id="row5_yes" name="row5Choose" type="radio" value="1">
-                <label>Yes</label>
-                <select id="row5_role" name="row5Role" disabled>
-                  <option value="" selected disabled hidden>請選擇參與身分</option>
-                  <option value="chair">會議主席</option>
-                  <option value="attendees">出席人員</option>
-                  <option value="bystander">旁觀人員</option>
-                </select>
-                <input id="row5_no" name="row5Choose" type="radio" value="0">
-                <label>No</label>
-              </td>
-            </tr>
-            <!-- and so on... -->
+            <!-- 系統管理員之情況 END -->
           </tbody>
         </table>
       </div>
       <!-- 人員權限區域 END -->
 
       <!-- 討論事項區域 START -->
-      <div class="area_container" id="area_container">
+      <div class="area_container" id="discussion_container">
         <h3>討論事項</h3>
         <button class="btn" id="add_discussion_btn" type="button">
           <span class="material-icons">add</span>
@@ -173,27 +125,21 @@
       <!-- 附件區域 START -->
       <div class="area_container">
         <h3>附件</h3>
-        <input id="attachment1" name="attachment1" type="file" onchange="handle_file()">
-        <input type="submit" id="submit_file" onclick="add_item()" disabled>
-        <button class="file_delete_btn" id="file_delete_btn" type="button" onclick="file_delete1()" disabled>刪除</button>
-        <br>
-        <span>List: </span>
-        <input class=" file_name" name="fileName" id="file_name0" type="text" disabled="disable" value="" hidden>
-        <div id="attachment_list" class="form_item">
-          <ol id="attachment_container" type="1">
-          </ol>
-        </div>
+        <button class="btn" id="add_attachment_btn" type="button">
+          <span class="material-icons">add</span>
+          <span class="text">新增附件</span>
+        </button>
+        <ol id="file_area">
+        </ol>
       </div>
-
       <!-- 附件區域 END -->
 
       <div class="area_container">
         <button class="btn" id="send_meeting_btn" name="sendMeetingBtn" type="button">
-          <span class="material-icons">add</span>
-          <span class="text">送出資料</span>
+          <span class="material-icons">save</span>
+          <span class="text">儲存會議</span>
         </button>
       </div>
-
     </form>
   </div>
 
