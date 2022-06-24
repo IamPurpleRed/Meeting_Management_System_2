@@ -11,6 +11,20 @@
   .group {
     width: 100%;
 
+    .material-icons {
+      font-size: 40px;
+      cursor: pointer;
+
+      &.del {
+        transition: 0.5s;
+      }
+
+      &.del:hover {
+        color: #ee0979;
+        transition: 0.5s;
+      }
+    }
+
     .header {
       width: 100%;
       height: 45px;
@@ -22,10 +36,11 @@
       font-size: 22px;
       font-weight: bold;
 
-      .material-icons {
-        font-size: 40px;
-        cursor: pointer;
+      .icon_group {
+        display: flex;
+        align-items: center;
       }
+
     }
 
     .item {
@@ -52,6 +67,7 @@
       }
 
       .text_area {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;

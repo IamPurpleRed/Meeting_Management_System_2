@@ -110,7 +110,7 @@ if ($_SESSION['loginMember']['管理員'] == '管理員') {
             <span class="text">編輯資料</span>
         </button>
         <button class="btn" id="reset_pwd_btn" type="button">
-            <span class="material-icons">reset</span>
+            <span class="material-icons">refresh</span>
             <span class="text">重設密碼</span>
             <!-- 將會跳出 alert 視窗 -->
         </button>

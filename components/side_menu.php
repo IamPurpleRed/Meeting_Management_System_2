@@ -22,7 +22,10 @@
   <div class="group" id="std_group">
     <div class="header">
       <span class="title">學生代表 (<?php echo $count_students->fetchColumn(); ?>)</span>
-      <span class="material-icons toggle">keyboard_arrow_down</span>
+      <div class="icon_group">
+        <span class="material-icons" id="add_std">add</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
     </div>
     <div class="container">
       <?php
@@ -37,6 +40,7 @@
             echo '<span class="name">'.$result_theUser['姓名'].'</span>';
             echo '<span class="identity">學生代表</span>';
           echo '</div>';
+          echo '<span class="material-icons del">delete</span>';
         echo '</div>';
       }
       ?>
@@ -46,7 +50,10 @@
   <div class="group" id="assistant_group">
     <div class="header">
       <span class="title">系助理 (<?php echo $count_assistants->fetchColumn(); ?>)</span>
-      <span class="material-icons toggle">keyboard_arrow_down</span>
+      <div class="icon_group">
+        <span class="material-icons" id="add_assistant">add</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
     </div>
     <div class="container">
       <?php
@@ -61,6 +68,7 @@
             echo '<span class="name">'.$result_theUser['姓名'].'</span>';
             echo '<span class="identity">系助理</span>';
           echo '</div>';
+          echo '<span class="material-icons del">delete</span>';
         echo '</div>';
       }
       ?>
@@ -70,7 +78,10 @@
   <div class="group" id="school_teacher_group">
     <div class="header">
       <span class="title">系上老師 (<?php echo $count_ourTeachers->fetchColumn(); ?>)</span>
-      <span class="material-icons toggle">keyboard_arrow_down</span>
+      <div class="icon_group">
+        <span class="material-icons" id="add_school_teacher">add</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
     </div>
     <div class="container">
       <?php
@@ -85,6 +96,7 @@
             echo '<span class="name">'.$result_theUser['姓名'].'</span>';
             echo '<span class="identity">系上老師</span>';
           echo '</div>';
+          echo '<span class="material-icons del">delete</span>';
         echo '</div>';
       }
       ?>
@@ -94,7 +106,10 @@
   <div class="group" id="outside_teacher_group">
     <div class="header">
       <span class="title">校外老師 (<?php echo $count_otherTeachers->fetchColumn(); ?>)</span>
-      <span class="material-icons toggle">keyboard_arrow_down</span>
+      <div class="icon_group">
+        <span class="material-icons" id="add_outside_teacher">add</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
     </div>
     <div class="container">
       <?php
@@ -109,6 +124,7 @@
             echo '<span class="name">'.$result_theUser['姓名'].'</span>';
             echo '<span class="identity">校外老師</span>';
           echo '</div>';
+          echo '<span class="material-icons del">delete</span>';
         echo '</div>';
       }
       ?>
@@ -118,7 +134,10 @@
   <div class="group" id="expert_group">
     <div class="header">
       <span class="title">業界專家 (<?php echo $count_experts->fetchColumn(); ?>)</span>
-      <span class="material-icons toggle">keyboard_arrow_down</span>
+      <div class="icon_group">
+        <span class="material-icons" id="add_expert">add</span>
+        <span class="material-icons toggle">keyboard_arrow_down</span>
+      </div>
     </div>
     <div class="container">
       <?php
@@ -133,6 +152,7 @@
             echo '<span class="name">'.$result_theUser['姓名'].'</span>';
             echo '<span class="identity">業界專家</span>';
           echo '</div>';
+          echo '<span class="material-icons del">delete</span>';
         echo '</div>';
       }
       ?>

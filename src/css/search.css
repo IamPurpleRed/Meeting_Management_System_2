@@ -5,7 +5,6 @@
   position: relative;
   top: 20vh;
 }
-
 #search_area #search_input {
   width: 100%;
   height: 100%;
@@ -16,7 +15,6 @@
   border-radius: 10px;
   font-size: 22px;
 }
-
 #search_area .material-icons {
   padding: 5px;
   position: absolute;
@@ -33,28 +31,20 @@
   top: calc(20vh + 50px);
   border-radius: 10px;
   overflow-x: hidden;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .group_header {
   width: 100%;
   height: 45px;
   padding: 0 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #c8c8c8;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(200, 200, 200);
   font-size: 22px;
   font-weight: bold;
 }
-
 .group_header .material-icons {
   font-size: 40px;
   cursor: pointer;
@@ -64,29 +54,21 @@
 .meeting_item {
   height: 50px;
   padding: 0 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-color: transparent;
   color: #000;
   font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .user_item:hover,
 .meeting_item:hover {
-  background-color: #646464;
+  background-color: rgb(100, 100, 100);
   color: #fff;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .user_item .user_photo,
 .meeting_item .user_photo {
   width: 50px;
@@ -94,34 +76,28 @@
   margin-right: 15px;
   border-radius: 50%;
 }
-
 .user_item .user_name,
 .meeting_item .user_name {
   width: 20%;
 }
-
 .user_item .meeting_name,
 .user_item .user_email,
 .meeting_item .meeting_name,
 .meeting_item .user_email {
   width: 45%;
 }
-
 .user_item .user_identity,
 .meeting_item .user_identity {
   width: 20%;
 }
-
 .user_item .meeting_date,
 .meeting_item .meeting_date {
   width: 20%;
 }
-
 .user_item .meeting_time,
 .meeting_item .meeting_time {
   width: 20%;
 }
-
 .user_item .material-icons,
 .meeting_item .material-icons {
   margin-right: 15px;
