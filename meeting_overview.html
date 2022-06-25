@@ -14,35 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- nav START -->
-  <nav>
-    <div id="nav_start">
-      <a href="/mms.csie.nuk.edu.tw/homepage.php">
-        <img src="/mms.csie.nuk.edu.tw/src/images/logo-icon.png">
-        <h1>高大資工會議管理系統</h1>
-      </a>
-    </div>
-    <div id="nav_end">
-      <img id="user_photo" src="/mms.csie.nuk.edu.tw/<?php echo $_SESSION["loginMember"]["頭貼"] ?>">
-      <h2 id="user_name"><?php echo $_SESSION['loginMember']['姓名'] ?></h2>
-      <div class="menuToggle"></div>
-    </div>
-  </nav>
-  <ul id="nav_menu">
-    <li><a href="/mms.csie.nuk.edu.tw/profile.php">
-        <span class="material-icons">person_outline</span>
-        <span>My Profile</span>
-      </a></li>
-    <li><a href="#">
-        <span class="material-icons">notifications_active</span>
-        <span>Notification</span>
-      </a></li>
-    <li><a href="/mms.csie.nuk.edu.tw/login.php">
-        <span class="material-icons">logout</span>
-        <span>Log out</span>
-      </a></li>
-  </ul>
-  <!-- nav END -->
+  <!-- 插入nav -->
 
   <!-- 獨立成 components/meeting_side_menu.php -->
   <div id="meeting_side_menu">
@@ -143,6 +115,7 @@
         </div>
       </div>
       <!-- 一個討論事項 END -->
+
       <!-- 一個討論事項 START -->
       <div class="item">
         <div class="discussion_index">提案 2</div>
@@ -172,7 +145,7 @@
       </span>
     </div>
     <ol id="attachment_container">
-      <li><a href="src/attachments/核心基礎課程獎勵名單.docx">核心基礎課程獎勵名單.docx</a></li>
+      <li><a href="src/attachments/1/核心基礎課程獎勵名單.docx">核心基礎課程獎勵名單.docx</a></li>
     </ol>
     <!-- 有選取會議 END -->
     <div id="actions">
@@ -193,5 +166,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/js/nav.js"></script>
+  <script src="src/js/meeting_overview.js"></script>
 </body>
 </html>
