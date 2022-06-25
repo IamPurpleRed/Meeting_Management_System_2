@@ -1,4 +1,3 @@
-?>
 <?php session_start(); ?>
 <nav>
   <div id="nav_start">
