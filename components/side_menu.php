@@ -1,21 +1,22 @@
 <?php
-  include("src/php/sql_connect.inc.php");
-  $theSelectedUser = null;
+include("src/php/sql_connect.inc.php");
+$theSelectedUser = null;
 
-  $select_students = $sql_qry->query("SELECT * FROM `學生代表`");
-  $count_students = $sql_qry->query("SELECT count(*) FROM `學生代表`");
+$select_students = $sql_qry->query("SELECT * FROM `學生代表`");
+$count_students = $sql_qry->query("SELECT count(*) FROM `學生代表`");
 
-  $select_assistants = $sql_qry->query("SELECT * FROM `系助理`");
-  $count_assistants = $sql_qry->query("SELECT count(*) FROM `系助理`");
+$select_assistants = $sql_qry->query("SELECT * FROM `系助理`");
+$count_assistants = $sql_qry->query("SELECT count(*) FROM `系助理`");
 
-  $select_ourTeachers = $sql_qry->query("SELECT * FROM `系上老師`");
-  $count_ourTeachers = $sql_qry->query("SELECT count(*) FROM `系上老師`");
+$select_ourTeachers = $sql_qry->query("SELECT * FROM `系上老師`");
+$count_ourTeachers = $sql_qry->query("SELECT count(*) FROM `系上老師`");
 
-  $select_otherTeachers = $sql_qry->query("SELECT * FROM `校外老師`");
-  $count_otherTeachers = $sql_qry->query("SELECT count(*) FROM `校外老師`");
+$select_otherTeachers = $sql_qry->query("SELECT * FROM `校外老師`");
+$count_otherTeachers = $sql_qry->query("SELECT count(*) FROM `校外老師`");
 
-  $select_experts = $sql_qry->query("SELECT * FROM `業界專家`");
-  $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
+$select_experts = $sql_qry->query("SELECT * FROM `業界專家`");
+$count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
+
 ?>
 
 <div id="side_menu">
@@ -29,18 +30,17 @@
     </div>
     <div class="container">
       <?php
-      while ($result_students = $select_students->fetch(PDO::FETCH_ASSOC))
-      {
+      while ($result_students = $select_students->fetch(PDO::FETCH_ASSOC)) {
         $userID = $result_students['使用者編號'];
         $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
         $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
-        echo '<div class="item" onclick="makeActive(this)" id="'.$userID.'">';
-          echo '<img src="'.$result_theUser['頭貼'].'">';
-          echo '<div class="text_area">';
-            echo '<span class="name">'.$result_theUser['姓名'].'</span>';
-            echo '<span class="identity">學生代表</span>';
-          echo '</div>';
-          echo '<span class="material-icons del">delete</span>';
+        echo '<div class="item" onclick="makeActive(this)" id="' . $userID . '">';
+        echo '<img src="' . $result_theUser['頭貼'] . '">';
+        echo '<div class="text_area">';
+        echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
+        echo '<span class="identity">學生代表</span>';
+        echo '</div>';
+        echo '<span class="material-icons del" id="del_std">delete</span>';
         echo '</div>';
       }
       ?>
@@ -57,18 +57,17 @@
     </div>
     <div class="container">
       <?php
-      while ($result_assistants = $select_assistants->fetch(PDO::FETCH_ASSOC))
-      {
+      while ($result_assistants = $select_assistants->fetch(PDO::FETCH_ASSOC)) {
         $userID = $result_assistants['使用者編號'];
         $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
         $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
-        echo '<div class="item" onclick="makeActive(this)" id="'.$userID.'">';
-          echo '<img src="'.$result_theUser['頭貼'].'">';
-          echo '<div class="text_area">';
-            echo '<span class="name">'.$result_theUser['姓名'].'</span>';
-            echo '<span class="identity">系助理</span>';
-          echo '</div>';
-          echo '<span class="material-icons del">delete</span>';
+        echo '<div class="item" onclick="makeActive(this)" id="' . $userID . '">';
+        echo '<img src="' . $result_theUser['頭貼'] . '">';
+        echo '<div class="text_area">';
+        echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
+        echo '<span class="identity">系助理</span>';
+        echo '</div>';
+        echo '<span class="material-icons del" id="del_assistant">delete</span>';
         echo '</div>';
       }
       ?>
@@ -85,18 +84,17 @@
     </div>
     <div class="container">
       <?php
-      while ($result_ourTeachers = $select_ourTeachers->fetch(PDO::FETCH_ASSOC))
-      {
+      while ($result_ourTeachers = $select_ourTeachers->fetch(PDO::FETCH_ASSOC)) {
         $userID = $result_ourTeachers['使用者編號'];
         $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
         $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
-        echo '<div class="item" onclick="makeActive(this)" id="'.$userID.'">';
-          echo '<img src="'.$result_theUser['頭貼'].'">';
-          echo '<div class="text_area">';
-            echo '<span class="name">'.$result_theUser['姓名'].'</span>';
-            echo '<span class="identity">系上老師</span>';
-          echo '</div>';
-          echo '<span class="material-icons del">delete</span>';
+        echo '<div class="item" onclick="makeActive(this)" id="' . $userID . '">';
+        echo '<img src="' . $result_theUser['頭貼'] . '">';
+        echo '<div class="text_area">';
+        echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
+        echo '<span class="identity">系上老師</span>';
+        echo '</div>';
+        echo '<span class="material-icons del" id="del_school_teacher">delete</span>';
         echo '</div>';
       }
       ?>
@@ -113,18 +111,17 @@
     </div>
     <div class="container">
       <?php
-      while ($result_otherTeachers = $select_otherTeachers->fetch(PDO::FETCH_ASSOC))
-      {
+      while ($result_otherTeachers = $select_otherTeachers->fetch(PDO::FETCH_ASSOC)) {
         $userID = $result_otherTeachers['使用者編號'];
         $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
         $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
-        echo '<div class="item" onclick="makeActive(this)" id="'.$userID.'">';
-          echo '<img src="'.$result_theUser['頭貼'].'">';
-          echo '<div class="text_area">';
-            echo '<span class="name">'.$result_theUser['姓名'].'</span>';
-            echo '<span class="identity">校外老師</span>';
-          echo '</div>';
-          echo '<span class="material-icons del">delete</span>';
+        echo '<div class="item" onclick="makeActive(this)" id="' . $userID . '">';
+        echo '<img src="' . $result_theUser['頭貼'] . '">';
+        echo '<div class="text_area">';
+        echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
+        echo '<span class="identity">校外老師</span>';
+        echo '</div>';
+        echo '<span class="material-icons del" id="del_outside_teacher">delete</span>';
         echo '</div>';
       }
       ?>
@@ -141,21 +138,33 @@
     </div>
     <div class="container">
       <?php
-      while ($result_experts = $select_experts->fetch(PDO::FETCH_ASSOC))
-      {
+      while ($result_experts = $select_experts->fetch(PDO::FETCH_ASSOC)) {
         $userID = $result_experts['使用者編號'];
         $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
         $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
-        echo '<div class="item" onclick="makeActive(this)" id="'.$userID.'">';
-          echo '<img src="'.$result_theUser['頭貼'].'">';
-          echo '<div class="text_area">';
-            echo '<span class="name">'.$result_theUser['姓名'].'</span>';
-            echo '<span class="identity">業界專家</span>';
-          echo '</div>';
-          echo '<span class="material-icons del">delete</span>';
+        echo '<div class="item" onclick="makeActive(this)" id="' . $userID . '">';
+        echo '<img src="' . $result_theUser['頭貼'] . '">';
+        echo '<div class="text_area">';
+        echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
+        echo '<span class="identity">業界專家</span>';
+        echo '</div>';
+        echo '<span class="material-icons del" id="del_expert">delete</span>';
         echo '</div>';
       }
       ?>
     </div>
   </div>
+
+  <?php
+  // 若使用者非管理員，則隱藏新增與刪除按鈕
+  session_start();
+  if ($_SESSION['loginMember']['管理員'] != '管理員') {
+    echo '<script  language=javascript>';
+    echo 'var temp_index=["std","assistant","school_teacher","outside_teacher","expert"];';
+    echo 'for (var i = 0; i < temp_index.length; i++) {';
+    echo 'document.getElementById("add_" + temp_index[i]).style.display = "none";';
+    echo 'document.getElementById("del_" + temp_index[i]).style.display = "none";}';
+    echo '</script>';
+  }
+  ?>
 </div>

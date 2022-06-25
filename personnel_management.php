@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <?php
   include("components/navigation.php");
@@ -29,4 +31,5 @@
   <script src="src/js/side_menu.js"></script>
   <script src="src/js/personnel_management.js"></script>
 </body>
+
 </html>
