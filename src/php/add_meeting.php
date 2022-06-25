@@ -1,5 +1,6 @@
 <?php
 require_once("sql_connect.inc.php");
+session_start();
 $meeting_id = $_GET["meeting_id"];
 //會議基本資料輸入
 $title = $_POST["title"];
@@ -20,20 +21,31 @@ while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
 }
 foreach ($user_id as $id) {
   $member[$id] = $_POST["append$id"];
+  $select = $sql_qry->query("SELECT `身分` FROM `使用者` WHERE `使用者編號`=$id ;");
+  $result = $select->fetch(PDO::FETCH_ASSOC);
   if ($member[$id] == 1) {
     $role = $_POST["role$id"];
-    if (isset($_POST["view$id"]))
-      $view = $_POST["view$id"];
-    else
-      $view = 0;
-    if (isset($_POST["edit$id"]))
-      $edit = $_POST["edit$id"];
-    else
-      $edit = 0;
-
-    $op = $sql_qry->query("INSERT INTO `參與`(`會議編號`,`使用者編號`,`角色`,`閱讀權限`,`編輯權限`) values('$meeting_id','$id','$role','$view','$edit');");
+  } else {
+    $role = 0;
   }
+  if ($result["身分"] == "系助理") {
+    $view = 1;
+    $edit = 1;
+  } else {
+    if (isset($_POST["edit$id"])) {
+      $edit = $_POST["edit$id"];
+      $view = 1;
+    } else {
+      $edit = 0;
+      if (isset($_POST["view$id"]))
+        $view = $_POST["view$id"];
+      else
+        $view = 0;
+    }
+  }
+  $op = $sql_qry->query("INSERT INTO `參與`(`會議編號`,`使用者編號`,`角色`,`閱讀權限`,`編輯權限`) values('$meeting_id','$id','$role','$view','$edit');");
 }
+
 //參與人員輸入結束
 
 
@@ -51,5 +63,6 @@ for ($i = 1; $i < 11; $i++) {
     $op = $sql_qry->query("INSERT INTO `討論事項`(`會議編號`,`案由`,`說明`,`決議事項`,`執行情況`) values('$meeting_id','$disTitle','$disContent','$disResolution','$disImplementation');");
   }
 }
+echo $_SESSION["dis_num"];
 //討論事項輸入結束
 header("Location:../../edit_meeting.php");

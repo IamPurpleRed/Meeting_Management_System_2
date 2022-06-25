@@ -21,6 +21,7 @@
   include("src/php/sql_connect.inc.php");
   ?>
   <?php
+  $_SESSION["dis_num"] = 0;
   $select = $sql_qry->query("SELECT `會議編號` FROM `會議` ORDER BY `會議編號` DESC LIMIT 1 ;");
   $result = $select->fetch(PDO::FETCH_ASSOC);
   if ($result == NULL)
@@ -29,14 +30,13 @@
     $meeting_id = $result["會議編號"] + 1;
 
   $select = $sql_qry->query("SELECT * FROM `使用者` ;");
-  $dis_num = 0;
   ?>
   <h2 id="page_title">新增會議</h2><!-- 新增會議 or 編輯會議 -->
   <hr id="page_hr">
   <div id="main_container">
     <div id="number">會議編號:<?php echo $meeting_id ?> </div>
     <div id="creator">建立者: <?php echo $_SESSION["loginMember"]["姓名"] ?></div><!-- 只有管理員能建立會議 -->
-    <form action="src/php/add_meeting.php?meeting_id=<?php echo $meeting_id ?>&?dis_num=<?php echo $dis_num ?>" method="post" enctype="multipart/form-data">
+    <form action="src/php/add_meeting.php?meeting_id=<?php echo $meeting_id ?>" method="post" enctype="multipart/form-data">
       <!-- 基本資料區域 START -->
       <div class="area_container">
         <h3>基本資料</h3>
@@ -115,8 +115,8 @@
                   <td><?php echo $result["帳號"] ?></td>
                   <td><?php echo $result["姓名"] ?></td>
                   <td><?php echo $result["身分"] ?></td>
-                  <td><input id="view<?php echo $member_unm ?>" name="view<?php echo $member_unm ?>" type="checkbox" value="1" checked></td>
-                  <td><input id="edit<?php echo $member_unm ?>" name="edit<?php echo $member_unm ?>" type="checkbox" value="1" checked></td>
+                  <td><input id="view<?php echo $member_unm ?>" name="view<?php echo $member_unm ?>" type="checkbox" value="1" checked disabled></td>
+                  <td><input id="edit<?php echo $member_unm ?>" name="edit<?php echo $member_unm ?>" type="checkbox" value="1" checked disabled></td>
                   <td>
                     <input id="append<?php echo $member_unm ?>_yes" name="append<?php echo $member_unm ?>" type="radio" value="1">
                     <label>Yes</label>
