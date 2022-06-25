@@ -1,6 +1,7 @@
 create database `meeting-system`;
 USE `meeting-system`;
 
+
 CREATE TABLE `使用者`(
 	`使用者編號` int primary key auto_increment,
     `姓名` VARCHAR(20),
@@ -81,7 +82,8 @@ create table `附件`(
     附件編號 int primary key auto_increment,
     會議編號 int,
     foreign key (`會議編號`) references `會議`(`會議編號`) on delete cascade,
-    附件檔案 varchar(500)
+    附件檔案 varchar(500),
+    附件名稱 varchar(500)
 )DEFAULT CHARSET=utf8;
 
 create table `參與`(
@@ -109,4 +111,6 @@ insert into `學生代表` values(3,'A1081259','大學部','資工112');
 insert into `系上老師`values(4,'教授','0912345678');
 insert into `校外老師`values(5,'台大','資工所','教授','0911111111','高雄市楠梓區那條路2號','0123456789');
 
-select * from `使用者`;
+ --  drop database `meeting-system`;
+ --  select * from `討論事項`;
+-- delete from `會議` where `會議名稱` ='123';

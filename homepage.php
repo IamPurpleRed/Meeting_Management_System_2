@@ -17,7 +17,6 @@
 <body>
   <?php
   include("components/navigation.php");
-  session_start();
   include("src/php/sql_connect.inc.php");
   $userID = $_SESSION['loginMember']['使用者編號'];
 

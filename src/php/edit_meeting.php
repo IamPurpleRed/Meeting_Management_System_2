@@ -8,7 +8,7 @@ $date = $_POST["date"];
 $place = $_POST["place"];
 $chairman_speak = $_POST["chairmanSpeak"];
 $meeting_content = $_POST["meetingContent"];
-$op = $sql_qry->query("INSERT INTO `會議`(`會議名稱`,`開會地點`,`開會時間`,`主席致詞`,`報告內容`) values('$title','$place','$date','$chairman_speak','$meeting_content');");
+$op = $sql_qry->query("UPDATE `會議` SET `會議名稱`='$title',`開會地點`='$place', `開會時間`='$date',`主席致詞`='$chairman_speak',`報告內容`='$meeting_content' WHERE `會議編號`=$meeting_id");
 //會議基本資料輸入結束
 
 
@@ -43,13 +43,29 @@ foreach ($user_id as $id) {
         $view = 0;
     }
   }
-  $op = $sql_qry->query("INSERT INTO `參與`(`會議編號`,`使用者編號`,`角色`,`閱讀權限`,`編輯權限`) values('$meeting_id','$id','$role','$view','$edit');");
+  $op = $sql_qry->query("UPDATE`參與` SET `角色`='$role',`閱讀權限`='$view' , `編輯權限`='$edit' WHERE `會議編號`=$meeting_id AND `使用者編號`=$id");
 }
 
 //參與人員輸入結束
 
 
 //討論事項輸入
+$select = $sql_qry->query("SELECT * FROM `討論事項` WHERE `會議編號`=$meeting_id ;");
+while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+  $a = "discussionTitle" . $result["討論事項編號"];
+  $b = "discussionContent" . $result["討論事項編號"];
+  $c = "discussionResolution" . $result["討論事項編號"];
+  $d = "discussionImplementation" . $result["討論事項編號"];
+  $dis_id = $result["討論事項編號"];
+  if (isset($_POST[$a])) {
+    $disTitle = $_POST[$a];
+    $disContent = $_POST[$b];
+    $disResolution = $_POST[$c];
+    $disImplementation = $_POST[$d];
+    $op = $sql_qry->query("UPDATE `討論事項` SET `案由`='$disTitle',`說明`='$disContent',`決議事項`='$disResolution',`執行情況`='$disImplementation' WHERE `會議編號`='$meeting_id' AND `討論事項編號`='$dis_id' ;");
+  }
+}
+
 for ($i = 1; $i < 21; $i++) {
   $a = "discussion" . $i . "Title";
   $b = "discussion" . $i . "Content";
@@ -71,6 +87,11 @@ if (!file_exists($file_path)) {
 }
 
 //附件輸入
+// $select = $sql_qry->query("SELECT * FROM `附件` WHERE `會議編號`=$meeting_id ;");
+// while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
+//   $fname = $result["附件名稱"];
+//   if()
+// }
 for ($i = 1; $i < 21; $i++) {
   if (isset($_FILES["attachment$i"])) {
     if ($_FILES["attachment$i"]['error'] === UPLOAD_ERR_OK) {
@@ -91,4 +112,4 @@ for ($i = 1; $i < 21; $i++) {
   }
 }
 //附件輸入結束
-header("Location:../../edit_meeting.php");
+header("Location:../../meeting_overview.php");
