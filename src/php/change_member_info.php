@@ -63,10 +63,11 @@ if ($old_password == $result["密碼"]) {
         //mysqli_query($sql,$qry);
         $op = $sql_qry->query($qry);
     }
+    echo "<script> alert('修改成功！')</script>";
     if ($page == 1) {
-        header("Location:/mms.csie.nuk.edu.tw/profile.php");
+        echo '<script>window.location.href="../../profile.php";</script>';
     } elseif ($page == 0) {
-        header("Location:/mms.csie.nuk.edu.tw/personnel_management.php");
+        echo '<script>window.location.href="../../personnel_management.php";</script>';
     }
 } ?>
 <?php
