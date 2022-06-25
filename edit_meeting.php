@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新增會議 | 高大資工會議管理系統</title><!-- 新增會議 or 編輯會議 -->
   <link rel="stylesheet" href="src/css/style.css">
-  <link rel="stylesheet" href="src/css/edit_meeting_page.css">
+  <link rel="stylesheet" href="src/css/edit_meeting.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

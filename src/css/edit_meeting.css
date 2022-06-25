@@ -1,19 +1,23 @@
 #main_container {
   margin: 0 10vw 100px;
 }
+
 #main_container #number,
 #main_container #creator {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
 }
+
 #main_container .area_container {
   margin-bottom: 80px;
 }
+
 #main_container .area_container h3 {
   font-size: 30px;
   margin-top: 40px;
 }
+
 #main_container .area_container .input_area {
   width: 60vw;
   min-width: 600px;
@@ -22,6 +26,7 @@
   position: relative;
   font-size: 16px;
 }
+
 #main_container .area_container .text_area {
   width: 60vw;
   min-width: 600px;
@@ -30,9 +35,11 @@
   position: relative;
   font-size: 16px;
 }
+
 #main_container .area_container .text_area .input {
   height: 150px;
 }
+
 #main_container .area_container .input {
   width: 100%;
   padding: 5px;
@@ -44,16 +51,24 @@
   color: #555;
   font-size: 18px;
 }
+
 #main_container .area_container .input:disabled {
   background-color: #eee;
 }
+
 #main_container .area_container .input:invalid {
   border: 2px solid #ee0979;
 }
-#main_container .area_container .input:focus ~ .label, #main_container .area_container .input:valid ~ .label, #main_container .area_container .input:disabled ~ .label {
+
+#main_container .area_container .input:focus ~ .label,
+#main_container .area_container .input:valid ~ .label,
+#main_container .area_container .input:disabled ~ .label {
+  -webkit-transition: 0.5s;
   transition: 0.5s;
-  transform: translateX(-5px) translateY(-30px);
+  -webkit-transform: translateX(-5px) translateY(-30px);
+          transform: translateX(-5px) translateY(-30px);
 }
+
 #main_container .area_container .label {
   z-index: 1;
   position: absolute;
@@ -62,45 +77,56 @@
   left: 1px;
   padding: 5px;
   color: #555;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 18px;
   font-weight: bold;
 }
+
 #main_container .area_container table {
   width: 60vw;
   min-width: 600px;
   max-width: 900px;
   margin-top: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
+
 #main_container .area_container table th,
 #main_container .area_container table td {
   padding: 10px 0;
 }
+
 #main_container .area_container table thead tr {
   background-color: #4183ec;
   color: #ffffff;
   font-size: 22px;
   font-weight: bold;
 }
+
 #main_container .area_container table thead #identity {
   width: 100px;
 }
+
 #main_container .area_container table thead #view,
 #main_container .area_container table thead #edit {
   width: 70px;
 }
+
 #main_container .area_container table thead #append {
   width: 250px;
 }
+
 #main_container .area_container table tbody tr {
   border-bottom: 1px solid #dddddd;
   font-size: 18px;
 }
+
 #main_container .area_container table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
+
 #main_container .area_container .discussion_item {
   width: 60vw;
   min-width: 600px;
@@ -111,14 +137,21 @@
   border-radius: 15px;
   background-color: #f3f3f3;
 }
+
 #main_container .area_container .discussion_item .text_area {
   width: 100%;
   min-width: 0;
 }
+
 #main_container .area_container #file_area li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #main_container .area_container #file_area li input {
   font-size: 18px;
 }

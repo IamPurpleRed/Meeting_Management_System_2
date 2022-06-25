@@ -1,68 +1,108 @@
 #side_menu {
   width: 30vw;
   height: calc(100vh - 60px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 60px;
   left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
 #side_menu .group {
   width: 100%;
 }
+
 #side_menu .group .material-icons {
   font-size: 40px;
   cursor: pointer;
 }
+
 #side_menu .group .material-icons.del {
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+
 #side_menu .group .material-icons.del:hover {
   color: #ee0979;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+
 #side_menu .group .header {
   width: 100%;
   height: 45px;
   padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(200, 200, 200);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #c8c8c8;
   font-size: 22px;
   font-weight: bold;
 }
+
 #side_menu .group .header .icon_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #side_menu .group .item {
   width: 100%;
   height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0 20px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
 }
+
 #side_menu .group .item:hover {
   background-color: #0690fd;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+
 #side_menu .group .item.active {
   background-color: #0690fd;
 }
+
 #side_menu .group .item img {
   height: 80%;
   margin-right: 20px;
 }
+
 #side_menu .group .item .text_area {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 #side_menu .group .item .text_area .name {
   font-size: 26px;
   font-weight: bold;
