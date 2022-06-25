@@ -50,7 +50,7 @@ foreach ($user_id as $id) {
 
 
 //討論事項輸入
-for ($i = 1; $i < 11; $i++) {
+for ($i = 1; $i < 21; $i++) {
   $a = "discussion" . $i . "Title";
   $b = "discussion" . $i . "Content";
   $c = "discussion" . $i . "Resolution";
@@ -63,6 +63,31 @@ for ($i = 1; $i < 11; $i++) {
     $op = $sql_qry->query("INSERT INTO `討論事項`(`會議編號`,`案由`,`說明`,`決議事項`,`執行情況`) values('$meeting_id','$disTitle','$disContent','$disResolution','$disImplementation');");
   }
 }
-echo $_SESSION["dis_num"];
+
 //討論事項輸入結束
+$file_path = $_SERVER['DOCUMENT_ROOT'] . '/mms.csie.nuk.edu.tw/src/attachment/' . $meeting_id;
+if (!file_exists($file_path)) {
+  mkdir($file_path);
+}
+
+//附件輸入
+for ($i = 1; $i < 21; $i++) {
+  if (isset($_FILES["attachment$i"])) {
+    if ($_FILES["attachment$i"]['error'] === UPLOAD_ERR_OK) {
+      if (file_exists('upload/' . $_FILES["attachment$i"]['name'])) {
+        echo '檔案已存在。<br/>';
+      } else {
+        $file = $_FILES["attachment$i"]['tmp_name'];
+        $dest = $_SERVER['DOCUMENT_ROOT'] . '/mms.csie.nuk.edu.tw/src/attachment/' . $meeting_id . '/' . $_FILES["attachment$i"]['name'];
+
+        # 將檔案移至指定位置
+        move_uploaded_file($file, $dest);
+
+        $op = $sql_qry->query("INSERT INTO `附件`(`會議編號`,`附件檔案`) values('$meeting_id','$dest');");
+      }
+    } else {
+    }
+  }
+}
+//附件輸入結束
 header("Location:../../edit_meeting.php");
