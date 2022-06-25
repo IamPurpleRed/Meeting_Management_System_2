@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>會議總覽 | 高大資工會議管理系統</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/meeting_side_menu.css">
+  <link rel="stylesheet" href="src/css/meeting_overview.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 插入nav -->
+
+  <!-- 獨立成 components/meeting_side_menu.php -->
+  <div id="meeting_side_menu">
+    <!-- 一個會議 START -->
+    <!-- 被選中時，item 要添加 active 這個 class，可參考 personnel_overview.js -->
+    <div class="item">
+      <span class="name">國立高雄大學109學年度第二學期第一次系務會議議程</span>
+      <span class="datetime">2021/02/26 12:10</span><!-- 若只有個位數均要補0，時間為24小時制 -->
+    </div>
+    <!-- 一個會議 END -->
+  </div>
+  <!-- END -->
+
+  <!-- 獨立成 components/meeting_content.php -->
+  <div id="content">
+    <!-- 沒有已選取的會議 START -->
+    <!-- <div id="no_active_meeting">
+      <h3>請至左側選單點選項目以顯示會議內容</h3>
+    </div> -->
+    <!-- 沒有已選取的會議 END -->
+
+    <!-- 有選取會議 START -->
+    <h2>國立高雄大學109學年度第二學期第一次系務會議議程</h2>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">schedule</span>
+        <span>時&emsp;&emsp;間：</span>
+      </span>
+      <span>2021/02/26 12:10</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">place</span>
+        <span>地&emsp;&emsp;點：</span>
+      </span>
+      <span>本校工學院3樓資工系會議室313室</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">event_seat</span>
+        <span>主&emsp;&emsp;席：</span>
+      </span>
+      <span>張保榮(系上老師)</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class=" material-icons">edit</span>
+        <span>書&emsp;&emsp;記：</span>
+      </span>
+      <span>陳淑真(系助理)</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">groups</span>
+        <span>與會人員：</span>
+      </span>
+      <span>林文揚(系上老師)、洪宗貝(系上老師)、陳建源(系上老師)、吳俊興(系上老師)、郭錦福(系上老師)、潘欣泰(系上老師)、殷堂凱(系上老師)、余亞儒(系上老師)、黃健峯(系上老師)、蘇家輝(系上老師)</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">chat</span>
+        <span>主席致詞：</span>
+      </span>
+      <span>略</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">description</span>
+        <span>報告內容：</span>
+      </span>
+      <span>1.工學院團拜時間為110年2月26日(五)上午11：30-12：00，工學中庭(SDG corner,電機系辦和資工系辦中間)</span>
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">fact_check</span>
+        <span>討論事項：</span>
+      </span>
+    </div>
+    <div id="discussion_container">
+      <!-- 一個討論事項 START -->
+      <div class="item">
+        <div class="discussion_index">提案 1</div>
+        <div class="wrap">
+          <span class="subtitle">案&emsp;&emsp;由：</span>
+          <span>有關「110費規劃」概算，提請討論。</span>
+        </div>
+        <div class="wrap">
+          <span class="subtitle">說&emsp;&emsp;明：</span>
+          <span>本系業務費分配xxx元，設備費分配xxx元。</span>
+        </div>
+        <div class="wrap">
+          <span class="subtitle">決議事項：</span>
+          <span>無</span>
+        </div>
+        <div class="wrap">
+          <span class="subtitle">執行情況：</span>
+          <span>無</span>
+        </div>
+      </div>
+      <!-- 一個討論事項 END -->
+
+      <!-- 一個討論事項 START -->
+      <div class="item">
+        <div class="discussion_index">提案 2</div>
+        <div class="wrap">
+          <span class="subtitle">案&emsp;&emsp;由：</span>
+          <span>109學年度第一學期修讀核心基礎課程獎勵名單，提請討論。</span>
+        </div>
+        <div class="wrap">
+          <span class="subtitle">說&emsp;&emsp;明：</span>
+          <span>每名得獎人頒給獎狀乙紙（期末由任課老師頒發）及獎學金1仟元整。該學期操行成績八十分以上，且修讀本系核心基礎課程成績為該班前三名者，同分參酌順序由任課老師決定之。</span>
+        </div>
+        <div class="wrap">
+          <span class="subtitle">決議事項：</span>
+          <span>無</span>
+        </div>
+        <div class="wrap">
+          <span class="subtitle">執行情況：</span>
+          <span>無</span>
+        </div>
+      </div>
+      <!-- 一個討論事項 END -->
+    </div>
+    <div class="attribute">
+      <span class="prefix">
+        <span class="material-icons">attachment</span>
+        <span class="subtitle">附&emsp;&emsp;件：</span>
+      </span>
+    </div>
+    <ol id="attachment_container">
+      <li><a href="src/attachments/1/核心基礎課程獎勵名單.docx">核心基礎課程獎勵名單.docx</a></li>
+    </ol>
+    <!-- 有選取會議 END -->
+    <div id="actions">
+      <!-- 擁有編輯權限才看的到編輯按鈕 -->
+      <button class="btn" id="edit_btn" type="button">
+        <span class="material-icons">edit</span>
+        <span class="text">編輯</span>
+      </button>
+
+      <!-- 系統管理員才看的到刪除按鈕 -->
+      <button class="btn del" id="del_btn" type="button">
+        <span class="material-icons">delete</span>
+        <span class="text">刪除</span>
+      </button>
+    </div>
+  </div>
+  <!-- END -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="src/js/nav.js"></script>
+  <script src="src/js/meeting_overview.js"></script>
+</body>
+</html>
