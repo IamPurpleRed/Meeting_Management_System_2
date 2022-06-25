@@ -1,0 +1,38 @@
+#meeting_side_menu {
+  width: 30vw;
+  height: calc(100vh - 60px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .item {
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #0690fd;
+      transition: 0.5s;
+    }
+
+    &.active {
+      background-color: #0690fd;
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow-x: hidden;
+    }
+  }
+}

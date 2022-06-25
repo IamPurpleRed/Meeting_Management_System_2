@@ -1,0 +1,85 @@
+#content {
+  width: 70vw;
+  height: calc(100vh - 60px);
+  padding: 0 3%;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  font-size: 20px;
+  overflow-y: scroll;
+
+  #no_active_meeting {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(100, 100, 100);
+  }
+
+  .material-icons {
+    margin-right: 15px;
+  }
+
+  h2 {
+    margin: 50px 0;
+    text-align: center;
+  }
+
+  .attribute {
+    margin: 15px 0;
+    display: flex;
+    align-items: start;
+
+    .prefix {
+      flex-shrink: 0;
+      align-content: start;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  #discussion_container {
+    margin-left: 40px;
+
+    .item {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 15px;
+      background-color: #f3f3f3;
+
+      .discussion_index {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .wrap {
+        display: flex;
+        align-items: start;
+
+        .subtitle {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  #attachment_container {
+    margin-left: 60px;
+    margin-bottom: 50px;
+  }
+
+  #actions {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 0 20px;
+    }
+  }
+}
+
+#actions {
+  margin-top: 20px;
+}
