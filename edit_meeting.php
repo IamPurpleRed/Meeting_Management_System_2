@@ -85,8 +85,8 @@
             while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
               $member_unm = $result["使用者編號"];
             ?>
-              <?php if ($result["身分"] != "系助理") : ?>
-                <tr>
+              <?php if ($result["管理員"] != "管理員") : ?>
+                <tr id="user<?php echo $member_unm; ?>">
                   <td><?php echo $result["帳號"] ?></td>
                   <td><?php echo $result["姓名"] ?></td>
                   <td><?php echo $result["身分"] ?></td>
@@ -110,8 +110,8 @@
               <!-- 非系統管理員之情況 END -->
 
               <!-- 系統管理員之情況 START -->
-              <?php if ($result["身分"] == "系助理") : ?>
-                <tr>
+              <?php if ($result["管理員"] == "管理員") : ?>
+                <tr id="user<?php echo $member_unm; ?>">
                   <td><?php echo $result["帳號"] ?></td>
                   <td><?php echo $result["姓名"] ?></td>
                   <td><?php echo $result["身分"] ?></td>

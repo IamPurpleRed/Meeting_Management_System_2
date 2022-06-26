@@ -163,7 +163,7 @@ $select_attach = $sql_qry->query("SELECT * FROM `附件` WHERE `會議編號` = 
     </a>
   <?php endif; ?>
   <!-- 系統管理員才看的到刪除按鈕 -->
-  <?php if ($_SESSION["loginMember"]["身分"] == "系助理") : ?>
+  <?php if ($_SESSION["loginMember"]["管理員"] == "管理員") : ?>
     <button class="btn del" id="del_btn" type="button">
       <span class="material-icons">delete</span>
       <span class="text">刪除</span>

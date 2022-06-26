@@ -4,16 +4,18 @@ let attachmentCounter = 0;
 $(document).ready(() => {
     setInterval(hideBtnText, 100);
 
-    for (let i = 0; i < $('#members > tr').length; i++) {
-        $(`#edit${i + 1}`).click(() => {
-            checkEditLogic(i + 1);
+    for (let i = 1; i <= $('#members > tr').length; i++) {
+        let no = $(`#members > tr:nth-child(${i})`).attr('id').substring(4);
+
+        $(`#edit${no}`).click(() => {
+            checkEditLogic(no);
         });
 
-        $(`#append${i + 1}_yes`).click(() => {
-            checkAppendLogic(i + 1);
+        $(`#append${no}_yes`).click(() => {
+            checkAppendLogic(no);
         });
-        $(`#append${i + 1}_no`).click(() => {
-            checkAppendLogic(i + 1);
+        $(`#append${no}_no`).click(() => {
+            checkAppendLogic(no);
         });
     }
 
@@ -97,6 +99,8 @@ function checkAppendLogic(i) {
     let value = ($(`input[name=append${i}]:checked`).val() == 1) ? true : false;
     if (value) {
         $(`#role${i}`).prop('disabled', false);
+        $(`#view${i}`).prop('checked', true);
+        $(`#view${i}`).prop('disabled', true);
     } else {
         $(`#role${i}`).prop('disabled', true);
     }

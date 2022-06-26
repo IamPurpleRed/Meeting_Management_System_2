@@ -28,7 +28,7 @@ foreach ($user_id as $id) {
   } else {
     $role = 0;
   }
-  if ($result["身分"] == "系助理") {
+  if ($result["管理員"] == "管理員") {
     $view = 1;
     $edit = 1;
   } else {

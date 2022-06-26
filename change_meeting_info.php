@@ -83,13 +83,13 @@
               $select_person = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$member_unm'");
               $result_person = $select_person->fetch(PDO::FETCH_ASSOC);
             ?>
-              <?php if ($result_person["身分"] != "系助理") : ?>
-                <tr>
+              <?php if ($result_person["管理員"] != "管理員") : ?>
+                <tr id="user<?php echo $member_unm; ?>">
                   <td><?php echo $result_person["帳號"] ?></td>
                   <td><?php echo $result_person["姓名"] ?></td>
                   <td><?php echo $result_person["身分"] ?></td>
                   <td><input id="view<?php echo $member_unm ?>" name="view<?php echo $member_unm ?>" value="1" type="checkbox" <?php if ($result["閱讀權限"] == 1) : ?>checked<?php endif; ?>></td>
-                  <td><input id="edit<?php echo $member_unm ?>" name="edit<?php echo $member_unm ?>" value="1" type="checkbox"><?php if ($result["編輯權限"] == 1) : ?>checked<?php endif; ?></td>
+                  <td><input id="edit<?php echo $member_unm ?>" name="edit<?php echo $member_unm ?>" value="1" type="checkbox" <?php if ($result["編輯權限"] == 1) : ?>checked<?php endif; ?>></td>
                   <td>
                     <input id="append<?php echo $member_unm ?>_yes" name="append<?php echo $member_unm ?>" type="radio" value="1" <?php if ($result["角色"] != 0) : ?>checked<?php endif; ?>>
                     <label>Yes</label>
@@ -108,8 +108,8 @@
               <!-- 非系統管理員之情況 END -->
 
               <!-- 系統管理員之情況 START -->
-              <?php if ($result_person["身分"] == "系助理") : ?>
-                <tr>
+              <?php if ($result_person["管理員"] == "管理員") : ?>
+                <tr id="user<?php echo $member_unm; ?>">
                   <td><?php echo $result_person["帳號"] ?></td>
                   <td><?php echo $result_person["姓名"] ?></td>
                   <td><?php echo $result_person["身分"] ?></td>
