@@ -167,13 +167,19 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
 
   <?php
   // 若使用者非管理員，則隱藏新增與刪除按鈕
+  // session_start();
   // if ($_SESSION['loginMember']['管理員'] != '管理員') {
   //   echo '<script  language=javascript>';
   //   echo 'var temp_index=["std","assistant","school_teacher","outside_teacher","expert"];';
   //   echo 'for (var i = 0; i < temp_index.length; i++) {';
-  //   echo 'document.getElementById("add_" + temp_index[i]).style.display = "none";';
-  //   echo 'document.getElementById("del_" + temp_index[i]).style.display = "none";}';
+  //   echo 'var elem = document.querySelector("#add_"+temp_index[i]);';
+  //   echo 'var elem_del = document.querySelector("#del_"+temp_index[i]);';
+  //   echo 'elem.remove();';
+  //   echo 'elem_del.remove();';
   //   echo '</script>';
   // }
+
+
+
   ?>
 </div>
