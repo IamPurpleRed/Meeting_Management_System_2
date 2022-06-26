@@ -50,21 +50,8 @@ foreach ($user_id as $id) {
 
 
 //討論事項輸入
-$select = $sql_qry->query("SELECT * FROM `討論事項` WHERE `會議編號`=$meeting_id ;");
-while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
-  $a = "discussionTitle" . $result["討論事項編號"];
-  $b = "discussionContent" . $result["討論事項編號"];
-  $c = "discussionResolution" . $result["討論事項編號"];
-  $d = "discussionImplementation" . $result["討論事項編號"];
-  $dis_id = $result["討論事項編號"];
-  if (isset($_POST[$a])) {
-    $disTitle = $_POST[$a];
-    $disContent = $_POST[$b];
-    $disResolution = $_POST[$c];
-    $disImplementation = $_POST[$d];
-    $op = $sql_qry->query("UPDATE `討論事項` SET `案由`='$disTitle',`說明`='$disContent',`決議事項`='$disResolution',`執行情況`='$disImplementation' WHERE `會議編號`='$meeting_id' AND `討論事項編號`='$dis_id' ;");
-  }
-}
+$op = $sql_qry->query("DELETE FROM `討論事項` WHERE `會議編號`=$meeting_id");
+
 
 for ($i = 1; $i < 21; $i++) {
   $a = "discussion" . $i . "Title";

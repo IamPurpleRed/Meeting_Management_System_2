@@ -146,35 +146,38 @@
           <span class="material-icons">add</span>
           <span class="text">新增討論事項</span>
         </button>
+
+        <?php
+        $select_dis = $sql_qry->query("SELECT * FROM `討論事項` WHERE `會議編號` = '$meeting_id'");
+        $i = 1;
+        ?>
+        <?php while ($result_dis = $select_dis->fetch(PDO::FETCH_ASSOC)) { ?>
+          <?php $origin_dis = $result_dis["討論事項編號"] ?>
+          <div class="discussion_item" id="discussion<?php echo $i; ?>">
+            <button class="btn del" id="del_discussion<?php echo $i; ?>_btn" type="button">
+              <span class="material-icons">delete</span>
+              <span class="text">刪除</span>
+            </button>
+            <div class="text_area">
+              <textarea class="input" id="discussion<?php echo $i; ?>_title" name='discussion<?php echo $i; ?>Title' value="" required><?php echo $result_dis["案由"] ?></textarea>
+              <span class="label">案由</span>
+            </div>
+            <div class="text_area">
+              <textarea class="input" id="discussion<?php echo $i; ?>_content" name="discussion<?php echo $i; ?>Content" value="" required><?php echo $result_dis["說明"] ?></textarea>
+              <span class="label">說明</span>
+            </div>
+            <div class="text_area">
+              <textarea class="input" id="discussion<?php echo $i; ?>_resolution" name="discussion<?php echo $i; ?>Resolution" value="" required><?php echo $result_dis["決議事項"] ?></textarea>
+              <span class="label">決議事項</span>
+            </div>
+            <div class="text_area">
+              <textarea class="input" id="discussionimplementation<?php echo $origin_dis ?>" name="discussion<?php echo $i; ?>Implementation" value="" required><?php echo $result_dis["執行情況"] ?></textarea>
+              <span class="label">執行情況</span>
+            </div>
+          </div>
+        <?php $i++;
+        } ?>
       </div>
-      <?php
-      $select_dis = $sql_qry->query("SELECT * FROM `討論事項` WHERE `會議編號` = '$meeting_id'");
-      ?>
-      <?php while ($result_dis = $select_dis->fetch(PDO::FETCH_ASSOC)) { ?>
-        <?php $origin_dis = $result_dis["討論事項編號"] ?>
-        <div class="discussion_item" id="discussion${i}">
-          <button class="btn del" id="del_discussion${i}_btn" type="button">
-            <span class="material-icons">delete</span>
-            <span class="text">刪除</span>
-          </button>
-          <div class="text_area">
-            <textarea class="input" id="discussion${i}_title" name='discussionTitle<?php echo $origin_dis ?>' value="" required><?php echo $result_dis["案由"] ?></textarea>
-            <span class="label">案由</span>
-          </div>
-          <div class="text_area">
-            <textarea class="input" id="discussion${i}_content" name="discussionContent<?php echo $origin_dis ?>" value="" required><?php echo $result_dis["說明"] ?></textarea>
-            <span class="label">說明</span>
-          </div>
-          <div class="text_area">
-            <textarea class="input" id="discussion${i}_resolution" name="discussionResolution<?php echo $origin_dis ?>" value="" required><?php echo $result_dis["決議事項"] ?></textarea>
-            <span class="label">決議事項</span>
-          </div>
-          <div class="text_area">
-            <textarea class="input" id="discussion${i}_implementation" name="discussionImplementation<?php echo $origin_dis ?>" value="" required><?php echo $result_dis["執行情況"] ?></textarea>
-            <span class="label">執行情況</span>
-          </div>
-        </div>
-      <?php } ?>
       <!-- 討論事項區域 END -->
 
       <!-- 附件區域 START -->

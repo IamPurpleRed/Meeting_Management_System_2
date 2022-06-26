@@ -4,16 +4,6 @@ let attachmentCounter = 0;
 $(document).ready(() => {
     setInterval(hideBtnText, 100);
 
-    $('#add_discussion_btn').hover(() => {
-        $('#add_discussion_btn').width(200);
-        $('#add_discussion_btn > .text').delay(500).fadeIn();
-    }, () => {
-        $('#add_discussion_btn > .text').hide();
-        $('#add_discussion_btn').width(50);
-    });
-
-    $('#add_discussion_btn').click(addDiscussionItem);
-
     for (let i = 0; i < $('#members > tr').length; i++) {
         $(`#edit${i + 1}`).click(() => {
             checkEditLogic(i + 1);
@@ -26,6 +16,17 @@ $(document).ready(() => {
             checkAppendLogic(i + 1);
         });
     }
+
+    checkDiscussionItem();
+    $('#add_discussion_btn').hover(() => {
+        $('#add_discussion_btn').width(200);
+        $('#add_discussion_btn > .text').delay(500).fadeIn();
+    }, () => {
+        $('#add_discussion_btn > .text').hide();
+        $('#add_discussion_btn').width(50);
+    });
+
+    $('#add_discussion_btn').click(addDiscussionItem);
 
     $('#add_attachment_btn').hover(() => {
         $('#add_attachment_btn').width(150);
@@ -57,6 +58,29 @@ function hideBtnText() {
 
     if ($('#send_meeting_btn').width() < 130) {
         $('#send_meeting_btn > .text').hide();
+    }
+}
+
+function checkDiscussionItem() {
+    discussionCounter = $('.discussion_item').length;
+    for (let i = 1; i <= $('.discussion_item').length; i++) {
+        setInterval(() => {
+            if ($(`#del_discussion${i}_btn`).width() < 80) {
+                $(`#del_discussion${i}_btn > .text`).hide();
+            }
+        }, 100);
+
+        $(`#del_discussion${i}_btn`).hover(() => {
+            $(`#del_discussion${i}_btn`).width(100);
+            $(`#del_discussion${i}_btn > .text`).delay(500).fadeIn();
+        }, () => {
+            $(`#del_discussion${i}_btn > .text`).hide();
+            $(`#del_discussion${i}_btn`).width(50);
+        });
+
+        $(`#del_discussion${i}_btn`).click(() => {
+            $(`#discussion${i}`).remove();
+        });
     }
 }
 
