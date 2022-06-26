@@ -40,7 +40,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">學生代表</span>';
         echo '</div>';
-        echo '<span class="material-icons del" id="del_std">delete</span>';
+        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_std">delete</span></a>';
         echo '</div>';
       }
       ?>
@@ -67,7 +67,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">系助理</span>';
         echo '</div>';
-        echo '<span class="material-icons del" id="del_assistant">delete</span>';
+        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_assistant">delete</span></a>';
         echo '</div>';
       }
       ?>
@@ -94,7 +94,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">系上老師</span>';
         echo '</div>';
-        echo '<span class="material-icons del" id="del_school_teacher">delete</span>';
+        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_school_teacher">delete</span></a>';
         echo '</div>';
       }
       ?>
@@ -121,7 +121,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">校外老師</span>';
         echo '</div>';
-        echo '<span class="material-icons del" id="del_outside_teacher">delete</span>';
+        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_outside_teacher">delete</span></a>';
         echo '</div>';
       }
       ?>
@@ -148,7 +148,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">業界專家</span>';
         echo '</div>';
-        echo '<span class="material-icons del" id="del_expert">delete</span>';
+        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_expert">delete</span></a>';
         echo '</div>';
       }
       ?>
@@ -157,7 +157,6 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
 
   <?php
   // 若使用者非管理員，則隱藏新增與刪除按鈕
-  session_start();
   if ($_SESSION['loginMember']['管理員'] != '管理員') {
     echo '<script  language=javascript>';
     echo 'var temp_index=["std","assistant","school_teacher","outside_teacher","expert"];';

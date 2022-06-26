@@ -20,6 +20,7 @@
   <?php
   include("components/navigation.php");
   include("components/side_menu.php");
+  $_SESSION["last_page"] = "management";
   ?>
 
   <div id="content">
