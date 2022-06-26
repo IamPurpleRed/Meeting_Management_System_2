@@ -24,7 +24,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
     <div class="header">
       <span class="title">學生代表 (<?php echo $count_students->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_std">add</span>
+        <?php if ($_SESSION['loginMember']['管理員'] == '管理員') : ?><span class="material-icons" id="add_std">add</span><?php endif; ?>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -40,7 +40,9 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">學生代表</span>';
         echo '</div>';
-        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_std">delete</span></a>';
+        if ($_SESSION['loginMember']['管理員'] == '管理員') {
+          echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_std">delete</span></a>';
+        }
         echo '</div>';
       }
       ?>
@@ -51,7 +53,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
     <div class="header">
       <span class="title">系助理 (<?php echo $count_assistants->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_assistant">add</span>
+        <?php if ($_SESSION['loginMember']['管理員'] == '管理員') : ?><span class="material-icons" id="add_assistant">add</span><?php endif; ?>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -67,7 +69,9 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">系助理</span>';
         echo '</div>';
-        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_assistant">delete</span></a>';
+        if ($_SESSION['loginMember']['管理員'] == '管理員') {
+          echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_assistant">delete</span></a>';
+        }
         echo '</div>';
       }
       ?>
@@ -78,7 +82,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
     <div class="header">
       <span class="title">系上老師 (<?php echo $count_ourTeachers->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_school_teacher">add</span>
+        <?php if ($_SESSION['loginMember']['管理員'] == '管理員') : ?> <span class="material-icons" id="add_school_teacher">add</span><?php endif; ?>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -94,7 +98,9 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">系上老師</span>';
         echo '</div>';
-        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_school_teacher">delete</span></a>';
+        if ($_SESSION['loginMember']['管理員'] == '管理員') {
+          echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_school_teacher">delete</span></a>';
+        }
         echo '</div>';
       }
       ?>
@@ -105,7 +111,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
     <div class="header">
       <span class="title">校外老師 (<?php echo $count_otherTeachers->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_outside_teacher">add</span>
+        <?php if ($_SESSION['loginMember']['管理員'] == '管理員') : ?> <span class="material-icons" id="add_outside_teacher">add</span><?php endif; ?>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -121,7 +127,9 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">校外老師</span>';
         echo '</div>';
-        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_outside_teacher">delete</span></a>';
+        if ($_SESSION['loginMember']['管理員'] == '管理員') {
+          echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_outside_teacher">delete</span></a>';
+        }
         echo '</div>';
       }
       ?>
@@ -132,7 +140,7 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
     <div class="header">
       <span class="title">業界專家 (<?php echo $count_experts->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_expert">add</span>
+        <?php if ($_SESSION['loginMember']['管理員'] == '管理員') : ?><span class="material-icons" id="add_expert">add</span><?php endif; ?>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -148,7 +156,9 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
         echo '<span class="name">' . $result_theUser['姓名'] . '</span>';
         echo '<span class="identity">業界專家</span>';
         echo '</div>';
-        echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_expert">delete</span></a>';
+        if ($_SESSION['loginMember']['管理員'] == '管理員') {
+          echo '<a href="/mms.csie.nuk.edu.tw/src/php/delete_member.php?id=' . $userID . '"><span class="material-icons del" id="del_expert">delete</span></a>';
+        }
         echo '</div>';
       }
       ?>
@@ -157,13 +167,13 @@ $count_experts = $sql_qry->query("SELECT count(*) FROM `業界專家`");
 
   <?php
   // 若使用者非管理員，則隱藏新增與刪除按鈕
-  if ($_SESSION['loginMember']['管理員'] != '管理員') {
-    echo '<script  language=javascript>';
-    echo 'var temp_index=["std","assistant","school_teacher","outside_teacher","expert"];';
-    echo 'for (var i = 0; i < temp_index.length; i++) {';
-    echo 'document.getElementById("add_" + temp_index[i]).style.display = "none";';
-    echo 'document.getElementById("del_" + temp_index[i]).style.display = "none";}';
-    echo '</script>';
-  }
+  // if ($_SESSION['loginMember']['管理員'] != '管理員') {
+  //   echo '<script  language=javascript>';
+  //   echo 'var temp_index=["std","assistant","school_teacher","outside_teacher","expert"];';
+  //   echo 'for (var i = 0; i < temp_index.length; i++) {';
+  //   echo 'document.getElementById("add_" + temp_index[i]).style.display = "none";';
+  //   echo 'document.getElementById("del_" + temp_index[i]).style.display = "none";}';
+  //   echo '</script>';
+  // }
   ?>
 </div>
