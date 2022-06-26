@@ -21,14 +21,9 @@ while ($result = $select->fetch(PDO::FETCH_ASSOC)) {
 }
 foreach ($user_id as $id) {
   $member[$id] = $_POST["append$id"];
-  $select = $sql_qry->query("SELECT `身分` FROM `使用者` WHERE `使用者編號`=$id ;");
+  $select = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號`=$id ;");
   $result = $select->fetch(PDO::FETCH_ASSOC);
-  if ($member[$id] == 1) {
-    $role = $_POST["role$id"];
-  } else {
-    $role = 0;
-  }
-  if ($result["身分"] == "系助理") {
+  if ($result["管理員"] == "管理員") {
     $view = 1;
     $edit = 1;
   } else {
@@ -42,6 +37,12 @@ foreach ($user_id as $id) {
       else
         $view = 0;
     }
+  }
+  if ($member[$id] == 1) {
+    $role = $_POST["role$id"];
+    $view = 1;
+  } else {
+    $role = 0;
   }
   $op = $sql_qry->query("INSERT INTO `參與`(`會議編號`,`使用者編號`,`角色`,`閱讀權限`,`編輯權限`) values('$meeting_id','$id','$role','$view','$edit');");
 }

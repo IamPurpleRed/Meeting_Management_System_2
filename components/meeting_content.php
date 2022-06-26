@@ -166,7 +166,7 @@ $select_attach = $sql_qry->query("SELECT * FROM `附件` WHERE `會議編號` = 
   <?php if ($_SESSION["loginMember"]["管理員"] == "管理員") : ?>
     <button class="btn del" id="del_btn" type="button">
       <span class="material-icons">delete</span>
-      <span class="text">刪除</span>
+      <a href="/mms.csie.nuk.edu.tw/src/php/delete_meeting.php?meetingID=<?php echo $theSelectedMeeting ?>"><span class="text">&emsp;</span></a>
     </button>
   <?php endif; ?>
 </div>
