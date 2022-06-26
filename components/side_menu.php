@@ -23,7 +23,7 @@
     <div class="header">
       <span class="title">學生代表 (<?php echo $count_students->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_std">add</span>
+        <span class="material-icons add" id="add_std">add</span>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -51,7 +51,7 @@
     <div class="header">
       <span class="title">系助理 (<?php echo $count_assistants->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_assistant">add</span>
+        <span class="material-icons add" id="add_assistant">add</span>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -79,7 +79,7 @@
     <div class="header">
       <span class="title">系上老師 (<?php echo $count_ourTeachers->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_school_teacher">add</span>
+        <span class="material-icons add" id="add_school_teacher">add</span>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -107,7 +107,7 @@
     <div class="header">
       <span class="title">校外老師 (<?php echo $count_otherTeachers->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_outside_teacher">add</span>
+        <span class="material-icons add" id="add_outside_teacher">add</span>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
@@ -135,7 +135,7 @@
     <div class="header">
       <span class="title">業界專家 (<?php echo $count_experts->fetchColumn(); ?>)</span>
       <div class="icon_group">
-        <span class="material-icons" id="add_expert">add</span>
+        <span class="material-icons add" id="add_expert">add</span>
         <span class="material-icons toggle">keyboard_arrow_down</span>
       </div>
     </div>
