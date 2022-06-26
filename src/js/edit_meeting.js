@@ -103,6 +103,9 @@ function checkAppendLogic(i) {
         $(`#view${i}`).prop('disabled', true);
     } else {
         $(`#role${i}`).prop('disabled', true);
+        if ($(`#edit${i}`).prop('disabled') == false) {
+            $(`#view${i}`).prop('disabled', false);
+        }
     }
 }
 
