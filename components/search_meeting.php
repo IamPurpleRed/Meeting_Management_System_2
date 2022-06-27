@@ -29,6 +29,7 @@
       $userID = $result_user['使用者編號'];
       $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
       $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
+      echo '<a href="components/personnel_content.php?ID='.$userID.'" >';
       echo '<div class="group_items">';
         echo '<div class="user_item" class="group_items">';
           echo '<img class="user_photo" src="src/user_photo/'.$userID.'.png">';
@@ -37,6 +38,7 @@
           echo '<span class="user_email">'.$result_theUser['帳號'].'@mail.nuk.edu.tw</span>';
         echo '</div>';
       echo '</div>';
+      echo '</a>';
     }
     ?>
     </div>
