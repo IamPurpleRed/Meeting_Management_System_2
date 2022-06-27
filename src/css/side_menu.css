@@ -12,6 +12,7 @@
   width: 100%;
 }
 #side_menu .group .material-icons {
+  color: #000;
   font-size: 40px;
   cursor: pointer;
 }
