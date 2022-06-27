@@ -14,13 +14,20 @@
 </head>
 <body>
   <?php
+  session_start();
   include("components/navigation.php");
   
   ?>
   
 
     <!-- 匯入 components/profile.php -->
-    
+    <form method="POST" >
+      <div id="search_area">
+        <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
+        <input id="search_input" name="search" type="text" placeholder="搜尋使用者...">
+			  <span><input class="material-icons" type="submit" value="search" /></span>
+      </div>
+	  </form>
     
 
     

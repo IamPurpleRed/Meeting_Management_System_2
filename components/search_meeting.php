@@ -1,10 +1,8 @@
 <?php
   
+
   
-  session_start();
-  function set_token() {
-    $_SESSION['token'] = md5(microtime(true));
-  }
+  
   
   include("src/php/sql_connect.inc.php");
   $theSelectedUser = null;
@@ -14,36 +12,13 @@
   $select_user = $sql_qry->query("SELECT * FROM `使用者`");
   $count_user = $sql_qry->query("SELECT count(*) FROM `使用者`");
 
-  
+  include("src/php/search_function.php");
 ?>
   
 	
-	<?php 
-    if(!isset($_SESSION['token']) || $_SESSION['token']=='') {
-      set_token();
-    }
-    if(isset($_POST["search"]) && $_POST['token'] == $_SESSION['token'] ){
-      unset($_SESSION['token']);
-      $Name=$_POST["search"];
-      $select_user = $sql_qry->query("SELECT * from `使用者` where `姓名` like '%{$Name}%'");
-      $count_user = $sql_qry->query("SELECT count(*) from `使用者` where `姓名` like '%{$Name}%'");
-    
-      $select_meeting = $sql_qry->query("SELECT * from `會議` where `會議名稱` like '%{$Name}%'");
-      $count_meeting = $sql_qry->query("SELECT count(*) from `會議` where `會議名稱` like '%{$Name}%'");
-      
-		}else{ 
-  ?>
-    <iframe id="iframe" name="iframe" style="display:none;"></iframe>
-		<form method="POST">
-      <div id="search_area">
-        <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
-        <input id="search_input" name="search" type="text" placeholder="搜尋使用者...">
-			  <span><input class="material-icons" type="submit" value="search" /></span>
-      </div>
-		</form>
-	<?php } ?>
+	
 
-
+  
   <div id="result_area">
   <div id="user_group">
 
@@ -61,7 +36,7 @@
         echo '<div id="user_group_items" class="group_items">';
           
           echo '<div class="user_item" class="group_items">';
-            echo '<img class="user_photo" src="/src/images/account-circle.png">';
+            echo '<img class="user_photo" src="src/user_photo/'.$userID.'.png">';
             echo '<span class="user_name">'.$result_theUser['姓名'].'&nbsp</span>';
             echo '<span class="user_identity">'.$result_theUser['身分'].'&nbsp</span>';
             echo '<span class="user_email">'.$result_theUser['帳號'].'@mail.nuk.edu.tw</span>';
@@ -89,9 +64,9 @@
         $meetingID = $result_meeting['會議編號'];
         $select_theMeeting = $sql_qry->query("SELECT * FROM `會議` WHERE `會議編號` = '$meetingID'");
         $result_theMeeting = $select_theMeeting->fetch(PDO::FETCH_ASSOC);
-        echo '<div id="meeting_group_items" class="group_items">';
+        echo '<div id="meeting_group_items" class="group_items" onclick="makeActive(this)" id="' . $meetingID . '">';
           
-          echo '<div class="meeting_item">';
+          echo '<div class="meeting_item" >';
             echo '<span class="material-icons">groups</span>';
             echo '<span class="meeting_name">'.$result_theMeeting['會議名稱'].'</span>';
             echo '<span class="meeting_date">'.$result_theMeeting['開會時間'].'</span>';
