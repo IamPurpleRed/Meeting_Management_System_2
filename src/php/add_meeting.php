@@ -92,4 +92,4 @@ for ($i = 1; $i < 21; $i++) {
   }
 }
 //附件輸入結束
-header("Location:../../edit_meeting.php");
+header("Location:../../meeting_overview.php");

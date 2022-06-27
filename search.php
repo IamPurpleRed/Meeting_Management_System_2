@@ -15,20 +15,8 @@
 <body>
   <?php
   include("components/navigation.php");
-  
+  include("components/search_meeting.php");
   ?>
-  
-
-    <!-- 匯入 components/profile.php -->
-    
-    
-
-    
-    <?php
-      include("components/search_meeting.php");
-  
-    ?>
-  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="/src/js/nav.js"></script>
