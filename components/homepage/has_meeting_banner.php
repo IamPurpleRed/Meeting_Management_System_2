@@ -1,4 +1,3 @@
-?>
 <div id="banner">
   <div id="text_area">
     <h2 id="has_meeting_title">即將開始</h2>
@@ -9,10 +8,9 @@
       <h3 id="time_content">1 小時 43 分鐘後開始</h3>
     </div>
     <div id="banner_btn">
-      <a href="#">前往&nbsp;&nbsp;&nbsp;&nbsp;></a>
+      <a href="/mms.csie.nuk.edu.tw/components/meeting_content.php?ID=<?php echo $_SESSION["go_meetingID"]; ?>">前往&nbsp;&nbsp;&nbsp;&nbsp;></a>
     </div>
   </div>
   <div id="tri_area"></div>
   <img src="src/images/boring-meeting.gif">
 </div>
-<?php
