@@ -22,6 +22,7 @@
 
   $select_attend = $sql_qry->query("SELECT * FROM `參與` WHERE `使用者編號` = '$userID' ");
   $result_attend = $select_attend->fetch(PDO::FETCH_ASSOC);
+  $_SESSION["go_meetingID"] = $result_attend["會議編號"];
 
   if ($result_attend) {
     include("components/homepage/has_meeting_banner.php");
