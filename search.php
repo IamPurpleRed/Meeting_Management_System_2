@@ -14,9 +14,26 @@
 </head>
 <body>
   <?php
+  session_start();
   include("components/navigation.php");
   include("components/search_meeting.php");
   ?>
+  
+
+    <!-- 匯入 components/profile.php -->
+    <form method="POST" >
+      <div id="search_area">
+        <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
+        <input id="search_input" name="search" type="text" placeholder="搜尋使用者...">
+			  <span><input class="material-icons" type="submit" value="search" /></span>
+      </div>
+	  </form>
+    
+    <?php
+      include("components/search_meeting.php");
+  
+    ?>
+  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="/src/js/nav.js"></script>
