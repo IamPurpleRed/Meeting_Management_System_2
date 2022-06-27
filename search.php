@@ -32,7 +32,7 @@
     <?php
       include("components/search_meeting.php");
     ?>
-  
+    
 
   <script src="src/js/nav.js"></script>
 </body>

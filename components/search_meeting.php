@@ -51,21 +51,23 @@
 
     
 
-    <div class="container"  id="meeting_container">
+    <div class="container" id="meeting_container">
       <?php
       while ($result_meeting = $select_meeting->fetch(PDO::FETCH_ASSOC))
       {
         $meetingID = $result_meeting['會議編號'];
         $select_theMeeting = $sql_qry->query("SELECT * FROM `會議` WHERE `會議編號` = '$meetingID'");
         $result_theMeeting = $select_theMeeting->fetch(PDO::FETCH_ASSOC);
-        echo '<div id="meeting_group_items" class="group_items" onclick="makeActive(this)" id="' . $meetingID . '">';
-          echo '<div class="meeting_item" >';
+        echo '<a href="components/meeting_content.php?ID='.$meetingID.'" >';
+        echo '<div class="group_items" >';
+          echo '<div class="meeting_item">';
             echo '<span class="material-icons">groups</span>';
             echo '<span class="meeting_name">'.$result_theMeeting['會議名稱'].'</span>';
             echo '<span class="meeting_date">'.$result_theMeeting['開會時間'].'</span>';
           echo '</div>';
           
         echo '</div>';
+        echo '</a>';
       }
       ?>
     </div>
