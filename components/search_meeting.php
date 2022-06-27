@@ -1,13 +1,16 @@
 <?php
 
-  
+ 
   include("src/php/sql_connect.inc.php");
-  $theSelectedUser = null;
-  $select_meeting = $sql_qry->query("SELECT * FROM `會議`");
-  $count_meeting = $sql_qry->query("SELECT count(*) FROM `會議`");
 
+  $theSelectedUser = $_SESSION["loginMember"]["使用者編號"];
+  
   $select_user = $sql_qry->query("SELECT * FROM `使用者`");
   $count_user = $sql_qry->query("SELECT count(*) FROM `使用者`");
+
+  $select_meeting = $sql_qry->query("SELECT * FROM `會議` inner join `參與` on `參與`.`會議編號` = `會議`.`會議編號` WHERE `使用者編號` = '$theSelectedUser'");
+  $count_meeting = $sql_qry->query("SELECT count(*) FROM `會議` inner join `參與` on `參與`.`會議編號` = `會議`.`會議編號` WHERE `使用者編號` = '$theSelectedUser'");
+
 
   include("src/php/search_function.php");
 ?>
