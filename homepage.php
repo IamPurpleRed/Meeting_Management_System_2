@@ -24,7 +24,7 @@
   $result_attend = $select_attend->fetch(PDO::FETCH_ASSOC);
   $_SESSION["go_meetingID"] = $result_attend["會議編號"];
 
-  if ($result_attend) {
+  if ($result_attend["角色"] != 0) {
     include("components/homepage/has_meeting_banner.php");
   } else {
     include("components/homepage/no_meeting_banner.php");
