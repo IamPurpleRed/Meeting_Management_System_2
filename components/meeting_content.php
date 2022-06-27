@@ -15,6 +15,12 @@ $select_dis = $sql_qry->query("SELECT * FROM `討論事項` WHERE `會議編號`
 $select_attach = $sql_qry->query("SELECT * FROM `附件` WHERE `會議編號` = '$theSelectedMeeting'");
 
 ?>
+<link rel="stylesheet" href="../src/css/style.css">
+<link rel="stylesheet" href="../src/css/meeting_content.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 <h2><?php echo $result["會議名稱"] ?></h2>
 <div class="attribute">
   <span class="prefix">
@@ -164,9 +170,14 @@ $select_attach = $sql_qry->query("SELECT * FROM `附件` WHERE `會議編號` = 
   <?php endif; ?>
   <!-- 系統管理員才看的到刪除按鈕 -->
   <?php if ($_SESSION["loginMember"]["管理員"] == "管理員") : ?>
+    <a href="/mms.csie.nuk.edu.tw/src/php/delete_meeting.php?meetingID=<?php echo $theSelectedMeeting ?>">
     <button class="btn del" id="del_btn" type="button">
       <span class="material-icons">delete</span>
-      <a href="/mms.csie.nuk.edu.tw/src/php/delete_meeting.php?meetingID=<?php echo $theSelectedMeeting ?>"><span class="text">&emsp;</span></a>
+      <span class="text">移除</span>
     </button>
+    </a>
   <?php endif; ?>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/mms.csie.nuk.edu.tw/src/js/meeting_content.js"></script>

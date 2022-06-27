@@ -31,7 +31,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="src/js/nav.js"></script>
-  <script src="src/js/meeting_overview.js"></script>
   <script src="src/js/meeting.js"></script>
 </body>
 
