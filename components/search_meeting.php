@@ -30,7 +30,7 @@
         $userID = $result_user['使用者編號'];
         $select_theUser = $sql_qry->query("SELECT * FROM `使用者` WHERE `使用者編號` = '$userID'");
         $result_theUser = $select_theUser->fetch(PDO::FETCH_ASSOC);
-        echo '<div id="user_group_items" class="group_items">';
+        echo '<div id="user_group_items" class="group_items" >';
           
           echo '<div class="user_item" class="group_items">';
             echo '<img class="user_photo" src="src/user_photo/'.$userID.'.png">';
@@ -61,15 +61,16 @@
         $meetingID = $result_meeting['會議編號'];
         $select_theMeeting = $sql_qry->query("SELECT * FROM `會議` WHERE `會議編號` = '$meetingID'");
         $result_theMeeting = $select_theMeeting->fetch(PDO::FETCH_ASSOC);
-        echo '<div id="meeting_group_items" class="group_items" onclick="makeActive(this)" id="' . $meetingID . '">';
-          
-          echo '<div class="meeting_item" >';
+        echo '<a href="components/meeting_content.php?ID='.$meetingID.'" >';
+        echo '<div class="group_items" >';
+          echo '<div class="meeting_item">';
             echo '<span class="material-icons">groups</span>';
             echo '<span class="meeting_name">'.$result_theMeeting['會議名稱'].'</span>';
             echo '<span class="meeting_date">'.$result_theMeeting['開會時間'].'</span>';
           echo '</div>';
           
         echo '</div>';
+        echo '</a>';
       }
       ?>
     </div>
