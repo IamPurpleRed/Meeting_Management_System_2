@@ -23,7 +23,9 @@
       <div id="search_area">
         <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
         <input id="search_input" name="search" type="text" placeholder="搜尋使用者...">
-			  <span><input class="material-icons" type="submit" value="search" /></span>
+        <button class="btn" id="edit_btn" type="submit" value="search">
+             <span class="material-icons">search</span>
+        </button>
       </div>
 	  </form>
     

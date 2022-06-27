@@ -16,9 +16,10 @@
     font-size: 22px;
   }
 
-  .material-icons {
-    padding: 5px;
+  .btn {
+    margin: 0;
     position: absolute;
+    top: 0;
     right: 0;
     color: #000;
     font-size: 40px;
@@ -86,6 +87,9 @@
   .meeting_name,
   .user_email {
     width: 45%;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .user_identity {
