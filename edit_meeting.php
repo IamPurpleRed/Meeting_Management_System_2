@@ -34,7 +34,7 @@
   <h2 id="page_title">新增會議</h2><!-- 新增會議 or 編輯會議 -->
   <hr id="page_hr">
   <div id="main_container">
-    <div id="number">會議編號:<?php echo $meeting_id ?> </div>
+    <div id="number">會議編號: <?php echo $meeting_id ?> </div>
     <div id="creator">建立者: <?php echo $_SESSION["loginMember"]["姓名"] ?></div><!-- 只有管理員能建立會議 -->
     <form action="src/php/add_meeting.php?meeting_id=<?php echo $meeting_id ?>" method="post" enctype="multipart/form-data">
       <!-- 基本資料區域 START -->
