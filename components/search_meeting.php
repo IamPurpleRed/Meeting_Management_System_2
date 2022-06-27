@@ -1,8 +1,5 @@
 <?php
-  
 
-  
-  
   
   include("src/php/sql_connect.inc.php");
   $theSelectedUser = null;

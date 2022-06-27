@@ -29,8 +29,6 @@
       </div>
 	  </form>
     
-
-    
     <?php
       include("components/search_meeting.php");
   
