@@ -14,9 +14,7 @@
 </head>
 <body>
   <?php
-  session_start();
   include("components/navigation.php");
-  include("components/search_meeting.php");
   ?>
   
 
@@ -31,12 +29,9 @@
     
     <?php
       include("components/search_meeting.php");
-  
     ?>
   
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/src/js/nav.js"></script>
-  <script src="/src/js/search.js"></script>
+  <script src="src/js/nav.js"></script>
 </body>
 </html>

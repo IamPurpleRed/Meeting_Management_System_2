@@ -71,8 +71,8 @@
 }
 .user_item .user_photo,
 .meeting_item .user_photo {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   margin-right: 15px;
   border-radius: 50%;
 }
