@@ -102,7 +102,7 @@
                       <option value="3">與會人員</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;
-                    <input id="append<?php echo $member_unm ?>_no" name="append<?php echo $member_unm ?>" type="radio" value="0">
+                    <input id="append<?php echo $member_unm ?>_no" name="append<?php echo $member_unm ?>" type="radio" value="0" checked>
                     <label>No</label>
                   </td>
                 </tr>
@@ -127,7 +127,7 @@
                       <option value="3">與會人員</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;
-                    <input id="append<?php echo $member_unm ?>_no" name="append<?php echo $member_unm ?>" type="radio" value="0">
+                    <input id="append<?php echo $member_unm ?>_no" name="append<?php echo $member_unm ?>" type="radio" value="0" checked>
                     <label>No</label>
                   </td>
                 </tr>
