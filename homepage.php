@@ -30,6 +30,8 @@
     else {
       include("components/homepage/no_meeting_banner.php");
     }
+  } else {
+    include("components/homepage/no_meeting_banner.php");
   }
   ?>
 
