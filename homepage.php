@@ -27,8 +27,9 @@
   if (isset($result_attend["角色"])) {
     if ($result_attend["角色"] != 0)
       include("components/homepage/has_meeting_banner.php");
-  } else {
-    include("components/homepage/no_meeting_banner.php");
+    else {
+      include("components/homepage/no_meeting_banner.php");
+    }
   }
   ?>
 
